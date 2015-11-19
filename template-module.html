@@ -1,0 +1,12 @@
+<!--
+The 'name' variable is defined in the 'module' directive in app.js.
+It's OK to hardcode everything into the HTML for now, but here's an example
+of how you'd include a variable if you need to for some reason.
+-->
+<div>
+Here's a module! {{name}}
+</div>
+
+<!-- The 'module' tag contains 'activity' tags, and we want their output
+to be placed here.  The ng-transclude tag does that. -->
+<ng-transclude></ng-transclude>

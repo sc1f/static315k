@@ -1,0 +1,92 @@
+/*navigation + header*/
+.nav-bar {
+	background-image: url("img/background.jpg");
+	background-size: cover;
+	background-position: 0px -30px;
+	background-color: #cc5527;
+	min-height: 4vw;
+	height: 10vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 10;
+	/*transitions*/
+	-webkit-transition: height 0.45s;
+	-moz-transition: height 0.45s;
+	-ms-transition: height 0.45s;
+	-o-transition: height 0.45s;
+	transition: height 0.45s;
+}
+.nav-bar-scroll {
+	background-image: none;
+	background: #cc5527;
+	height: 4vw;
+	position:fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	-webkit-transition: height 0.45s;
+	-moz-transition: height 0.45s;
+	-ms-transition: height 0.45s;
+	-o-transition: height 0.45s;
+	transition: height 0.45s;
+}
+.nav-element {
+	color: #ffffff;
+	display: inline;
+	font: 1.1vw Roboto 400;
+	list-style-type: none;
+	margin: 0
+	padding: 0;
+	padding-top: 2vw;
+	text-transform: uppercase;
+	z-index: 15;
+}
+.nav-element-active {
+	text-shadow: 0 0 .5px #f0f0f0;
+}
+.nav-element-scroll {
+	padding-top: 1vw;
+}
+#activities-drop {
+	padding-left: 1.5vw;
+	float: left;
+}
+#resources-drop {
+	padding-right: 1.5vw;
+	float: right;
+}
+.header-container {
+	float: left;
+	position: relative;
+	left: 43%;
+}
+#main-head{
+	font-family: "Roboto Slab";
+    color: white;
+    font-size: 3vw;
+    font-weight: 300;
+    padding-top: 5vw;
+    list-style-type: none;
+    float: left;
+    position: relative;
+    left: -50%;
+    z-index: 11;
+}
+.main-head-scroll {
+	padding-top: 1vw;
+	font-size: 2vw;
+}
+/*body content*/
+body .main {
+	background-color: #f8f8f8;
+	height: 100%;
+	width: 100%;
+}
+.body-content {
+	width:100%;
+	height: 3000px;
+}

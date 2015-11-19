@@ -1,0 +1,22 @@
+{
+  "name": "module 3",
+  "authors": [
+    "sc1f <tanjunyuan@hotmail.co.uk>"
+  ],
+  "description": "LAITS mockup of HIS315K module 3. Created by Junyuan Tan, w/ lots of assistance from Chris Pittman, LAITS.",
+  "main": "index.htm",
+  "moduleType": [],
+  "keywords": [
+    "his315k"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.utexas.edu/cola/laits/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
