@@ -1,2 +1,2 @@
 # static315k
-LAITS
+LAITS static mockup
