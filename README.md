@@ -1,4 +1,4 @@
 # static315k
-LAITS static mockup
-HTML/CSS/Angular/JQuery<br>
+LAITS static mockup<br>
+HTML/CSS/Angular/JQuery
 <br>Junyuan Tan, LAITS STA, 2015
