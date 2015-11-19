@@ -12,6 +12,7 @@
 	right: 0;
 	width: 100%;
 	z-index: 10;
+	overflow: hidden;
 	/*transitions*/
 	-webkit-transition: height 0.1s linear;
 	-moz-transition: height 0.1s linear;
@@ -28,6 +29,7 @@
 	left: 0;
 	right: 0;
 	width: 100%;
+	overflow: hidden;
 	/*-webkit-transition: height 0.1s linear;
 	-moz-transition: height 0.1s linear;
 	-ms-transition: height 0.1s linear;
@@ -48,15 +50,6 @@
 .nav-element-active {
 	text-shadow: 0 0 .5px #f0f0f0;
 }
-/*.nav-element-scroll {
-	padding-top: 1vw;
-	/*transitions
-	-webkit-transition: padding-top 0.45s linear;
-	-moz-transition: padding-top 0.45s linear;
-	-ms-transition: padding-top 0.45s linear;
-	-o-transition: padding-top 0.45s linear;
-	transition: padding-top 0.45s linear;
-}*/
 #activities-drop {
 	padding-left: 1.5vw;
 	float: left;
@@ -88,22 +81,47 @@
 	-o-transition: padding-top font-size 0.1s linear;
 	transition: padding-top font-size 0.1s linear;
 }
-
+/*FAB*/
+.chat-icon {
+	vertical-align: middle;
+	display: inline-block;
+	line-height: 1;
+} 
+.md-button.md-fab, 
+.contact-button {
+	background: #4290D3;
+	position: fixed;
+	top: 7.5vw;
+	left: 85%;
+}
+button.md-fab.contact-button.md-button.md-default-theme{
+	background: #4290D3;
+}
+.contact-button-scroll {
+	background: #4290D3
+	position: fixed;
+	top: 1.5vw;
+}
 /*body content*/
-body .main {
-	background-color: #f7f7f7;
+/*html, body {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}*/
+.main {
+	background-color: #f8f8f8;
 	height: 100%;
 	width: 100%;
 }
-.float-center {
-	float: right;
-	position: relative;
-	left: -50%;
-	text-align: left;
+md-content {
+	background: #f8f8f8;
 }
-.float-center md-card .content-center {
-	position: relative;
-	left: 50%;
-	width:70%;
-	height: 3000px;
+.main-container {
+	position: absolute;
+	top: 10vw;
+}
+.content-center {
+	width: 65%;
+	margin: auto;
 }
