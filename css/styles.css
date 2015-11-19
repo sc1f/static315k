@@ -4,6 +4,7 @@
 	background-size: cover;
 	background-position: 0px -30px;
 	background-color: #cc5527;
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 	min-height: 4vw;
 	height: 10vw;
 	position: fixed;
@@ -23,6 +24,7 @@
 .nav-bar-scroll {
 	background-image: none;
 	background: #cc5527;
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 	height: 4vw;
 	position:fixed;
 	top: 0;
@@ -43,12 +45,12 @@
 	list-style-type: none;
 	margin: 0
 	padding: 0;
-	padding-top: 1.2vw;
+	padding-top: 1.3vw;
 	text-transform: uppercase;
 	z-index: 15;
 }
 .nav-element-active {
-	text-shadow: 0 0 .5px #f0f0f0;
+	text-shadow: 0 0 1px #ffffff;
 }
 #activities-drop {
 	padding-left: 1.5vw;
@@ -93,6 +95,11 @@
 	position: fixed;
 	top: 7.5vw;
 	left: 85%;
+	-webkit-transition: top 0.1s linear;
+	-moz-transition: top 0.1s linear;
+	-ms-transition: top 0.1s linear;
+	-o-transition: top 0.1s linear;
+	transition: top 0.1s linear;
 }
 button.md-fab.contact-button.md-button.md-default-theme{
 	background: #4290D3;
@@ -101,6 +108,12 @@ button.md-fab.contact-button.md-button.md-default-theme{
 	background: #4290D3
 	position: fixed;
 	top: 1.5vw;
+	-webkit-transition: top 0.1s linear;
+	-moz-transition: top 0.1s linear;
+	-ms-transition: top 0.1s linear;
+	-o-transition: top 0.1s linear;
+	transition: top 0.1s linear;
+
 }
 /*body content*/
 /*html, body {
@@ -124,4 +137,14 @@ md-content {
 .content-center {
 	width: 65%;
 	margin: auto;
+}
+.content-inject {
+	white-space: pre-wrap;
+}
+h3, .content-head {
+	color: #505050;
+	font-weight: 500;
+}
+p, .content-inject {
+	color: #404040;
 }

@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body class="main" ng-app="MintzApp">
+		<!--top navigation-->
 		<div class="nav-bar">
 			<nav>
 				<div class="nav-element" id="activities-drop">
@@ -25,25 +26,50 @@
 				<li id="main-head">The Significance of 1492</li>
 			</div>
 		</div>
+		<!--dropdown menus. work with SVGs-->
+		<section class="dropdowns">
+		<div id="a-dropdown">
+			<div class="a-select"></div>
+			<div class="a-select"></div>
+			<div class="a-select"></div>
+			<div class="a-select"></div>
+			<div class="a-select"></div>
+		</div>
+		<div id="r-dropdown">
+			<div class="r-select"></div>
+			<div class="r-select"></div>
+			<div class="r-select"></div>
+			<div class="r-select"></div>
+			<div class="r-select"></div>
+		</div>
+		</section>
+		<!--contact FAB USE FAB SPEED DIAL-->
 		<section id="contact-fab">
 			<md-button class="md-fab contact-button" aria-label="contact">
 				<i class="material-icons chat-icon">chat</i>
+				<md-tooltip md-direction="down">
+          		Connect with your classmates!
+        		</md-tooltip>
 		</section>
 		<section id="content">
-			<div class="main-container" ng-controller="ModuleController">	
+			<div class="main-container" ng-controller="ModuleController">
+			<!--main content card-->
 			<div id="float-center">
 				<md-content class="md-padding">
 				<md-card class="content-center">
 				<md-card-content>
-				<h3>Introduction to Module 3</h3>
-				<p>{{introduction}}</p>
-				<h3>Three Worlds Collide</h3>
-				<p>{{worlds_collide}}</p>
-				<h3>The Significance of 1492</h3>
-				<p>{{significance}}</p>
+				<h3 class="content-head">Introduction to Module 3</h3 class="content-head">
+				<p class="content-inject">{{introduction}}</p>
+				<h3 class="content-head">Three Worlds Collide</h3 class="content-head">
+				<p class="content-inject">{{worlds_collide}}</p>
+				<h3 class="content-head">The Significance of 1492</h3 class="content-head">
+				<p class="content-inject">{{significance}}</p>
+				<h3 class="content-head">When Worlds Collide</h3 class="content-head">
+				<p class="content-inject">{{when_worlds_collide}}</p>
+				<h3 class="content-head">Cinematic Encounters With Aliens</h3>
+				<p class="content-inject">{{cinematic_encounters}}</p>
 				</md-card-content>
 				</md-card>
-				</md-content>
 			</div>
 		</div>
 	</section>
