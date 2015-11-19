@@ -13,11 +13,11 @@
 	width: 100%;
 	z-index: 10;
 	/*transitions*/
-	-webkit-transition: height 0.45s;
-	-moz-transition: height 0.45s;
-	-ms-transition: height 0.45s;
-	-o-transition: height 0.45s;
-	transition: height 0.45s;
+	-webkit-transition: height 0.1s linear;
+	-moz-transition: height 0.1s linear;
+	-ms-transition: height 0.1s linear;
+	-o-transition: height 0.1s linear;
+	transition: height 0.1s linear;
 }
 .nav-bar-scroll {
 	background-image: none;
@@ -28,11 +28,11 @@
 	left: 0;
 	right: 0;
 	width: 100%;
-	-webkit-transition: height 0.45s;
-	-moz-transition: height 0.45s;
-	-ms-transition: height 0.45s;
-	-o-transition: height 0.45s;
-	transition: height 0.45s;
+	/*-webkit-transition: height 0.1s linear;
+	-moz-transition: height 0.1s linear;
+	-ms-transition: height 0.1s linear;
+	-o-transition: height 0.1s linear;
+	transition: height 0.1s linear;*/
 }
 .nav-element {
 	color: #ffffff;
@@ -41,16 +41,22 @@
 	list-style-type: none;
 	margin: 0
 	padding: 0;
-	padding-top: 2vw;
+	padding-top: 1.2vw;
 	text-transform: uppercase;
 	z-index: 15;
 }
 .nav-element-active {
 	text-shadow: 0 0 .5px #f0f0f0;
 }
-.nav-element-scroll {
+/*.nav-element-scroll {
 	padding-top: 1vw;
-}
+	/*transitions
+	-webkit-transition: padding-top 0.45s linear;
+	-moz-transition: padding-top 0.45s linear;
+	-ms-transition: padding-top 0.45s linear;
+	-o-transition: padding-top 0.45s linear;
+	transition: padding-top 0.45s linear;
+}*/
 #activities-drop {
 	padding-left: 1.5vw;
 	float: left;
@@ -68,25 +74,36 @@
 	font-family: "Roboto Slab";
     color: white;
     font-size: 3vw;
-    font-weight: 300;
+    font-weight: 400;
     padding-top: 5vw;
     list-style-type: none;
     float: left;
     position: relative;
     left: -50%;
     z-index: 11;
+    /*transitions*/
+    -webkit-transition: padding-top font-size 0.1s linear;
+	-moz-transition: padding-top font-size 0.1s linear;
+	-ms-transition: padding-top font-size 0.1s linear;
+	-o-transition: padding-top font-size 0.1s linear;
+	transition: padding-top font-size 0.1s linear;
 }
-.main-head-scroll {
-	padding-top: 1vw;
-	font-size: 2vw;
-}
+
 /*body content*/
 body .main {
-	background-color: #f8f8f8;
+	background-color: #f7f7f7;
 	height: 100%;
 	width: 100%;
 }
-.body-content {
-	width:100%;
+.float-center {
+	float: right;
+	position: relative;
+	left: -50%;
+	text-align: left;
+}
+.float-center md-card .content-center {
+	position: relative;
+	left: 50%;
+	width:70%;
 	height: 3000px;
 }
