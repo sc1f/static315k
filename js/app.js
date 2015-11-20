@@ -73,7 +73,7 @@ $(document).ready(function(){
     }
   });
   //click handlers
-  $('#activities-drop').click(function(){
+  /*$('#activities-drop').click(function(){
     $('#a-dropdown').show() //how to link back to angular material and link animations?
-  });
+  });*/
 });
