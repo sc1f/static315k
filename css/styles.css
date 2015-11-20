@@ -50,7 +50,7 @@
 	z-index: 15;
 }
 .nav-element-active {
-	text-shadow: 0 0 1px #ffffff;
+	text-shadow: 0 0 .5px #ffffff;
 }
 #activities-drop {
 	padding-left: 1.5vw;
@@ -115,7 +115,18 @@ button.md-fab.contact-button.md-button.md-default-theme{
 	transition: top 0.1s linear;
 
 }
+/*nav dropdowns*/
+.dropdowns {
+	height: 100%;
+}
+.nav-dropdown {
+	position: absolute;
+	float: left;
+	height: 100%;
+	z-index: 500;
+}
 /*body content*/
+
 /*html, body {
 	height: 100%;
 	width: 100%;

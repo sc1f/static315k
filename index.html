@@ -12,11 +12,18 @@
 		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body class="main" ng-app="MintzApp">
+		<!--dropdown menus-->
+		<section class="dropdowns">
+		<md-sidenav id="a-dropdown" class="md-sidenav-left md-whiteframe-z2 nav-dropdown" md-component-id="left" md-is-locked-open="false">Hello world!
+		</md-sidenav>
+		<md-sidenav id="d-dropdown" class="md-sidenav-right md-whiteframe-z2" nav-dropdown md-component-id="right" md-is-locked-open="false">Hello World!
+		</md-sidenav>
+		</section>
 		<!--top navigation-->
-		<div class="nav-bar">
+		<div class="nav-bar" ng-controller="ContactController">
 			<nav>
 				<div class="nav-element" id="activities-drop">
-					<li class="nav-select">Activities</li>
+					<li class="nav-select" ng-click="openLeftmenu">Activities</li>
 				</div>
 				<div class="nav-element" id="resources-drop">
 					<li class="nav-select">Resources</li>
@@ -26,33 +33,16 @@
 				<li id="main-head">The Significance of 1492</li>
 			</div>
 		</div>
-		<!--dropdown menus. work with SVGs-->
-		<section class="dropdowns">
-		<div id="a-dropdown">
-			<div class="a-select"></div>
-			<div class="a-select"></div>
-			<div class="a-select"></div>
-			<div class="a-select"></div>
-			<div class="a-select"></div>
-		</div>
-		<div id="r-dropdown">
-			<div class="r-select"></div>
-			<div class="r-select"></div>
-			<div class="r-select"></div>
-			<div class="r-select"></div>
-			<div class="r-select"></div>
-		</div>
-		</section>
 		<!--contact FAB USE FAB SPEED DIAL-->
 		<section id="contact-fab">
 			<md-button class="md-fab contact-button" aria-label="contact">
-				<i class="material-icons chat-icon">chat</i>
+				 <i class="material-icons chat-icon">chat</i>
 				<md-tooltip md-direction="down">
           		Connect with your classmates!
         		</md-tooltip>
 		</section>
 		<section id="content">
-			<div class="main-container" ng-controller="ModuleController">
+			<div class="main-container" ng-controller="ModuleController as module">
 			<!--main content card-->
 			<div id="float-center">
 				<md-content class="md-padding">
