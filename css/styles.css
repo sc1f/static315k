@@ -121,7 +121,8 @@ button.md-fab.contact-button.md-button.md-default-theme{
 }
 .nav-dropdown {
 	position: absolute;
-	float: left;
+	top: 0;
+	left: 0;
 	height: 100%;
 	z-index: 500;
 }
