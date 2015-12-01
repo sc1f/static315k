@@ -119,12 +119,20 @@ button.md-fab.contact-button.md-button.md-default-theme{
 .dropdowns {
 	height: 100%;
 }
-#a-dropdown #d-dropdown{
-	position: absolute;
-	top: 0;
+#a-dropdown {
+	float: left;
 	left: 0;
+	position: absolute;
+	top: 0;	
+}
+#d-dropdown{
+	float: right;
+	position: absolute;
+	right: 0;
+	top: 0;	
+}
+.md-sidenav-left .md-sidenav-right .md-whiteframe-z2 .nav-dropdown .ng-isolate-scope .md-locked-open {
 	height: 100%;
-	z-index: 5000;
 }
 
 /*body content*/

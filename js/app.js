@@ -29,7 +29,7 @@ app.controller('ContactController', function($scope, $mdSidenav) {
   };
 });
 app.controller('InputController', function($scope){
-  
+
 })
 // What do I do when I see a 'module' tag?
 app.directive("module", function() {
@@ -87,3 +87,26 @@ $(document).ready(function(){
     $('#a-dropdown').show() //how to link back to angular material and link animations?
   });*/
 });
+var debounceNav = {};
+debounceNav.debounce = function(func, wait, immediate){
+  var timeout;
+  return function() {
+    var context = this, 
+    args = arguments;
+    var later = function() {
+      timeout = null;
+      if(!immediate){
+        func.apply(context,args);
+      }
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait || 200);
+    if(callNow){
+      func.apply(context,args);
+      }
+  };
+};
+var updateNav = debounceNav.debounce(function(e){
+}, 500);
+window.addEventListener("resize", updateNav, false);
