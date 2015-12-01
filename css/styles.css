@@ -49,7 +49,7 @@
 	text-transform: uppercase;
 	z-index: 15;
 }
-.nav-element-active {
+.nav-element:hover {
 	text-shadow: 0 0 .5px #ffffff;
 }
 #activities-select {
