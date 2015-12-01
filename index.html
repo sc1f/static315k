@@ -14,19 +14,19 @@
 	<body class="main" ng-app="MintzApp">
 		<!--dropdown menus-->
 		<section class="dropdowns">
-		<md-sidenav id="a-dropdown" class="md-sidenav-left md-whiteframe-z2 nav-dropdown" md-component-id="left" md-is-locked-open="false">Hello world!
+		<md-sidenav id="a-dropdown" class="md-sidenav-left md-whiteframe-z2 nav-dropdown" md-component-id="left" md-is-locked-open="true">Hello world!
 		</md-sidenav>
-		<md-sidenav id="d-dropdown" class="md-sidenav-right md-whiteframe-z2" nav-dropdown md-component-id="right" md-is-locked-open="false">Hello World!
+		<md-sidenav id="d-dropdown" class="md-sidenav-right md-whiteframe-z2" nav-dropdown md-component-id="right" md-is-locked-open="true">Hello World!
 		</md-sidenav>
 		</section>
 		<!--top navigation-->
 		<div class="nav-bar">
-			<nav ng-controller="ContactController">
-				<div class="nav-element" id="activities-drop">
-					<li class="nav-select" ng-click="openLeftMenu">Activities</li>
+			<nav ng-controller="ContactController as contact">
+				<div class="nav-element" id="activities-select">
+					<li class="nav-select" ng-click="openLeftMenu()">Activities</li>
 				</div>
-				<div class="nav-element" id="resources-drop">
-					<li class="nav-select" ng-click="openRightMenu">Resources</li>
+				<div class="nav-element" id="resources-select">
+					<li class="nav-select" ng-click="openRightMenu()">Resources</li>
 				</div>
 			</nav>
 			<div class="header-container">
@@ -42,10 +42,10 @@
         		</md-tooltip>
 		</section>
 		<section id="content">
-			<div class="main-container" ng-controller="ModuleController as module">
+			<div class="content-container" ng-controller="ModuleController as module">
 			<!--main content card-->
-			<div id="float-center">
-				<md-content class="md-padding">
+			<div layout="column" id="float-center">
+				<md-content class="md-padding" layout="column" layout-align="center start">
 				<md-card class="content-center">
 				<md-card-content>
 				<!--<h3 class="content-head">Introduction to Module 3</h3>-->
@@ -62,13 +62,30 @@
 				<p class="content-inject">{{earth_still}}</p>
 				<h3 class="content-head">War of the Worlds (1953)</h3>
 				<p class="content-inject">{{war_worlds}}</p>
+				<h3 class="content-head">Earth vs. The Flying Saucers (1956)</h3>
+				<p class="content-inject">{{earth_flying_saucers}}</p>
+				<h3 class="content-head">Invasion of the Body Snatchers (1956)</h3>
+				<p class="content-inject">{{invasion_body_snatchers}}</p>
+				<h3 class="content-head">E.T.: The Extraterrestrial (1982)</h3>
+				<p class="content-inject">{{et}}</p>
+				<h3 class="content-head">Independence Day (1996)</h3>
+				<p class="content-inject">{{independence_day}}</p>
+				<h3 class="content-head">European Conceptions of the Other</h3>
+				<p class="content-inject">{{european_conceptions}}</p>
 				</md-card-content>
 				</md-card>
-				<md-content class="md-padding">
-				<md-card class="content-center" id="film-display-grid">
+				<!--text entry for question-->
+				<md-card class="content-center text-entry">
 				<md-card-content>
-				<p>Hello world</p>
+				<h2 class="content-head">Question:</h2>
+				<h3 class="content-head question"> How do you think such images may have influenced Columbus’s ideas about the New World Indians?</h3>
+				<md-input-container>
+				<form name="answer-input"></form>
+				<label>Type your answer here</label>
+				<textarea ng-model="InputController" md-maxlength="300" rows="5"></textarea>
+				</md-input-container>
 				</md-card-content>
+				</form>
 				</md-card>
 			</div>
 		</div>
