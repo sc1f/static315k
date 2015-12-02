@@ -44,9 +44,9 @@
 		<section id="content">
 			<div class="content-container" ng-controller="ModuleController as module">
 			<!--main content card-->
-			<div layout="column" id="float-center">
+			<div layout="column" layout-align="space-around center" id="float-center">
 				<md-content class="md-padding" layout="column" layout-align="center start">
-				<md-card class="content-center">
+				<md-card flex class="content-center">
 				<md-card-content>
 				<!--<h3 class="content-head">Introduction to Module 3</h3>-->
 				<p class="content-inject">{{introduction}}</p>
@@ -75,20 +75,26 @@
 				</md-card-content>
 				</md-card>
 				<!--text entry for question-->
-				<md-card class="content-center text-entry">
+				<md-card flex class="content-center text-entry" ng-controller="EntryController">
 				<md-card-content>
-				<h2 class="content-head">Question:</h2>
-				<h3 class="content-head question"> How do you think such images may have influenced Columbus’s ideas about the New World Indians?</h3>
+				<h2 class="content-head question-head">Question:</h2>
+				<h3 class="question"> How do you think such images may have influenced Columbus’s ideas about the New World Indians?</h3>
 				<md-input-container>
 				<form name="answer-input"></form>
 				<label>Type your answer here</label>
-				<textarea ng-model="InputController" md-maxlength="300" rows="5"></textarea>
+				<textarea ng-model="EntryController" md-maxlength="300" rows="5"></textarea>
 				</md-input-container>
 				</md-card-content>
 				</form>
-				<md-card-actions layout="row" layout-align="end center">
-					<md-button>Continue</md-button>
+				<md-card-actions layout="row" layout-align="end center" ng-controller="EntryController">
+					<md-button class="btn-continue" ng-click="submit()">Continue</md-button>
 				</md-card-actions>
+				</md-card>
+				<md-card flex class="content-center pre-activity">
+				<md-card-content>
+				<h3 class="content-head">Why Did It Take So Long to Regularly Cross the Atlantic?</h3>
+				<p class="content-inject">{{atlantic_crossing}}</p>
+				</md-card-content>
 				</md-card>
 			</div>
 		</div>

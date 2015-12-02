@@ -122,17 +122,20 @@ button.md-fab.contact-button.md-button.md-default-theme{
 #a-dropdown {
 	float: left;
 	left: 0;
-	position: absolute;
+	position: fixed;
 	top: 0;	
 }
 #d-dropdown{
 	float: right;
-	position: absolute;
+	position: fixed;
 	right: 0;
 	top: 0;	
 }
 .md-sidenav-left .md-sidenav-right .md-whiteframe-z2 .nav-dropdown .ng-isolate-scope .md-locked-open {
 	height: 100%;
+}
+md-backdrop.md-sidenav-backdrop.md-opaque {
+	position: fixed;
 }
 
 /*body content*/
@@ -166,7 +169,41 @@ md-content {
 .content-head {
 	color: #505050;
 	font-weight: 500;
+	-webkit-margin-before: .5em;
+	-webkit-margin-after: .5em;
 }
-.content-head.question {
+h2.content-head.question-head {
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+}
+h3.question {
+	color: #505050;
 	font-weight: 400;
+	-webkit-margin-after: .5em;
+}
+.content-center.text-entry {
+	position: relative;
+	top: 1.5vw;
+}
+.content-center.pre-activity {
+	position: relative;
+	top: 3vw;
+}
+.btn-continue {
+    position: relative;
+    float: right;
+    bottom: 1vw;
+    color: #cc5527;
+}
+md-toast {
+	position: fixed;
+}
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+	border-color: #cc5527;
+}
+md-input-container:not(.md-input-invalid).md-input-focused label {
+	color: #cc5527;
+}
+md-input-container {
+	padding-bottom: 0 ;
 }

@@ -20,7 +20,8 @@ app.controller("ModuleController", function($scope) {
   $scope.et = "An alien spacecraft on a scientific mission mistakenly left behind an aging botanist who isn't sure how to get home. Eventually Elliott puts his fears aside and makes contact with the \"little squashy guy,\" perhaps the least threatening alien invader ever to hit a movie screen. As Elliott tries to keep the alien under wraps and help him figure out a way to get home, he discovers that the creature can communicate with him telepathically. Soon they begin to learn from each other, and Elliott becomes braver and less threatened by life. E.T. rigs up a communication device from junk he finds around the house, but no one knows if he'll be rescued before a group of government scientists gets hold of him.";
   $scope.independence_day = "A series of massive spaceships approach Earth, which many greet with open arms, looking forward to the first contact with alien life. Unfortunately, these extraterrestrials have not come in peace, and they unleash powerful weapons that destroy most of the world's major cities. Thrown into chaos, the survivors struggle to band together and put up a last-ditch resistance in order to save the human race.";
   $scope.european_conceptions = "During the decade before 1492, as Columbus nursed a growing urge to sail west to the Indies, he studied the old writers to find out what the world and its people were like. He read the Ymago Mundi of Pierre d'Ailly, a French cardinal who wrote in the early 15th century, the travels of Marco Polo and of Sir John Mandeville, Pliny's Natural History and the Historia Rerum Ubique Gestarum of Aeneas Sylvius Piccolomini. Columbus was not a scholarly man. Yet he studied these books, made hundreds of marginal notations in them and came out with ideas about the world that were characteristically simple and strong and sometimes wrong, the kind of ideas that the self-educated person gains from independent reading and clings to in defiance of what anyone else tries to tell him.\n\nAmong the most influential books was The Travels of Sir John Mandeville (1371).  It purports to recount the author's travels through Jerusalem, Egypt, Turkistan, India, China, and other places. Actually it is a skillful compilation from the recorded travels of other people—e.g., Marco Polo, Ordoric of Pordenone, and William of Boldensele—into which Mandeville interpolated extravagant details of medieval lore.\n\nMandeville tells of islands whose inhabitants had the bodies of humans but the heads of dogs, of a tribe whose only source of nourishment was the smell of apples, of a people the size of pygmies whose mouths were so small that they had to suck all their food through reeds, and of a race of one-eyed giants who ate only raw fish and raw meat. All of this fantasy was interwoven with other geographical descriptions that were perfectly accurate.";
-  });
+  $scope.atlantic_crossing = "The Atlantic Ocean was the last large body of water on Earth to be mastered.  Ancient navigators voyaged across the Mediterranean even before historical records marked their journeys. The Pacific was crossed by Polynesians from the time of Christ and the Indian Ocean was crisscrossed with trading boats long before the common era began.\n\nBut it was not until the 15th century that the Atlantic became a regular channel of navigation. There were crossings before, but they did not make the Atlantic the highway that other large bodies of water had become centuries earlier.\n\nTo understand why it took so long to master the Atlantic, one must understand the difficulties of sailing wind powered ships on such a body of water. The Atlantic has strong currents and winds.\n\nThe key to crossing the Atlantic in a sailing craft lies in identifying the outbound and inbound currents.  Columbus discovered these, and this discovery allowed him to sail straight into the Atlantic.";
+});
 app.controller('ContactController', function($scope, $mdSidenav) {
   "use strict";
   $scope.openLeftMenu = function() {
@@ -30,8 +31,11 @@ app.controller('ContactController', function($scope, $mdSidenav) {
     $mdSidenav('right').toggle();
   };
 });
-app.controller('InputController', function($scope) {
-})
+app.controller('EntryController', function($scope, $mdToast){
+  $scope.submit = function($event) {
+    $mdToast.showSimple('Your response has been submitted.');
+  };
+});
 // What do I do when I see a 'module' tag?
 app.directive("module", function() {
   return {
