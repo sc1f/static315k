@@ -113,7 +113,6 @@ button.md-fab.contact-button.md-button.md-default-theme{
 	-ms-transition: top 0.1s linear;
 	-o-transition: top 0.1s linear;
 	transition: top 0.1s linear;
-
 }
 /*nav dropdowns*/
 .dropdowns {
@@ -131,21 +130,41 @@ button.md-fab.contact-button.md-button.md-default-theme{
 	right: 0;
 	top: 0;	
 }
-.md-sidenav-left .md-sidenav-right .md-whiteframe-z2 .nav-dropdown .ng-isolate-scope .md-locked-open {
+md-sidenav {
 	height: 100%;
+	min-width: 15vw;
+	max-width:15vw;
+	width: 15vw;
 }
 md-backdrop.md-sidenav-backdrop.md-opaque {
 	position: fixed;
 }
-
+.left-drop {
+	padding-right: 40px;
+}
+div.element-drop {
+	border-radius: 50%;
+	display: inline-block;
+	height: 6vw;
+	width: 6vw;
+	background-color: #a5c7e3;
+}
+.drop-tag {
+	color: #404040;
+	text-align: center;
+	text-transform: uppercase;
+}
+.drop-icon {
+	color: #ffffff;
+	font-size: 3vw;
+	padding-left: 1.5vw;
+	padding-top: 1.5vw;
+	text-align: center;
+}
 /*body content*/
-
-/*html, body {
-	height: 100%;
-	width: 100%;
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
-}*/
+.disable-scroll {
+	overflow: hidden;
+}
 .main {
 	background-color: #f8f8f8;
 	height: 100%;

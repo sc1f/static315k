@@ -21,6 +21,8 @@ app.controller("ModuleController", function($scope) {
   $scope.independence_day = "A series of massive spaceships approach Earth, which many greet with open arms, looking forward to the first contact with alien life. Unfortunately, these extraterrestrials have not come in peace, and they unleash powerful weapons that destroy most of the world's major cities. Thrown into chaos, the survivors struggle to band together and put up a last-ditch resistance in order to save the human race.";
   $scope.european_conceptions = "During the decade before 1492, as Columbus nursed a growing urge to sail west to the Indies, he studied the old writers to find out what the world and its people were like. He read the Ymago Mundi of Pierre d'Ailly, a French cardinal who wrote in the early 15th century, the travels of Marco Polo and of Sir John Mandeville, Pliny's Natural History and the Historia Rerum Ubique Gestarum of Aeneas Sylvius Piccolomini. Columbus was not a scholarly man. Yet he studied these books, made hundreds of marginal notations in them and came out with ideas about the world that were characteristically simple and strong and sometimes wrong, the kind of ideas that the self-educated person gains from independent reading and clings to in defiance of what anyone else tries to tell him.\n\nAmong the most influential books was The Travels of Sir John Mandeville (1371).  It purports to recount the author's travels through Jerusalem, Egypt, Turkistan, India, China, and other places. Actually it is a skillful compilation from the recorded travels of other people—e.g., Marco Polo, Ordoric of Pordenone, and William of Boldensele—into which Mandeville interpolated extravagant details of medieval lore.\n\nMandeville tells of islands whose inhabitants had the bodies of humans but the heads of dogs, of a tribe whose only source of nourishment was the smell of apples, of a people the size of pygmies whose mouths were so small that they had to suck all their food through reeds, and of a race of one-eyed giants who ate only raw fish and raw meat. All of this fantasy was interwoven with other geographical descriptions that were perfectly accurate.";
   $scope.atlantic_crossing = "The Atlantic Ocean was the last large body of water on Earth to be mastered.  Ancient navigators voyaged across the Mediterranean even before historical records marked their journeys. The Pacific was crossed by Polynesians from the time of Christ and the Indian Ocean was crisscrossed with trading boats long before the common era began.\n\nBut it was not until the 15th century that the Atlantic became a regular channel of navigation. There were crossings before, but they did not make the Atlantic the highway that other large bodies of water had become centuries earlier.\n\nTo understand why it took so long to master the Atlantic, one must understand the difficulties of sailing wind powered ships on such a body of water. The Atlantic has strong currents and winds.\n\nThe key to crossing the Atlantic in a sailing craft lies in identifying the outbound and inbound currents.  Columbus discovered these, and this discovery allowed him to sail straight into the Atlantic.";
+  $scope.christopher_columbus = "A newspaper cartoon showed a sign in the front window of Jack’s Department Store: “Columbus Day Sale. All merchandise marked up 200 percent. Because, let’s face it, Columbus was a greedy opportunist, just like Jack.”\n\nTo a generation of school children, Columbus was a man of mythic stature, an explorer and discoverer who initiated the modern age and carried European civilization across the Atlantic Ocean.  Lately, Columbus has been depicted as an imperialist, a racist, and a genocidal despoiler of the natural environment.  Indian peoples called Columbus the father of colonial greed, slavery, and genocide.  In 1992, the National Council of Churches voted to condemn Columbus’s arrival as a genocide.\n\nAt 2 a.m., October 12, 1492, a sailor on board the Spanish ship the Pinta sighted a distant cliff in the moonlight.  For 88 weary men who had been sailing for nine weeks in search of Asia, the sight was a godsend.  Members of the crew had been talking of mutiny for several days, but now they asked for forgiveness.  At dawn, Columbus put ashore in full regalia and claimed the land in the name of the King and Queen of Spain.\n\nWhen Columbus and his men came ashore, the native Indians, known as the Arawak, greeted them with food, water, and gifts.  This is the way Columbus described the encounter:\n\n“They brought us parrots and balls of cotton and many other things, which they exchanged for glass beads.  They willingly traded everything they owned. They do not bear arms and do not know them, for I showed them a sword, they took it by the edge, and cut themselves out of ignorance.  With 50 men we could subjugate them all and make them  do whatever we want.”\n\nOn the basis of Columbus’s report, a second expedition was given 17 ships and more than 1,200 sailors.  Their aim was clear: gold and slaves.  In Haiti, Columbus and his men rounded up 1,500 Arawak and put them in pens guarded by dogs.  Five hundred were loaded on ships and taken to Spain.  Some 200 died en route.  Columbus also ordered all Indians 14 or older to collect a certain quantity of gold every three months.  When they handed over that amount, the Indians were given copper tokens to hang around their necks. Indians without a copper token had their hands cut off and bled to death.";
+  $scope.activity_intro = "1492 is the most significant year in modern world history. Not only did it bring the Old and New Worlds together, it also initiated a set of changes that would have vast implications for the future.\n\nIt contributed to the rise of the transatlantic slave trade and a vast movement of people, animals, food, plants, and diseases that would transform the world.\n\nAlfred Crosby, a Professor Emeritus, University of Texas at Austin, stated:\n\n\"Millions of years ago, continental drift carried the Old World and New Worlds apart, splitting North and South America from Eurasia and Africa. That separation lasted so long that it fostered divergent evolution; for instance, the development of rattlesnakes on one side of the Atlantic and vipers on the other. After 1492, human voyagers in part reversed this tendency. Their artificial re-establishment of connections through the commingling of Old and New World plants, animals, and bacteria, commonly known as the Columbian Exchange, is one of the more spectacular and significant ecological events of the past millennium.\"";
 });
 app.controller('ContactController', function($scope, $mdSidenav) {
   "use strict";
@@ -29,14 +31,14 @@ app.controller('ContactController', function($scope, $mdSidenav) {
   };
   $scope.openRightMenu = function() {
     $mdSidenav('right').toggle();
-  };
+  };  
 });
 app.controller('EntryController', function($scope, $mdToast){
   $scope.submit = function($event) {
     $mdToast.showSimple('Your response has been submitted.');
   };
 });
-// What do I do when I see a 'module' tag?
+/*What do I do when I see a 'module' tag?
 app.directive("module", function() {
   return {
     restrict: "E", // 'module' has to be an 'E'lement in the HTML document, not an attribute.
@@ -45,7 +47,7 @@ app.directive("module", function() {
     controller: function($scope) {
      $scope.name="Module 3: When Worlds Collide";
     }
-  }
+  };
 });
 // Note that both activities use the same template - I was lazy and just reused
 // the same for both.
@@ -55,7 +57,7 @@ app.directive("activity1", function() {
     templateUrl: "template-activity.html",
     scope: {
     }
-  }
+  };
 });
 
 app.directive("activity2", function() {
@@ -64,9 +66,9 @@ app.directive("activity2", function() {
     templateUrl: "template-activity.html",
     scope: {
     }
-  }
+  };
 });
-
+*/
 //jQuery
 
 $(document).ready(function(){
@@ -83,7 +85,6 @@ $(document).ready(function(){
     }
   });
 });
-
 /*debounce function*/
 
 var debounceNav = {};
@@ -107,4 +108,4 @@ debounceNav.debounce = function(func, wait, immediate){
 };
 var updateNav = debounceNav.debounce(function(e){
 }, 500);
-window.addEventListener("resize", updateNav, false);
+$(window).addEventListener("resize", updateNav, false);

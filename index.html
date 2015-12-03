@@ -14,9 +14,79 @@
 	<body class="main" ng-app="MintzApp">
 		<!--dropdown menus-->
 		<section class="dropdowns">
-		<md-sidenav id="a-dropdown" class="md-sidenav-left md-whiteframe-z2 nav-dropdown" md-component-id="left" md-is-locked-open="false">Hello world!
+		<md-sidenav id="a-dropdown" class="md-sidenav-left md-whiteframe-z2 nav-dropdown" md-component-id="left" md-is-locked-open="false">
+		<ul class="left-drop" layout="column" layout-align="space-around center">
+			<li class="drop-contain" layout="column" layout-align="space-around center">
+			<div class="element-drop">
+				<i class="material-icons drop-icon">library_books</i>
+			</div>
+			<p class="drop-tag">Introduction</p>
+			</li>
+		<li class="drop-contain" layout="column" layout-align="space-around center">
+			<div class="element-drop">
+				<i class="material-icons drop-icon">insert_photo</i>
+			</div>
+			<p class="drop-tag">Activity 1</p>
+		</li>
+		<li class="drop-contain" layout="column" layout-align="space-around center">
+			<div class="element-drop">
+				<i class="material-icons drop-icon">mode_edit</i>
+			</div>
+			<p class="drop-tag">Activity 2</p>
+		</li>
+		<li class="drop-contain" layout="column" layout-align="space-around center">
+			<div class="element-drop">
+				<i class="material-icons drop-icon">mode_edit</i>
+			</div>
+			<p class="drop-tag">Activity 3</p>
+		</li>
+		<li class="drop-contain" layout="column" layout-align="space-around center">
+			<div class="element-drop">
+				<i class="material-icons drop-icon">insert_photo</i>
+			</div>
+			<p class="drop-tag">Activity 4</p>
+		</li>
+		<li class="drop-contain" layout="column" layout-align="space-around center">
+			<div class="element-drop">
+				<i class="material-icons drop-icon">video_library</i>
+			</div>
+			<p class="drop-tag">Columbus at the Movies</p>
+		</li>
+		</ul>
 		</md-sidenav>
-		<md-sidenav id="d-dropdown" class="md-sidenav-right md-whiteframe-z2" nav-dropdown md-component-id="right" md-is-locked-open="false">Hello World!
+		<md-sidenav id="d-dropdown" class="md-sidenav-right md-whiteframe-z2" nav-dropdown md-component-id="right" md-is-locked-open="false">
+		<ul class="left-drop" layout="column" layout-align="space-around center">
+			<li class="drop-contain" layout="column" layout-align="space-around center">
+			<div class="element-drop">
+				<i class="material-icons drop-icon">book</i>
+			</div>
+			<p class="drop-tag">Textbook</p>
+			</li>
+		<li class="drop-contain" layout="column" layout-align="space-around center">
+			<div class="element-drop">
+				<i class="material-icons drop-icon">video_library</i>
+			</div>
+			<p class="drop-tag">Films</p>
+		</li>
+		<li class="drop-contain" layout="column" layout-align="space-around center">
+			<div class="element-drop">
+				<i class="material-icons drop-icon">music_note</i>
+			</div>
+			<p class="drop-tag">Music</p>
+		</li>
+		<li class="drop-contain" layout="column" layout-align="space-around center">
+			<div class="element-drop">
+				<i class="material-icons drop-icon">library_books</i>
+			</div>
+			<p class="drop-tag">Primary Resources</p>
+		</li>
+		<li class="drop-contain" layout="column" layout-align="space-around center">
+			<div class="element-drop">
+				<i class="material-icons drop-icon">insert_photo</i>
+			</div>
+			<p class="drop-tag">Visual Histories</p>
+		</li>
+		</ul>
 		</md-sidenav>
 		</section>
 		<!--top navigation-->
@@ -94,6 +164,10 @@
 				<md-card-content>
 				<h3 class="content-head">Why Did It Take So Long to Regularly Cross the Atlantic?</h3>
 				<p class="content-inject">{{atlantic_crossing}}</p>
+				<h3 class="content-head">Christopher Columbus</h3>
+				<p class="content-inject">{{christopher_columbus}}</p>
+				<h3 class="content-head">Activity Introduction</h3>
+				<p class="content-inject">{{activity_intro}}</p>
 				</md-card-content>
 				</md-card>
 			</div>
