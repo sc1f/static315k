@@ -38,7 +38,8 @@ app.controller('EntryController', function($scope, $mdToast){
     $mdToast.showSimple('Your response has been submitted.');
   };
 });
-/*What do I do when I see a 'module' tag?
+//What do I do when I see a 'module' tag?
+//
 app.directive("module", function() {
   return {
     restrict: "E", // 'module' has to be an 'E'lement in the HTML document, not an attribute.
@@ -54,7 +55,7 @@ app.directive("module", function() {
 app.directive("activity1", function() {
   return {
     restrict: "E",
-    templateUrl: "template-activity.html",
+    templateUrl: "activity1.html",
     scope: {
     }
   };
@@ -63,12 +64,12 @@ app.directive("activity1", function() {
 app.directive("activity2", function() {
   return {
     restrict: "E",
-    templateUrl: "template-activity.html",
+    templateUrl: "activity2.html",
     scope: {
     }
   };
 });
-*/
+
 //jQuery
 
 $(document).ready(function(){
@@ -84,7 +85,7 @@ $(document).ready(function(){
       $('.contact-button').css('top','7.5vw');
     }
   });
-});
+  });
 /*debounce function*/
 
 var debounceNav = {};
