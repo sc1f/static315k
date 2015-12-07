@@ -139,7 +139,7 @@ md-sidenav {
 md-backdrop.md-sidenav-backdrop.md-opaque {
 	position: fixed;
 }
-.left-drop, .right-drop{
+.left-drop {
 	padding-right: 40px;
 }
 div.element-drop {
