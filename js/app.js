@@ -1,11 +1,16 @@
-// Create an app and a controller, matching the names from the
-// ng-app and ng-controller attributes in index.html.  This app
-// needs all the material design stuff to work, which is in a module
-// named 'ngMaterial'.  So tell Angular to find that and insert it
-// where appropriate.  (This is the 'dependency injection' process
-// we were talking about earlier.)
-var app = angular.module("MintzApp", ['ngMaterial']);
+var app = angular.module("MintzApp", ['ngMaterial','ngRoute']);
 //to keep whitespace use \n\n, break quotes w \
+app.config(function($routeProvider){
+  $routeProvider
+    .when('/',{
+      templateUrl: "introduction.html",
+      controller: "ModuleController"
+    })
+    .when('/activity1',{
+      templateUrl:"activity1.html",
+      controller: "Activity1Controller as a1"
+    });
+});
 app.controller("ModuleController", function($scope) {
   "use strict";
   $scope.introduction = "The collision of cultures that took place in 1492 has consequences that are still unfolding today. New foods reshaped the diets of the Eastern and Western Hemispheres.  Sugar, coffee, cattle, pigs, and sheep reached the Americas, while corn, tobacco, tomatoes, and potatoes came to Africa, Asia, and Europe. The New World environment was transformed as Europeans cleared vast tracts of forested land and introduced cattle, goats, horses, sheep, and swine as well as Old World grasses and weeds. The European discovery of the New World also resulted in the sharpest population decline in human history, as millions of Indians died from smallpox, measles, and other epidemic diseases. With the New World population decimated by disease, Europeans gradually introduced a new labor force: enslaved Africans. By the late eighteenth century, Europeans were debating whether Columbus's discovery of the New World had added to or subtracted from human happiness.";
@@ -43,38 +48,9 @@ app.controller('FABController', function(){
   this.isOpen = "false";
   this.mode = "md-fling";
 })
-//What do I do when I see a 'module' tag?
-//
-app.directive("module", function() {
-  return {
-    restrict: "E", // 'module' has to be an 'E'lement in the HTML document, not an attribute.
-    templateUrl: "template-module.html", // the html template describing how to display a module.
-    transclude: true,
-    controller: function($scope) {
-     $scope.name="Module 3: When Worlds Collide";
-    }
-  };
+app.controller('Activity1Controller', function(){
+  console.log("hello world!");
 });
-// Note that both activities use the same template - I was lazy and just reused
-// the same for both.
-app.directive("activity1", function() {
-  return {
-    restrict: "E",
-    templateUrl: "activity1.html",
-    scope: {
-    }
-  };
-});
-
-app.directive("activity2", function() {
-  return {
-    restrict: "E",
-    templateUrl: "activity2.html",
-    scope: {
-    }
-  };
-});
-
 //jQuery
 
 $(document).ready(function(){
