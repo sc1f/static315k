@@ -1,0 +1,58 @@
+	<div layout="column" layout-align="space-around center" id="float-center">
+				<md-content class="md-padding" layout="column" layout-align="center start">
+				<md-card flex class="content-center">
+				<md-card-content>
+				<!--<h3 class="content-head">Introduction to Module 3</h3>-->
+				<p class="content-inject">{{introduction}}</p>
+				<h3 class="content-head">Three Worlds Collide</h3 class="content-head">
+				<p class="content-inject">{{worlds_collide}}</p>
+				<h3 class="content-head">The Significance of 1492</h3 class="content-head">
+				<p class="content-inject">{{significance}}</p>
+				<h3 class="content-head">When Worlds Collide</h3 class="content-head">
+				<p class="content-inject">{{when_worlds_collide}}</p>
+				<h3 class="content-head">Cinematic Encounters With Aliens</h3>
+				<p class="content-inject">{{cinematic_encounters}}</p>
+				<h3 class="content-head">The Day the Earth Stood Still (1951)</h3>
+				<p class="content-inject">{{earth_still}}</p>
+				<h3 class="content-head">War of the Worlds (1953)</h3>
+				<p class="content-inject">{{war_worlds}}</p>
+				<h3 class="content-head">Earth vs. The Flying Saucers (1956)</h3>
+				<p class="content-inject">{{earth_flying_saucers}}</p>
+				<h3 class="content-head">Invasion of the Body Snatchers (1956)</h3>
+				<p class="content-inject">{{invasion_body_snatchers}}</p>
+				<h3 class="content-head">E.T.: The Extraterrestrial (1982)</h3>
+				<p class="content-inject">{{et}}</p>
+				<h3 class="content-head">Independence Day (1996)</h3>
+				<p class="content-inject">{{independence_day}}</p>
+				<h3 class="content-head">European Conceptions of the Other</h3>
+				<p class="content-inject">{{european_conceptions}}</p>
+				</md-card-content>
+				</md-card>
+				<!--text entry for question-->
+				<md-card flex class="content-center text-entry" ng-controller="EntryController">
+				<md-card-content>
+				<h2 class="content-head question-head">Question:</h2>
+				<h3 class="question"> How do you think such images may have influenced Columbus’s ideas about the New World Indians?</h3>
+				<md-input-container>
+				<form name="answer-input"></form>
+				<label>Type your answer here</label>
+				<textarea ng-model="EntryController" md-maxlength="300" rows="5"></textarea>
+				</md-input-container>
+				</md-card-content>
+				</form>
+				<md-card-actions layout="row" layout-align="end center" ng-controller="EntryController">
+					<md-button class="btn-continue" ng-click="submit()">Continue</md-button>
+				</md-card-actions>
+				</md-card>
+				<md-card flex class="content-center pre-activity">
+				<md-card-content>
+				<h3 class="content-head">Why Did It Take So Long to Regularly Cross the Atlantic?</h3>
+				<p class="content-inject">{{atlantic_crossing}}</p>
+				<h3 class="content-head">Christopher Columbus</h3>
+				<p class="content-inject">{{christopher_columbus}}</p>
+				<h3 class="content-head">Activity Introduction</h3>
+				<p class="content-inject">{{activity_intro}}</p>
+				</md-card-content>
+				</md-card>
+				</div>
+			</div>
