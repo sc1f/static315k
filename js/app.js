@@ -38,6 +38,11 @@ app.controller('EntryController', function($scope, $mdToast){
     $mdToast.showSimple('Your response has been submitted.');
   };
 });
+app.controller('FABController', function(){
+  this.direction = "down";
+  this.isOpen = "false";
+  this.mode = "md-fling";
+})
 //What do I do when I see a 'module' tag?
 //
 app.directive("module", function() {
