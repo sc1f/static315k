@@ -1,7 +1,39 @@
-<md-content class="md-padding" layout="column" layout-align="center start">
-	<md-card flex class="content-center">
+<div ng-controller="Activity1Controller as activity">
+	<div layout="column" layout-align="space-around center" id="float-center">
+		<md-content class="md-padding" layout="column" layout-align="center start">
+		<!--intro-->
+		<md-card flex class="content-center">
 		<md-card-content>
-			<p class="content-inject">{{introduction}}</p>
+		<p class="content-inject">{{activity.intro}}</p>
 		</md-card-content>
-	</md-card>
-
+		</md-card>
+		<!--grid display-->
+		<md-card class="activity-content grid-display" id="portrait-grid" layout flex="33" layout-align="space-around center">
+			<md-card-content>
+			</md-card-content>
+		</md-card>
+		<!--big portrait-->
+		<md-card class="activity-content expand-portrait" id="highlight-portrait" layout flex="33" layout-align="space-around center">
+			<md-card-content>
+			</md-card-content>
+		</md-card>
+		<!--text entry-->
+		<md-card class="activity-content answer-question" id="text-entry" layout flex="33" layout-align="space-around center" ng-controller="EntryController">
+			<md-card-content>
+				<div class="entry-contain">				
+				<h3 class="question"> Based on these descriptions, explain which of the following portraits is probably most accurate.</h3>
+				<md-input-container class="activity1-input">
+				<form name="answer-input"></form>
+				<label>Type your answer here</label>
+				<textarea ng-model="EntryController" md-maxlength="300" rows="5"></textarea>
+				</md-input-container>
+				</md-card-content>
+				</form>
+				<md-card-actions layout="row" layout-align="end center" ng-controller="EntryController">
+					<md-button class="activity-btn" ng-click="submit()">Submit</md-button>
+				</md-card-actions>	
+				</div>
+			</md-card-content>
+		</md-card>
+	</div>
+</div>

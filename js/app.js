@@ -1,16 +1,18 @@
 var app = angular.module("MintzApp", ['ngMaterial','ngRoute']);
-//to keep whitespace use \n\n, break quotes w \
 app.config(function($routeProvider){
   $routeProvider
     .when('/',{
       templateUrl: "introduction.html",
-      controller: "ModuleController"
+      controller: "ModuleController",
+      title: "Introduction to Module 3"
     })
     .when('/activity1',{
       templateUrl:"activity1.html",
-      controller: "Activity1Controller as a1"
+      controller: "Activity1Controller as activity",
+      title: "Activity 1"
     });
 });
+//to keep whitespace use \n\n, break quotes w \
 app.controller("ModuleController", function($scope) {
   "use strict";
   $scope.introduction = "The collision of cultures that took place in 1492 has consequences that are still unfolding today. New foods reshaped the diets of the Eastern and Western Hemispheres.  Sugar, coffee, cattle, pigs, and sheep reached the Americas, while corn, tobacco, tomatoes, and potatoes came to Africa, Asia, and Europe. The New World environment was transformed as Europeans cleared vast tracts of forested land and introduced cattle, goats, horses, sheep, and swine as well as Old World grasses and weeds. The European discovery of the New World also resulted in the sharpest population decline in human history, as millions of Indians died from smallpox, measles, and other epidemic diseases. With the New World population decimated by disease, Europeans gradually introduced a new labor force: enslaved Africans. By the late eighteenth century, Europeans were debating whether Columbus's discovery of the New World had added to or subtracted from human happiness.";
@@ -49,7 +51,7 @@ app.controller('FABController', function(){
   this.mode = "md-fling";
 })
 app.controller('Activity1Controller', function(){
-  console.log("hello world!");
+  this.intro = "Christopher Columbus, arguably, had a greater impact on the course of world history than anyone else in the past thousand years.  Yet we know remarkably little about him.  Encyclopedias and textbooks generally state that he was born in 1451 in Genoa, but serious scholars still dispute when and where he was born, his ethnicity, how he was educated, where he landed in 1492, and even where he is buried.\n\nThe 1893 commemoration of Columbus’s voyages of discovery, the World’s Columbian Exposition in Chicago, displayed 71 portraits reputedly of Columbus. None was painted from life.\n\nBut we do have two surviving written descriptions.  Read these, and then briefly explain why you think one of the following portraits is most accurate.\n\nThe earliest published description of Columbus appeared in 1504, and described him as \“Genoese, a man of tall and imposing stature, ruddy, of great intelligence, and with a long face.\” This description is attributed to Angelo Trivigiano, who was secretary to the Venetian ambassador at the court of Ferdinand and Isabella.\n\nThree decades later, Conzalo Fernandez de Oviedo described him as a man \“of good stature and appearance, taller than middling and with strong limbs, the eyes lively and other parts of the countenance of good proportion, the hair very red, and the face somewhat flushed and freckled.\“\n\nFernando Colon described his father as follows:\n\n\"The Admiral was a well-built man of more than average stature, the face long, the cheeks somewhat high, his body neither fat nor lean. He had an aquiline nose and light-colored eyes; his complexion was light and tending to bright red. In youth his hair was fair, but when he reached the age of thirty, it all turned white. In eating and drinking, and in the adornment of his person, he was very moderate and modest. He was affable in conversation with strangers and very pleasant to the members of his household, though with a certain gravity. He was so strict in matters of religion that for fasting and saying prayers he might have been taken for a member of a religious order. He was so great an enemy of swearing and blasphemy that I give my word I never heard him utter any other oath than ‘by St. Ferdinand!’ and when he grew very angry with someone his rebuke was to say ‘God take you’ for doing or saying that;. If he had to write anything, he always began by writing these words: IESUS cum MARIA sit nobis in via. And so fine was his hand that he might have earned his bread by that skill alone.\"\n\nBased on these descriptions, explain which of the following portraits is probably most accurate." 
 });
 //jQuery
 
@@ -66,7 +68,7 @@ $(document).ready(function(){
       $('.contact-button').css('top','7.5vw');
     }
   });
-  });
+});
 /*debounce function*/
 
 var debounceNav = {};
