@@ -7,39 +7,28 @@
 		<p class="content-inject" id="a1intro">{{activity.intro}}</p>
 		</md-card-content>
 		</md-card>
-		<!--grid display-->
 		<div class="activity-wrap" ng-controller="Activity1Controller as activity">
-		<md-card class="activity-content"id="portrait-grid" layout flex="33" layout-align="space-around center">
+			<!--big portrait-->
+			<md-card class="activity-card" id="photo-display" layout flex="66" layout-align="center center">
+			</md-card>
+			<!--text entry-->
+			<md-card class="activity-card" id="text-entry" layout flex="33" layout-align="space-around center" ng-controller="EntryController">
 			<md-card-content>
-				<md-grid-list class="grid-display" md-gutter="1vw" md-cols="2" md-row-height="fit">
-					<md-grid-tile class="portrait-tile"><img src="img/thumbs/1.png" class="img-display"alt="Christopher Columbus">
-    				</md-grid-tile>
-				</md-grid-list>
-			</md-card-content>
-		</md-card>
-		<!--big portrait-->
-		<md-card class="activity-content expand-portrait" id="highlight-portrait" layout flex="33" layout-align="space-around center">
-			<md-card-content>
-			</md-card-content>
-		</md-card>
-		<!--text entry-->
-		<md-card class="activity-content answer-question" id="text-entry" layout flex="33" layout-align="space-around center" ng-controller="EntryController">
-			<md-card-content>
-				<div class="entry-contain">				
+			<div class="entry-contain">
 				<h3 class="question"> Based on these descriptions, explain which of the following portraits is probably most accurate.</h3>
 				<md-input-container>
-				<form name="answer-input"></form>
-				<label>Type your answer here</label>
-				<textarea ng-model="EntryController" md-maxlength="300" rows="5" md-no-autogrow="true"></textarea>
-				</md-input-container>
-				</md-card-content>
-				</form>
-				<md-card-actions layout="row" layout-align="end center" ng-controller="EntryController">
-					<md-button class="activity-btn" ng-click="submit()">Submit</md-button>
-				</md-card-actions>	
-				</div>
+			<form name="answer-input"></form>
+			<label>Type your answer here</label>
+			<textarea ng-model="EntryController" md-maxlength="300" rows="5" md-no-autogrow="true"></textarea>
+			</md-input-container>
 			</md-card-content>
-		</md-card>
-		</div>
+		</form>
+		<md-card-actions layout="row" layout-align="end center" ng-controller="EntryController">
+		<md-button class="activity-btn" ng-click="submit()">Submit</md-button>
+		</md-card-actions>
 	</div>
+	</md-card-content>
+	</md-card>
+</div>
+</div>
 </div>
