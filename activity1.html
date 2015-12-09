@@ -1,15 +1,20 @@
 <div ng-controller="Activity1Controller as activity">
 	<div layout="column" layout-align="space-around center" id="float-center">
-		<md-content class="md-padding" layout="column" layout-align="center start">
+		<md-content layout-padding>
 		<!--intro-->
-		<md-card flex class="content-center">
+		<md-card flex class="content-center a1-display">
 		<md-card-content>
-		<p class="content-inject">{{activity.intro}}</p>
+		<p class="content-inject" id="a1intro">{{activity.intro}}</p>
 		</md-card-content>
 		</md-card>
 		<!--grid display-->
-		<md-card class="activity-content grid-display" id="portrait-grid" layout flex="33" layout-align="space-around center">
+		<div class="activity-wrap" ng-controller="Activity1Controller as activity">
+		<md-card class="activity-content"id="portrait-grid" layout flex="33" layout-align="space-around center">
 			<md-card-content>
+				<md-grid-list class="grid-display" md-gutter="1vw" md-cols="2" md-row-height="fit">
+					<md-grid-tile class="portrait-tile"><img src="img/thumbs/1.png" class="img-display"alt="Christopher Columbus">
+    				</md-grid-tile>
+				</md-grid-list>
 			</md-card-content>
 		</md-card>
 		<!--big portrait-->
@@ -22,10 +27,10 @@
 			<md-card-content>
 				<div class="entry-contain">				
 				<h3 class="question"> Based on these descriptions, explain which of the following portraits is probably most accurate.</h3>
-				<md-input-container class="activity1-input">
+				<md-input-container>
 				<form name="answer-input"></form>
 				<label>Type your answer here</label>
-				<textarea ng-model="EntryController" md-maxlength="300" rows="5"></textarea>
+				<textarea ng-model="EntryController" md-maxlength="300" rows="5" md-no-autogrow="true"></textarea>
 				</md-input-container>
 				</md-card-content>
 				</form>
@@ -35,5 +40,6 @@
 				</div>
 			</md-card-content>
 		</md-card>
+		</div>
 	</div>
 </div>

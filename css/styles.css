@@ -228,35 +228,28 @@ md-input-container {
 }
 
 /*activity 1*/
+.a1-display {
+	margin-top: 1vw;
+	padding-top: 0;
+}
 .activity-content {
-	display: inline-block;
-	margin-bottom: 1.5vw;
-	margin-left: 1.5vw;
-	margin-right: 1.5vw;
-	margin-top: 1.5vw;
-	height: 100%;
-	min-height: 46vw;
+	float: left;
+	height: 50.5vw;
 	width: 31.5%;
+	margin: 1.5vw 0 0 1.5vw;
 }
-.grid-display {
-	position: absolute;
-	left: 0;
-}
-.expand-portrait {
-	position: absolute;
-	left: 33%;
-}
-.answer-question {
-	position: absolute;
-	left: 66%;
+.activity-wrap {
+	width: 100%;
 }
 .entry-contain {
-	position: absolute;
 	height: 100%;
 	width: 90%;
 	padding: 5%;
 	padding-top: 0;
 	margin-top: -1vw;
+	margin: auto;
+	position: relative;
+	top: -12vw;
 }
 .activity-btn {
 	bottom: -1vw;
@@ -264,4 +257,20 @@ md-input-container {
     float: right;
     right: -1vw;
    	position: relative;
+}
+.grid-display {
+	height: 100%;
+	width: 100%;
+}
+.img-display {
+	height: 12vw;
+	width: 12vw;
+}
+#a1intro {
+	margin: 0;
+}
+.portrait-tile {
+	height: 300px;
+	width: 300px;
+	float: left
 }
