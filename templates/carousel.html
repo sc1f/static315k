@@ -1,0 +1,9 @@
+<div class="carousel">
+	<div class="slide" ng-repeat="image in images" ng-show="image.visible">
+		<img ng-src="img/carousel/{{image.src}}">
+	</div>
+	<div class="scrim right-scrim" ng-click="next()"></div>
+	<i class="material-icons arrow" id="arrow-right" ng-click="next()">navigate_next</i>
+	<div class="scrim left-scrim" ng-click="prev()"></div>
+	<i class="material-icons arrow" id="arrow-left" ng-click="prev()">navigate_before</i>
+</div>

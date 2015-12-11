@@ -1,4 +1,4 @@
-var app = angular.module("MintzApp", ['ngMaterial','ngRoute']);
+var app = angular.module("MintzApp", ['ngMaterial','ngRoute','ngAnimate']);
 app.config(function($routeProvider){
   $routeProvider
     .when('/',{
@@ -53,17 +53,65 @@ app.controller('FABController', function(){
 })
 app.controller('Activity1Controller', function(){
   this.title = "What did Columbus look like?";
-  this.intro = "Christopher Columbus, arguably, had a greater impact on the course of world history than anyone else in the past thousand years.  Yet we know remarkably little about him.  Encyclopedias and textbooks generally state that he was born in 1451 in Genoa, but serious scholars still dispute when and where he was born, his ethnicity, how he was educated, where he landed in 1492, and even where he is buried.\n\nThe 1893 commemoration of Columbus’s voyages of discovery, the World’s Columbian Exposition in Chicago, displayed 71 portraits reputedly of Columbus. None was painted from life.\n\nBut we do have two surviving written descriptions.  Read these, and then briefly explain why you think one of the following portraits is most accurate.\n\nThe earliest published description of Columbus appeared in 1504, and described him as \“Genoese, a man of tall and imposing stature, ruddy, of great intelligence, and with a long face.\” This description is attributed to Angelo Trivigiano, who was secretary to the Venetian ambassador at the court of Ferdinand and Isabella.\n\nThree decades later, Conzalo Fernandez de Oviedo described him as a man \“of good stature and appearance, taller than middling and with strong limbs, the eyes lively and other parts of the countenance of good proportion, the hair very red, and the face somewhat flushed and freckled.\“\n\nFernando Colon described his father as follows:\n\n\"The Admiral was a well-built man of more than average stature, the face long, the cheeks somewhat high, his body neither fat nor lean. He had an aquiline nose and light-colored eyes; his complexion was light and tending to bright red. In youth his hair was fair, but when he reached the age of thirty, it all turned white. In eating and drinking, and in the adornment of his person, he was very moderate and modest. He was affable in conversation with strangers and very pleasant to the members of his household, though with a certain gravity. He was so strict in matters of religion that for fasting and saying prayers he might have been taken for a member of a religious order. He was so great an enemy of swearing and blasphemy that I give my word I never heard him utter any other oath than ‘by St. Ferdinand!’ and when he grew very angry with someone his rebuke was to say ‘God take you’ for doing or saying that. If he had to write anything, he always began by writing these words: IESUS cum MARIA sit nobis in via. And so fine was his hand that he might have earned his bread by that skill alone.\"\n\nBased on these descriptions, explain which of the following portraits is probably most accurate." 
-  this.portrait1 = "img/thumbs/1.png";
-  this.portrait2 = "img/thumbs/2.png";
-  this.portrait3 = "img/thumbs/3.png";
-  this.portrait4 = "img/thumbs/4.png";
-  this.portrait5 = "img/thumbs/5.png";
-  this.portrait6 = "img/thumbs/6.png";
-  this.portrait7 = "img/thumbs/7.png";
-  this.portrait8 = "img/thumbs/8.png";
+  this.intro = "Christopher Columbus, arguably, had a greater impact on the course of world history than anyone else in the past thousand years.  Yet we know remarkably little about him.  Encyclopedias and textbooks generally state that he was born in 1451 in Genoa, but serious scholars still dispute when and where he was born, his ethnicity, how he was educated, where he landed in 1492, and even where he is buried.\n\nThe 1893 commemoration of Columbus’s voyages of discovery, the World’s Columbian Exposition in Chicago, displayed 71 portraits reputedly of Columbus. None was painted from life.\n\nBut we do have two surviving written descriptions.  Read these, and then briefly explain why you think one of the following portraits is most accurate.\n\nThe earliest published description of Columbus appeared in 1504, and described him as \“Genoese, a man of tall and imposing stature, ruddy, of great intelligence, and with a long face.\” This description is attributed to Angelo Trivigiano, who was secretary to the Venetian ambassador at the court of Ferdinand and Isabella.\n\nThree decades later, Conzalo Fernandez de Oviedo described him as a man \“of good stature and appearance, taller than middling and with strong limbs, the eyes lively and other parts of the countenance of good proportion, the hair very red, and the face somewhat flushed and freckled.\“\n\nFernando Colon described his father as follows:\n\n\"The Admiral was a well-built man of more than average stature, the face long, the cheeks somewhat high, his body neither fat nor lean. He had an aquiline nose and light-colored eyes; his complexion was light and tending to bright red. In youth his hair was fair, but when he reached the age of thirty, it all turned white. In eating and drinking, and in the adornment of his person, he was very moderate and modest. He was affable in conversation with strangers and very pleasant to the members of his household, though with a certain gravity. He was so strict in matters of religion that for fasting and saying prayers he might have been taken for a member of a religious order. He was so great an enemy of swearing and blasphemy that I give my word I never heard him utter any other oath than ‘by St. Ferdinand!’ and when he grew very angry with someone his rebuke was to say ‘God take you’ for doing or saying that. If he had to write anything, he always began by writing these words: IESUS cum MARIA sit nobis in via. And so fine was his hand that he might have earned his bread by that skill alone.\"\n\nBased on these descriptions, explain which of the following portraits is probably most accurate.";
 });
-
+//carousel http://www.sitepoint.com/creating-slide-show-plugin-angularjs/
+app.directive('carousel', function($timeout) {
+  return {
+    restrict: 'AE',
+    replace: true,
+    scope: {
+      images: '='
+    },
+    link: function(scope, elem, attrs){
+      scope.currentIndex = 0;
+      scope.next = function(){
+        scope.currentIndex < scope.images.length -1 ? scope.currentIndex++ : scope.currentIndex = 0;
+      };
+      scope.prev = function(){
+        scope.currentIndex > 0? scope.currentIndex -- : scope.currentIndex = scope.images.length -1;
+      };
+      scope.$watch('currentIndex', function(){
+        scope.images.forEach(function(image){
+          image.visible = false;
+        });
+        scope.images[scope.currentIndex].visible = true;
+      });
+    },
+    templateUrl: 'templates/carousel.html'
+  };
+});
+app.controller('CarouselController', function($scope){
+  $scope.images = [{
+    src: '1.jpg',
+    title: 'Columbus 1',
+    number: '1'
+  },{
+    src: '2.jpg',
+    title: 'Columbus 2',
+    number: '2'
+  },{
+    src: '3.jpg',
+    title: 'Columbus 3',
+    number: '3'
+  },{
+    src: '4.jpg',
+    title: 'Columbus 4',
+    number: '4'
+  },{
+    src: '5.jpg',
+    title: 'Columbus 5',
+    number: '5'
+  },{
+    src: '6.jpg',
+    title: 'Columbus 6',
+    number: '6'
+  },{
+    src: '7.jpg',
+    title: 'Columbus 7',
+    number: '7'
+  }];
+});
 //jQuery
 
 $(document).ready(function(){

@@ -1,5 +1,5 @@
 <div ng-controller="Activity1Controller as activity">
-	<div layout="column" layout-align="space-around center" id="float-center">
+	<div layout="column" layout-align="space-around center">
 		<md-content layout-padding>
 		<!--intro-->
 		<md-card flex class="content-center a1-display">
@@ -9,7 +9,8 @@
 		</md-card>
 		<div class="activity-wrap" ng-controller="Activity1Controller as activity">
 			<!--big portrait-->
-			<md-card class="activity-card" id="photo-display" layout flex="66" layout-align="center center">
+			<md-card class="activity-card" id="photo-display" layout flex="66" layout-align="center center" ng-controller="CarouselController">
+			<carousel images="images">
 			</md-card>
 			<!--text entry-->
 			<md-card class="activity-card" id="text-entry" layout flex="33" layout-align="space-around center" ng-controller="EntryController">
