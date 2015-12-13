@@ -1,3 +1,40 @@
+/*debounce function*/
+
+var debounceNav = {};
+debounceNav.debounce = function(func, wait, immediate){
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if(!immediate){
+        func.apply(context,args);
+      }
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait || 200);
+    if(callNow){
+      func.apply(context,args);
+      }
+  };
+};
+var updateNav = debounceNav.debounce(function(){
+  $(document).scroll(function(){
+    if ($(window).scrollTop() > 40) {
+      $('.nav-bar').addClass('nav-bar-scroll');
+      $('#main-head').css('padding-top', '1vw').css('font-size','1.5vw');
+      $('.contact-button').css('top','1.5vw');
+    }
+  else if ($(window).scrollTop() === 0) {
+      $('.nav-bar').removeClass('nav-bar-scroll');
+      $('#main-head').css('padding-top', '5vw').css('font-size','3vw');
+      $('.contact-button').css('top','7.5vw');
+    }
+  });
+}, 200, true);
+window.addEventListener("scroll", updateNav);
+
 var app = angular.module("MintzApp", ['ngMaterial','ngRoute','ngAnimate']);
 app.config(function($routeProvider){
   $routeProvider
@@ -112,43 +149,3 @@ app.controller('CarouselController', function($scope){
     number: '7'
   }];
 });
-//jQuery
-
-$(document).ready(function(){
-  $(document).scroll(function(){
-    if ($(window).scrollTop() > 40) {
-      $('.nav-bar').addClass('nav-bar-scroll');
-      $('#main-head').css('padding-top', '1vw').css('font-size','1.5vw');
-      $('.contact-button').css('top','1.5vw');
-    }
-  else if ($(window).scrollTop() === 0) {
-      $('.nav-bar').removeClass('nav-bar-scroll');
-      $('#main-head').css('padding-top', '5vw').css('font-size','3vw');
-      $('.contact-button').css('top','7.5vw');
-    }
-  });
-});
-/*debounce function*/
-
-var debounceNav = {};
-debounceNav.debounce = function(func, wait, immediate){
-  var timeout;
-  return function() {
-    var context = this, args = arguments;
-    var later = function() {
-      timeout = null;
-      if(!immediate){
-        func.apply(context,args);
-      }
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait || 200);
-    if(callNow){
-      func.apply(context,args);
-      }
-  };
-};
-var updateNav = debounceNav.debounce(function(e){
-}, 500);
-window.addEventListener("scroll", updateNav, false);
