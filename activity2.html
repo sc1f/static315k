@@ -1,0 +1,29 @@
+<div ng-controller="Activity2Controller as activity">
+	<div layout="column" layout-align="space-around center">
+		<md-content layout-padding>
+		<!--intro-->
+		<md-card flex class="content-center a-display">
+		<md-card-content>
+		<p class="content-inject a-intro">{{activity.intro}}</p>
+		</md-card-content>
+		</md-card>
+		<!--text entry-->
+		<md-card class="a-display content-center" id="text-entry" layout-align="space-around center" ng-controller="EntryController">
+			<md-card-content>
+			<div class="a2-entry-contain">
+				<h3 class="question"> Who should the New World have been named after? Columbus, or Vespucci?</h3>
+				<md-input-container>
+			<form name="answer-input"></form>
+			<label>Type your answer here</label>
+			<textarea ng-model="EntryController" md-maxlength="300" rows="5" md-no-autogrow="true"></textarea>
+			</md-input-container>
+			</md-card-content>
+			</form>
+			<md-card-actions layout="row" layout-align="end center" ng-controller="EntryController">
+			<md-button class="activity-btn" ng-click="submit()">Submit</md-button>
+			</md-card-actions>
+			</div>
+			</md-card-content>
+			</md-card>
+	</div>
+</div>
