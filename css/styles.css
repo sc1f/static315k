@@ -116,6 +116,9 @@
 button.md-fab.contact-button.md-button.md-default-theme{
 	background: #4290D3;
 }
+a.md-button.md-default-theme.md-fab:not([disabled]):hover, a.md-button.md-fab:not([disabled]):hover, .md-button.md-default-theme.md-fab:not([disabled]):hover, .md-button.md-fab:not([disabled]):hover {
+	background: #3084cc;
+}
 .contact-button-scroll {
 	background: #4290D3
 	position: fixed;
@@ -152,7 +155,7 @@ md-backdrop.md-sidenav-backdrop.md-opaque {
 	position: fixed;
 }
 .left-drop, .right-drop{
-	padding-right: 7vw;
+	padding-right: 40px;
 }
 .element-drop {
 	background-color: #a5c7e3;
@@ -160,6 +163,7 @@ md-backdrop.md-sidenav-backdrop.md-opaque {
 	display: inline-block;
 	height: 6vw;
 	width: 6vw;
+	margin-left: 20px;
 }
 .drop-tag {
 	color: #404040;
