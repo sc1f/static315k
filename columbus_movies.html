@@ -1,17 +1,25 @@
-<div ng-controller="Activity3Controller as activity">
+<div ng-controller="ColumbusMovieController as movie">
 	<div layout="column" layout-align="space-around center">
 		<md-content layout-padding>
 		<!--intro-->
 		<md-card flex class="content-center a-display">
 		<md-card-content>
-		<p class="content-inject a-intro">{{activity.intro}}</p>
+		<p class="content-inject">{{movie.intro}}</p>
 		</md-card-content>
+		</md-card>
+		<!--video 1-->
+		<md-card flex class="content-center a-display video">
+		<iframe width="100%" height="100%" src="https://www.youtube.com/embed/aLAnlt_DF4Y" frameborder="0" allowfullscreen></iframe>
+		</md-card>
+		<!--video 2-->
+		<md-card flex class="content-center a-display video">
+		<iframe width="100%" height="100%" src="https://www.youtube.com/embed/SE0qZNaA-i0" frameborder="0" allowfullscreen></iframe>
 		</md-card>
 		<!--text entry-->
 		<md-card class="a-display content-center" id="text-entry" layout-align="space-around center" ng-controller="EntryController">
 			<md-card-content>
 			<div class="a3-entry-contain">
-				<h3 class="question"> Why do you think Washington Irving created the Columbus Myth?</h3>
+				<h3 class="question"> How do the movie trailers depict Columbus? How do they seek to generate your interest in a figure first met in grade school?</h3>
 				<md-input-container>
 			<form name="answer-input"></form>
 			<label>Type your answer here</label>
@@ -25,5 +33,6 @@
 			</div>
 			</md-card-content>
 			</md-card>
+
 	</div>
 </div>
