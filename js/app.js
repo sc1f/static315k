@@ -63,6 +63,16 @@ app.config(function($routeProvider){
       controller: 'Activity4Controller as activity',
       title: "Activity 4"
     })
+    .when('/columbus_movies', {
+      templateUrl: 'columbus_movies.html',
+      controller: 'ColumbusMovieController as movie',
+      title: 'Columbus at the Movies'
+    })
+    .when('/primarysrc', {
+      templateUrl: "primarysrc.html",
+      controller: 'PrimarySrcController as primary',
+      title: "Primary Sources"
+    })
 });
 //to keep whitespace use \n\n, break quotes w \
 app.controller("ModuleController", function() {
@@ -119,8 +129,11 @@ app.controller('Activity4Controller', function(){
   this.title = "Judging Columbus";
   this.intro = "Historical reputations rise and fall, and Columbus’s is no exception. Over time, he has been revered, reviled, and even ignored.\n\nDuring his own lifetime, his reputation had ups and downs. Indeed, in 1500, he and his brothers were sent to Spain in chains, accused of brutality toward the native peoples and to the Spanish colonists.\n\nIt was not until the end of the eighteenth century that Columbus, soon after the American revolution, that began to be celebrated as a brave, skillful, and visionary explorer. The first Columbus Day celebration recorded in the United States took place in New York on October 12th, 1792.\n\nThe 400th anniversary of his epic voyage was marked by the World’s Columbian Exposition in Chicago, which attracted over a quarter of the U.S. population. But it was not until 1937 that President Franklin Delano Roosevelt proclaimed October 12th to be Columbus Day, a national holiday.\n\nThe 500th anniversary of the voyage of discovery generated intense controversy, with Columbus condemned by some as a genocidal exploiter of New World peoples, an initiator of the Atlantic slave trade, and a despoiler of the natural environment. \n\nSo how might we best evaluate Columbus’s legacy, weighing his strengths, achievements, and flaws? One window is offered by art.\n\nCompare and contrast these two depictions of Spanish colonialism, one by the American painter John Vanderlyn (1775-1852) and the other by the great Mexican muralist Diego Rivera.  Both, notably, appear in key national buildings: The U.S. Capitol and Mexico’s National Palace.  What do these paintings say about popular attitudes toward Columbus in their respective countries?";
 });
+app.controller('ColumbusMovieController', function(){
+  this.title = "Columbus at the Movies";
+  this.intro = "Where do Americans learn their history these days?\n\nAt the movies, of course.\n\nIn our increasingly visual culture, much of what the public knows about the past comes from the movies.\n\nMany historians are highly critical of historical movies. They are travesties, some say, playing fast and loose with the facts.\n\nIt is true: Popular films often distort history.  Historical films movies are filled with inaccuracies, simplifications, invented dialogue and imagined characters, imagined dialogue, anachronisms, and improbabilities.  Frequently such movies inject romance into the plot.  Worse yet, films often populate the screen with clearly identified heroes and villains, and promote a “Great Man” view of history, overemphasizing the role of certain powerful individuals.\n\nBut historical films can also be a valuable source of information.  Such movies can help us visualize another time and place and introduce the audience to important episodes from the past.\n\nHistorical movies always contain a mixture of truth, illusion, history, and fantasy and it can be helpful to tease out these elements.\n\nWe've all heard the phrase: \"It's just a movie.\" Movies, we often hear, are just entertainment. In fact, movies are educators. Films provide information and misinformation. Some of the best historical films challenge deeply engrained mythologies and force the audience to confront the complex realities of the past.\n\nThe year 1992 brought two big budget films about Columbus to the screen: 1492: The Conquest of Paradise and Christopher Columbus: The Discovery. View the trailers to these films and briefly decode the messages that the trailers convey. Describe how they depict Columbus and how they seek to generate audience interest in a figure they first met in grade school.";
+})
 //carousel
-
 app.directive('carousel', function($timeout) {
   return {
     restrict: 'AE',
@@ -130,11 +143,17 @@ app.directive('carousel', function($timeout) {
     },
     link: function(scope, elem, attrs){
       scope.currentIndex = 0;
+      scope.paintingCredits = ['John Vanderlyn, Landing of Christopher Columbus, U.S. Capitol, 1846', 'Diego Rivera, Disembarkation of the Spanish at Vera Cruz (Colonial Domination), National Palace, Mexico City, 1951'];
       scope.next = function(){
         scope.currentIndex < scope.images.length -1 ? scope.currentIndex++ : scope.currentIndex = 0;
+        scope.cleanIndex = scope.currentIndex + 1;
+        $('.number-display').text(scope.cleanIndex);
       };
       scope.prev = function(){
         scope.currentIndex > 0? scope.currentIndex -- : scope.currentIndex = scope.images.length -1;
+        scope.cleanIndex = scope.currentIndex + 1;
+        $('.number-display').text(scope.cleanIndex);
+
       };
       scope.$watch('currentIndex', function(){
         scope.images.forEach(function(image){
