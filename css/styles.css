@@ -203,6 +203,7 @@ md-content {
 .content-inject {
 	color: #404040;
 	white-space: pre-wrap;
+	line-height: 1.4;
 }
 .content-head {
 	color: #505050;
@@ -390,4 +391,8 @@ md-input-container {
 md-card.video {
 	height: 36.5625vw;
 	max-height: 100vh;
+}
+/*primary source*/
+.contents {
+	list-style-type: none;
 }

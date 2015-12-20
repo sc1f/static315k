@@ -1,0 +1,43 @@
+<div ng-controller="PrimarySrcController as primary">
+	<div layout="column" layout-align="space-around center">
+		<md-content layout-padding>
+		<!--intro-->
+		<md-card flex class="content-center a-display">
+		<md-card-content>
+		<!--<h3 class="content-head">Table of Contents</h3>
+		<ul>
+			<li class="contents">
+			<a href="#1">The Meaning of America</a>
+			</li>
+			<li class="contents">
+			<a href="#2">Utilizing the Local Labor Force</a>
+			</li>
+			<li class="contents">
+			<a href="#3">New World Fantasies</a>
+			</li>
+			<li class="contents">
+			<a href="#4">Labor Needs</a>
+			</li>
+			<li class="contents">
+			<a href="#5">The Black Legend</a>
+			</li>
+			<li class="contents">
+			<a href="#6">A Critique of the Slave Trade</a>
+			</li>
+		</ul>-->
+		<h3 class="content-head" id="1">1: The Meaning of America</h3>
+		<p class="content-inject" ng-bind-html="primary.meaning_of_america | unsafe"</p>
+		<h3 class="content-head" id="2">2: Utilizing the Local Labor Force</h3>
+		<p class="content-inject" ng-bind-html="primary.labor_force | unsafe"</p>
+		<h3 class="content-head" id="3">3: New World Fantasies</h3>
+		<p class="content-inject" ng-bind-html="primary.new_world_fantasies | unsafe"</p>
+		<h3 class="content-head" id="4">4: Labor Needs</h3>
+		<p class="content-inject" ng-bind-html="primary.labor_needs | unsafe"</p>
+		<h3 class="content-head" id="5">5: The Black Legend</h3>
+		<p class="content-inject" ng-bind-html=""</p>
+		<h3 class="content-head" id="6">6: A Critique of the Slave Trade</h3>
+		<p class="content-inject" ng-bind-html=""</p>
+		</md-card-content>
+		</md-card>
+	</div>
+</div>

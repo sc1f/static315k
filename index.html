@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="MintzApp">
 	<head>
 		<title>Module 3</title>
 		<meta charset="utf-8">
@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="css/styles.css">
 		
 	</head>
-	<body class="main" ng-app="MintzApp">
+	<body class="main">
 		<!--dropdown menus-->
 		<section class="dropdowns">
 		<md-sidenav id="a-dropdown" class="md-sidenav-left md-whiteframe-z2 nav-dropdown" md-component-id="left" md-is-locked-open="false" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
@@ -88,7 +88,9 @@
 		</li>
 		<li class="right-drop-contain" layout="column" layout-align="space-around center">
 			<div class="element-drop">
+				<a href="#/primarysrc">
 				<i class="material-icons drop-icon">library_books</i>
+				</a>
 			</div>
 			<p class="drop-tag">Primary Resources</p>
 		</li>
