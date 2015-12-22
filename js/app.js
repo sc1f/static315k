@@ -1,25 +1,8 @@
 /*debounce function*/
 
-var debounceNav = {};
-debounceNav.debounce = function(func, wait, immediate){
-  var timeout;
-  return function() {
-    var context = this, args = arguments;
-    var later = function() {
-      timeout = null;
-      if(!immediate){
-        func.apply(context,args);
-      }
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait || 200);
-    if(callNow){
-      func.apply(context,args);
-      }
-  };
-};
-var updateNav = debounceNav.debounce(function(){
+function debounce(n,t,u){var e;return function(){var a=this,i=arguments,o=function(){e=null,u||n.apply(a,i)},r=u&&!e;clearTimeout(e),e=setTimeout(o,t),r&&n.apply(a,i)}}
+
+var updateNav = debounce(function(){
   $(document).scroll(function(){
     if ($(window).scrollTop() > 40) {
       $('.nav-bar').addClass('nav-bar-scroll');
