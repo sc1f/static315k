@@ -2,9 +2,9 @@
 	<div class="slide" ng-repeat="image in images" ng-show="image.visible">
 		<img ng-src="img/carousel/{{image.src}}">
 	</div>
-	<div class="scrim right-scrim" ng-click="next()"></div>
+	<div class="scrim right-scrim" ng-click="next()" ng-keydown="$event.which === 39 && next()"></div>
 	<i class="material-icons arrow" id="arrow-right" ng-click="next()">navigate_next</i>
 	<div class="scrim left-scrim" ng-click="prev()"></div>
-	<i class="material-icons arrow" id="arrow-left" ng-click="prev()">navigate_before</i>
+	<i class="material-icons arrow" id="arrow-left" ng-click="prev()" ng-keydown="$event.which === 37 && prev()">navigate_before</i>
 	<p class="number-display">1</p>
 </div>
