@@ -116,6 +116,8 @@ app.controller('ContactController', function($scope, $mdSidenav) {
 app.controller('EntryController', function($scope, $mdToast){
   $scope.submit = function($event) {
     $mdToast.showSimple('Your response has been submitted.');
+    $('.input').val('');
+    $('.md-char-counter').text('0/300');
     };
 });
 app.controller('FABController', function(){
