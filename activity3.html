@@ -11,16 +11,17 @@
 		<md-card class="a-display content-center" id="text-entry" layout-align="space-around center" ng-controller="EntryController">
 			<md-card-content>
 			<div class="a3-entry-contain">
-				<h3 class="question"> Why do you think Washington Irving created the Columbus Myth?</h3>
-				<md-input-container>
-			<form name="answer-input"></form>
+				<h3 class="question"> Why do you think Washington Irving created the Columbus Myth?
+				</h3>
+			<md-input-container>
+			<form name="answer-input">
 			<label>Type your answer here</label>
-			<textarea ng-model="EntryController" md-maxlength="300" rows="5" md-no-autogrow="true"></textarea>
+			<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50"rows="5" md-no-autogrow="true"></textarea>
 			</md-input-container>
 			</md-card-content>
 			</form>
 			<md-card-actions layout="row" layout-align="end center" ng-controller="EntryController">
-			<md-button class="activity-btn" ng-click="submit()">Submit</md-button>
+			<md-button class="activity-btn" ng-disabled="true"  ng-click="submit()">Submit</md-button>
 			</md-card-actions>
 			</div>
 			</md-card-content>

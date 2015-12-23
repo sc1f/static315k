@@ -13,14 +13,14 @@
 			<div class="a2-entry-contain">
 				<h3 class="question"> Who should the New World have been named after? Columbus, or Vespucci?</h3>
 				<md-input-container>
-			<form name="answer-input"></form>
+			<form name="answer-input">
 			<label>Type your answer here</label>
-			<textarea ng-model="EntryController" md-maxlength="300" rows="5" md-no-autogrow="true"></textarea>
+			<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5" md-no-autogrow="true"></textarea>
 			</md-input-container>
 			</md-card-content>
 			</form>
 			<md-card-actions layout="row" layout-align="end center" ng-controller="EntryController">
-			<md-button class="activity-btn" ng-click="submit()">Submit</md-button>
+			<md-button class="activity-btn" ng-disabled="true"  ng-click="submit()">Submit</md-button>
 			</md-card-actions>
 			</div>
 			</md-card-content>
