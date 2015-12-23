@@ -31,13 +31,19 @@ $(document).ready(function() {
   $(this).scrollTop(0);
 });
 //angularJS
-var app = angular.module("MintzApp", ['ngMaterial','ngRoute','ngAnimate']);
+var app = angular.module("MintzApp", [
+    'ngMaterial',
+    'ngRoute',
+    'ngAnimate',
+    'ngResource',
+    'ngTouch'
+    ]);
 app.config(function($routeProvider){
   $routeProvider
     .when('/',{
       templateUrl: "introduction.html",
       controller: "ModuleController as module",
-      title: "Introduction to Module 3"
+      title: "Module 3 Introduction"
     })
     .when('/activity1',{
       templateUrl:"activity1.html",
@@ -70,6 +76,11 @@ app.config(function($routeProvider){
       title: "Primary Sources"
     })
 });
+app.run(['$location','$rootScope', function($location,$rootScope){
+  $rootScope.$on('$routeChangeSuccess', function(event, current, previous){
+    $rootScope.title = current.$$route.title;
+  });
+}]);
 app.filter('unsafe', function($sce) {
   return function(val) {
     return $sce.trustAsHtml(val);
