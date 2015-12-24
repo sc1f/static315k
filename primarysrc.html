@@ -3,40 +3,79 @@
 		<md-content layout-padding>
 		<!--intro-->
 		<md-card flex class="content-center a-display">
+			<md-grid-list md-cols='3' md-gutter=".5vw" md-row-height="21vw" md-on-layout="expr">
+		  		<md-grid-tile class="tile" id="tile1">
+		  			<p class="tile-num">1</p>
+		  			<md-grid-tile-footer>
+		  				<p class="tile-foot">The Meaning of America</p>
+		  			</md-grid-tile-footer>
+		  		</md-grid-tile>
+		  		<md-grid-tile class="tile" id="tile2">
+		  			<p class="tile-num">2</p>
+		  			<md-grid-tile-footer>
+		  				<p class="tile-foot">Utilizing the Local Labor Force</p>
+		  			</md-grid-tile-footer>
+		  		</md-grid-tile>
+		  		<md-grid-tile class="tile" id="tile3">	
+		  			<p class="tile-num">3</p>
+		  			<md-grid-tile-footer>
+		  				<p class="tile-foot">New World Fantasies</p>
+		  			</md-grid-tile-footer>
+		  		</md-grid-tile>
+		  		<md-grid-tile class="tile" id="tile4">
+		  			<p class="tile-num">4</p>
+		  			<md-grid-tile-footer>
+		  				<p class="tile-foot">Labor Needs</p>
+		  			</md-grid-tile-footer>
+		  		</md-grid-tile>
+		  		<md-grid-tile class="tile" id="tile5">
+		  			<p class="tile-num">5</p>
+		  			<md-grid-tile-footer>
+		  				<p class="tile-foot">The Black Legend</p>
+		  			</md-grid-tile-footer>
+		  		</md-grid-tile>
+		  		<md-grid-tile class="tile" id="tile6">
+		  			<p class="tile-num">6</p>
+		  			<md-grid-tile-footer>
+		  				<p class="tile-foot">A Critique of the Slave Trade</p>
+		  			</md-grid-tile-footer>
+		  		</md-grid-tile>
+			</md-grid-list>
+		</md-card>
+		<md-card flex class="content-center a-display">
 		<md-card-content>
-		<!--<h3 class="content-head">Table of Contents</h3>
-		<ul>
-			<li class="contents">
-			<a href="#1">The Meaning of America</a>
-			</li>
-			<li class="contents">
-			<a href="#2">Utilizing the Local Labor Force</a>
-			</li>
-			<li class="contents">
-			<a href="#3">New World Fantasies</a>
-			</li>
-			<li class="contents">
-			<a href="#4">Labor Needs</a>
-			</li>
-			<li class="contents">
-			<a href="#5">The Black Legend</a>
-			</li>
-			<li class="contents">
-			<a href="#6">A Critique of the Slave Trade</a>
-			</li>
-		</ul>-->
-		<h3 class="content-head" id="1">1: The Meaning of America</h3>
-		<p class="content-inject" ng-bind-html="primary.meaning_of_america | unsafe"</p>
-		<h3 class="content-head" id="2">2: Utilizing the Local Labor Force</h3>
-		<p class="content-inject" ng-bind-html="primary.labor_force | unsafe"</p>
-		<h3 class="content-head" id="3">3: New World Fantasies</h3>
-		<p class="content-inject" ng-bind-html="primary.new_world_fantasies | unsafe"</p>
-		<h3 class="content-head" id="4">4: Labor Needs</h3>
-		<p class="content-inject" ng-bind-html="primary.labor_needs | unsafe"</p>
-		<h3 class="content-head" id="5">5: The Black Legend</h3>
-		<p class="content-inject" ng-bind-html=""</p>
-		<h3 class="content-head" id="6">6: A Critique of the Slave Trade</h3>
-		<p class="content-inject" ng-bind-html=""</p>
+			<h3 class="content-head" id="1">1: The Meaning of America</h3>
+			<p class="content-inject" ng-bind-html="primary.meaning_of_america | unsafe"</p>
+		</md-card-content>
+		</md-card>
+		<md-card flex class="content-center a-display">
+		<md-card-content>
+			<h3 class="content-head" id="2">2: Utilizing the Local Labor Force</h3>
+			<p class="content-inject" ng-bind-html="primary.labor_force | unsafe"</p>
+		</md-card-content>
+		</md-card>
+		<md-card flex class="content-center a-display">
+		<md-card-content>
+			<h3 class="content-head" id="3">3: New World Fantasies</h3>
+			<p class="content-inject" ng-bind-html="primary.new_world_fantasies | unsafe"</p>
+		</md-card-content>
+		</md-card>
+		<md-card flex class="content-center a-display">
+		<md-card-content>
+			<h3 class="content-head" id="4">4: Labor Needs</h3>
+			<p class="content-inject" ng-bind-html="primary.labor_needs | unsafe"</p>
+		</md-card-content>
+		</md-card>
+		<md-card flex class="content-center a-display">
+		<md-card-content>
+			<h3 class="content-head" id="5">5: The Black Legend</h3>
+			<p class="content-inject" ng-bind-html="primary.black_legend | unsafe"</p>
+		</md-card-content>
+		</md-card>
+		<md-card flex class="content-center a-display">
+		<md-card-content>
+			<h3 class="content-head" id="6">6: A Critique of the Slave Trade</h3>
+			<p class="content-inject" ng-bind-html=""</p>
 		</md-card-content>
 		</md-card>
 	</div>
