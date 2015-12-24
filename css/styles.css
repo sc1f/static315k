@@ -22,21 +22,10 @@
 	transition: height 0.1s linear;
 }
 .nav-bar-scroll {
-	background: #a0a0a0;
+	background: #A09C9A;
 	background-image: none;
-	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 	height: 4vw;
-	left: 0;
-	overflow: hidden;
-	position:fixed;
-	right: 0;
-	top: 0;
 	width: 100%;
-	/*-webkit-transition: height 0.1s linear;
-	-moz-transition: height 0.1s linear;
-	-ms-transition: height 0.1s linear;
-	-o-transition: height 0.1s linear;
-	transition: height 0.1s linear;*/
 }
 .nav-element {
 	color: #ffffff;
@@ -190,7 +179,7 @@ md-backdrop.md-sidenav-backdrop.md-opaque {
 	width: 100%;
 }
 md-content {
-	background: #f8f8f8;
+	background: #f7f7f7;
 }
 .content-container {
 	position: absolute;
@@ -392,4 +381,21 @@ md-card.video {
 /*primary source*/
 .contents {
 	list-style-type: none;
+}
+.tile {
+	background-color: #a0a0a0;
+}
+.tile-num {
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 8em;
+	opacity: .5;
+	text-align: center;
+}
+.tile-foot {
+	font-weight: 400;
+	font-size: 1.1em;
+	color: #ffffff;
+	margin: auto;
+	text-align: center;
 }
