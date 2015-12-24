@@ -22,7 +22,7 @@
 	transition: height 0.1s linear;
 }
 .nav-bar-scroll {
-	background: #A09C9A;
+	background: #a0a0a0;
 	background-image: none;
 	height: 4vw;
 	width: 100%;
@@ -183,11 +183,12 @@ md-content {
 }
 .content-container {
 	position: absolute;
-	top: 10vw;
+	top: 9.5vw;
 }
 .content-center {
 	margin: auto;
 	width: 65%;
+	margin-top: 1.5vw;
 }
 .content-inject {
 	color: #404040;
@@ -195,7 +196,7 @@ md-content {
 	line-height: 1.4;
 }
 .content-head {
-	color: #505050;
+	color: #404040;
 	font-weight: 500;
 	-webkit-margin-after: .5em;
 	-webkit-margin-before: .5em;	
@@ -208,14 +209,6 @@ h3.question {
 	color: #505050;
 	font-weight: 400;
 	-webkit-margin-after: .5em;
-}
-.content-center.text-entry {
-	position: relative;
-	top: 1.5vw;
-}
-.content-center.pre-activity {
-	position: relative;
-	top: 3vw;
 }
 md-toast {
 	position: fixed;
@@ -232,7 +225,6 @@ md-input-container {
 .input {
 	width: 100% !important;
 }
-
 /*activity general*/
 .a-display {
 	margin-top: 1vw;
@@ -240,6 +232,21 @@ md-input-container {
 }
 .a-intro {
 	margin: 0;
+}
+md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused {
+	color: #404040;
+}
+md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]){
+	color: #808080;
+}
+.md-padding.tab-bg {
+	background: none;
+}
+.img-display {
+	width: 50%;
+	height: auto;
+	float: left;
+	padding-right: 1.5vw;
 }
 /*activity1*/
 .activity-card {
@@ -392,10 +399,10 @@ md-card.video {
 	opacity: .5;
 	text-align: center;
 }
-.tile-foot {
+/*.tile-foot {
 	font-weight: 400;
 	font-size: 1.1em;
 	color: #ffffff;
 	margin: auto;
 	text-align: center;
-}
+}*/

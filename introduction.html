@@ -1,5 +1,5 @@
 	<div layout="column" layout-align="space-around center" id="float-center">
-				<md-content class="md-padding" layout="column" layout-align="center start">
+				<md-content class="md-padding">
 				<md-card flex class="content-center">
 				<md-card-content>
 				<!--<h3 class="content-head">Introduction to Module 3</h3>-->
@@ -10,26 +10,66 @@
 				<p class="content-inject">{{module.significance}}</p>
 				<h3 class="content-head">When Worlds Collide</h3 class="content-head">
 				<p class="content-inject">{{module.when_worlds_collide}}</p>
-				<h3 class="content-head">Cinematic Encounters With Aliens</h3>
-				<p class="content-inject">{{module.cinematic_encounters}}</p>
-				<h3 class="content-head">The Day the Earth Stood Still (1951)</h3>
-				<p class="content-inject">{{module.earth_still}}</p>
-				<h3 class="content-head">War of the Worlds (1953)</h3>
-				<p class="content-inject">{{module.war_worlds}}</p>
-				<h3 class="content-head">Earth vs. The Flying Saucers (1956)</h3>
-				<p class="content-inject">{{module.earth_flying_saucers}}</p>
-				<h3 class="content-head">Invasion of the Body Snatchers (1956)</h3>
-				<p class="content-inject">{{module.invasion_body_snatchers}}</p>
-				<h3 class="content-head">E.T.: The Extraterrestrial (1982)</h3>
-				<p class="content-inject">{{module.et}}</p>
-				<h3 class="content-head">Independence Day (1996)</h3>
-				<p class="content-inject">{{module.independence_day}}</p>
+				</md-card-content>
+				</md-card>
+				<md-card flex class="content-center">
+				<md-card-content>
+					<h3 class="content-head">Cinematic Encounters With Aliens</h3>
+					<p class="content-inject">{{module.cinematic_encounters}}</p>
+					<md-tabs md-stretch-tabs="always" md-dynamic-height="true">
+						<md-tab class="tabbed-display"label="The Day the Earth Stood Still">
+							<md-content class="md-padding tab-bg">
+							    <h3 class="content-head">The Day the Earth Stood Still (1951)</h3>
+							    <img class="img-display" src="img/movie/1.jpg" alt="The Day the Earth Stood Still">
+								<span class="content-inject">{{module.earth_still}}</span>
+							</md-content>
+						</md-tab>
+						<md-tab class="tabbed-display"label="War of the Worlds">
+							<md-content class="md-padding tab-bg">
+							    <h3 class="content-head">War of the Worlds (1953)</h3>
+							    <img class="img-display" src="img/movie/2.jpg" alt="War of the Worlds">
+								<p class="content-inject">{{module.war_worlds}}</p>
+							</md-content>
+						</md-tab>
+						<md-tab class="tabbed-display"label="Earth vs. The Flying Saucers">
+							<md-content class="md-padding tab-bg">
+							    <h3 class="content-head">Earth vs. The Flying Saucers (1956)</h3>
+							    <img class="img-display" src="img/movie/3.jpg" alt="Earth vs. The Flying Saucers">
+								<p class="content-inject">{{module.earth_flying_saucers}}</p>
+							</md-content>
+						</md-tab>
+						<md-tab class="tabbed-display"label="Invasion of the Body Snatchers">
+							<md-content class="md-padding tab-bg">
+							    <h3 class="content-head">Invasion of the Body Snatchers (1956)</h3>
+							    <img class="img-display" src="img/movie/4.jpg" alt="Invasion of the Body Snatchers">
+								<p class="content-inject">{{module.invasion_body_snatchers}}</p>
+							</md-content>
+						</md-tab>
+						<md-tab class="tabbed-display"label="E.T.: The Extraterrestrial">
+							<md-content class="md-padding tab-bg">
+							    <h3 class="content-head">E.T.: The Extraterrestrial (1982)</h3>
+							    <img class="img-display" src="img/movie/5.jpg" alt="E.T.: The Extraterrestrial">
+								<p class="content-inject">{{module.et}}</p>
+							</md-content>
+						</md-tab>
+						<md-tab class="tabbed-display"label="Independence Day">
+							<md-content class="md-padding tab-bg">
+							    <h3 class="content-head">Independence Day (1996)</h3>
+							    <img class="img-display" src="img/movie/6.jpg" alt="Independence Day">
+								<p class="content-inject">{{module.independence_day}}</p></p>
+							</md-content>
+						</md-tab>
+					</md-tabs>
+				</md-card-content>
+				</md-card>
+				<md-card flex class="content-center">
+				<md-card-content>
 				<h3 class="content-head">European Conceptions of the Other</h3>
 				<p class="content-inject">{{module.european_conceptions}}</p>
 				</md-card-content>
 				</md-card>
 				<!--text entry for question-->
-				<md-card flex class="content-center text-entry" ng-controller="EntryController">
+				<md-card flex class="content-center" ng-controller="EntryController">
 				<md-card-content>
 				<h2 class="content-head question-head">Question:</h2>
 				<h3 class="question"> How do you think such images may have influenced Columbus’s ideas about the New World Indians?</h3>
@@ -44,13 +84,17 @@
 					<md-button class="activity-btn" ng-disabled="true" ng-click="submit()">Continue</md-button>
 				</md-card-actions>
 				</md-card>
-				<md-card flex class="content-center pre-activity">
+				<md-card flex class="content-center">
 				<md-card-content>
 				<h3 class="content-head">Why Did It Take So Long to Regularly Cross the Atlantic?</h3>
 				<p class="content-inject">{{module.atlantic_crossing}}</p>
 				<h3 class="content-head">Christopher Columbus</h3>
 				<p class="content-inject">{{module.christopher_columbus}}</p>
-				<h3 class="content-head">Activity Introduction</h3>
+				</md-card-content>
+				</md-card>
+				<md-card flex class="content-center">
+				<md-card-content>
+				<h3 class="content-head">Conclusion</h3>
 				<p class="content-inject">{{module.activity_intro}}</p>
 				</md-card-content>
 				</md-card>
