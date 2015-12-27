@@ -386,23 +386,3 @@ md-card.video {
 	max-height: 100vh;
 }
 /*primary source*/
-.contents {
-	list-style-type: none;
-}
-.tile {
-	background-color: #a0a0a0;
-}
-.tile-num {
-	color: #ffffff;
-	font-weight: 500;
-	font-size: 8em;
-	opacity: .5;
-	text-align: center;
-}
-/*.tile-foot {
-	font-weight: 400;
-	font-size: 1.1em;
-	color: #ffffff;
-	margin: auto;
-	text-align: center;
-}*/

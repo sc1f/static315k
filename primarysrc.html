@@ -1,82 +1,100 @@
 <div ng-controller="PrimarySrcController as primary">
-	<div layout="column" layout-align="space-around center">
-		<md-content layout-padding>
-		<!--intro-->
-		<md-card flex class="content-center a-display">
-			<md-grid-list md-cols='3' md-gutter=".5vw" md-row-height="21vw" md-on-layout="expr">
-		  		<md-grid-tile class="tile" id="tile1">
-		  			<p class="tile-num">1</p>
-		  			<md-grid-tile-footer>
-		  				<h3 class="tile-foot">The Meaning of America</h3>
-		  			</md-grid-tile-footer>
-		  		</md-grid-tile>
-		  		<md-grid-tile class="tile" id="tile2">
-		  			<p class="tile-num">2</p>
-		  			<md-grid-tile-footer>
-		  				<h3 class="tile-foot">Utilizing the Local Labor Force</h3>
-		  			</md-grid-tile-footer>
-		  		</md-grid-tile>
-		  		<md-grid-tile class="tile" id="tile3">	
-		  			<p class="tile-num">3</p>
-		  			<md-grid-tile-footer>
-		  				<h3 class="tile-foot">New World Fantasies</h3>
-		  			</md-grid-tile-footer>
-		  		</md-grid-tile>
-		  		<md-grid-tile class="tile" id="tile4">
-		  			<p class="tile-num">4</p>
-		  			<md-grid-tile-footer>
-		  				<h3 class="tile-foot">Labor Needs</h3>
-		  			</md-grid-tile-footer>
-		  		</md-grid-tile>
-		  		<md-grid-tile class="tile" id="tile5">
-		  			<p class="tile-num">5</p>
-		  			<md-grid-tile-footer>
-		  				<h3 class="tile-foot">The Black Legend</h3>
-		  			</md-grid-tile-footer>
-		  		</md-grid-tile>
-		  		<md-grid-tile class="tile" id="tile6">
-		  			<p class="tile-num">6</p>
-		  			<md-grid-tile-footer>
-		  				<h3 class="tile-foot">A Critique of the Slave Trade</h3>
-		  			</md-grid-tile-footer>
-		  		</md-grid-tile>
-			</md-grid-list>
-		</md-card>
-		<md-card flex class="content-center a-display">
-		<md-card-content>
-			<h3 class="content-head" id="1">1: The Meaning of America</h3>
-			<p class="content-inject" ng-bind-html="primary.meaning_of_america | unsafe"</p>
+	<md-content class="md-padding">
+		<md-card flex class="content-center">
+			<md-card-content>
+				<md-tabs md-dynamic-height="true">
+					<md-tab label="A Critique of the Slave Trade">
+						<md-content class="md-padding tab-bg">
+							<h3 class="content-head">A Critique of the Slave Trade</h3>
+							<p class="content-inject" ng-bind-html="primary.critique_slave_trade | unsafe"></p>
+							<div ng-controller="EntryController">
+								<h2 class="content-head question-head">Question:</h2>
+								<h3 class="question"> On what grounds does Fray Tomas de Mercado condemn slavery?</h3>
+								<md-input-container>
+									<form name="answer-input">
+										<label>Type your answer here</label>
+										<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+									</form>
+								</md-input-container>
+								<md-button class="activity-btn" ng-disabled="true" ng-click="submit()">Continue</md-button>
+							</div>
+						</md-content>
+					</md-tab>
+					<md-tab label="The Black Legend">
+						<md-content class="md-padding tab-bg">
+							<h3 class="content-head">The Black Legend</h3>
+							<p class="content-inject" ng-bind-html="primary.black_legend | unsafe"></p>
+							<div ng-controller="EntryController">
+								<h2 class="content-head question-head">Question:</h2>
+								<h3 class="question"> Bartolomé de las Casas delivered sermons and wrote books denouncing Spanish cruelty toward the Indians, and established Venezuela as a society people of different races might live together in peace. According to las Casas, how did the Conquistadors treat the Indians? What does it say about the Spanish that they allowed las Casas to openly denounce cruel treatment of Indians?</h3>
+								<md-input-container>
+									<form name="answer-input">
+										<label>Type your answer here</label>
+										<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+									</form>
+								</md-input-container>
+								<md-button class="activity-btn" ng-disabled="true" ng-click="submit()">Continue</md-button>
+							</div>
+						</md-content>
+					</md-tab>
+					<md-tab label="Labor Needs">
+						<md-content class="md-padding tab-bg">
+							<h3 class="content-head">Labor Needs</h3>
+							<p class="content-inject" ng-bind-html="primary.labor_needs | unsafe"></p>
+							<div ng-controller="EntryController">
+								<h2 class="content-head question-head">Question:</h2>
+								<h3 class="question"> Why does Alonso de Zuazo urge Spain to send enslaved Africans to the New World?</h3>
+								<md-input-container>
+									<form name="answer-input">
+										<label>Type your answer here</label>
+										<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+									</form>
+								</md-input-container>
+								<md-button class="activity-btn" ng-disabled="true" ng-click="submit()">Continue</md-button>
+							</div>
+						</md-content>
+					</md-tab>
+					<md-tab label="New World Fantasies">
+						<md-content class="md-padding tab-bg">
+							<h3 class="content-head">New World Fantasies</h3>
+							<p class="content-inject" ng-bind-html="primary.new_world_fantasies | unsafe"></p>
+							<div ng-controller="EntryController">
+								<h2 class="content-head question-head">Question:</h2>
+								<h3 class="question"> Writing just twenty-four years after Columbus's first voyage of discovery, Sir Thomas More presented his vision of an ideal society, set in the New World, in a book entitled Utopia. What is life like in More's Utopia? Who does the work in More's perfect society? </h3>
+								<md-input-container>
+									<form name="answer-input">
+										<label>Type your answer here</label>
+										<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+									</form>
+								</md-input-container>
+								<md-button class="activity-btn" ng-disabled="true" ng-click="submit()">Continue</md-button>
+							</div>
+						</md-content>
+					</md-tab>
+				<md-tab label="Utilizing the Local Labor Force">
+						<md-content class="md-padding tab-bg">
+							<h3 class="content-head">Utilizing the Local Labor Force</h3>
+							<p class="content-inject" ng-bind-html="primary.labor_force | unsafe"></p>
+							<div ng-controller="EntryController">
+								<h2 class="content-head question-head">Question:</h2>
+								<h3 class="question"> Describe how Columbus characterizes the Taino Indians that he encountered in the Caribbean.  How do these people, in his view, differ from Europeans? </h3>
+								<md-input-container>
+									<form name="answer-input">
+										<label>Type your answer here</label>
+										<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+									</form>
+								</md-input-container>
+								<md-button class="activity-btn" ng-disabled="true" ng-click="submit()">Continue</md-button>
+							</div>
+						</md-content>
+					</md-tab>
+				<md-tab label="The Meaning of America">
+					<md-content class="md-padding tab-bg">
+						<h3 class="content-head">The Meaning of America</h3>
+						<p class="content-inject" ng-bind-html="primary.meaning_of_america | unsafe"</p>
+					</md-content>
+				</md-tab>
+			</md-tabs>
 		</md-card-content>
-		</md-card>
-		<md-card flex class="content-center a-display">
-		<md-card-content>
-			<h3 class="content-head" id="2">2: Utilizing the Local Labor Force</h3>
-			<p class="content-inject" ng-bind-html="primary.labor_force | unsafe"</p>
-		</md-card-content>
-		</md-card>
-		<md-card flex class="content-center a-display">
-		<md-card-content>
-			<h3 class="content-head" id="3">3: New World Fantasies</h3>
-			<p class="content-inject" ng-bind-html="primary.new_world_fantasies | unsafe"</p>
-		</md-card-content>
-		</md-card>
-		<md-card flex class="content-center a-display">
-		<md-card-content>
-			<h3 class="content-head" id="4">4: Labor Needs</h3>
-			<p class="content-inject" ng-bind-html="primary.labor_needs | unsafe"</p>
-		</md-card-content>
-		</md-card>
-		<md-card flex class="content-center a-display">
-		<md-card-content>
-			<h3 class="content-head" id="5">5: The Black Legend</h3>
-			<p class="content-inject" ng-bind-html="primary.black_legend | unsafe"</p>
-		</md-card-content>
-		</md-card>
-		<md-card flex class="content-center a-display">
-		<md-card-content>
-			<h3 class="content-head" id="6">6: A Critique of the Slave Trade</h3>
-			<p class="content-inject" ng-bind-html=""</p>
-		</md-card-content>
-		</md-card>
-	</div>
+	</md-card>
 </div>
