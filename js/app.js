@@ -1,12 +1,15 @@
 //debounce
 function debounce(n,t,u){var e;return function(){var a=this,i=arguments,o=function(){e=null,u||n.apply(a,i)},r=u&&!e;clearTimeout(e),e=setTimeout(o,t),r&&n.apply(a,i)}};
 //navbar
+var scrollPos = {};
 var updateNav = debounce(function(){
   $(document).scroll(function(){
+    scrollPos.position = $(window).scrollTop();
     if ($(window).scrollTop() > 40) {
       $('.nav-bar').addClass('nav-bar-scroll');
       $('#main-head').css('padding-top', '1vw').css('font-size','1.5vw');
       $('.contact-button').css('top','1.5vw');
+      localStorage.setItem('scrollPosition', scrollPos.position);
     }
   else if ($(window).scrollTop() === 0) {
       $('.nav-bar').removeClass('nav-bar-scroll');
@@ -16,33 +19,21 @@ var updateNav = debounce(function(){
   });
 }, 200, true);
 window.addEventListener("scroll", updateNav);
-//tracker
-/*function storageAvailable(type) {
-  try {
-    var storage = window[type],
-      x = '__storage_test__';
-    storage.setItem(x, x);
-    storage.removeItem(x);
-    return true;
-  }
-  catch(e) {
-    return false;
-  }
-};
-if storageAvailable(localStorage) {*/
-$(document).ready(function() {
-  (function(){
-    var storage = localStorage;
-    var populateStorage = function(){
-      storage.setItem('scrollPos', pageYOffset);
-    };
-    pageYOffset.onChange = populateStorage;
-  }());    
-});
-
-/*} else {
-  console.log('false');
-}*/
+//tracker, inspired by PaulBot from http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/
+var dialogue = [];
+(function () {
+  var position = localStorage.getItem('scrollPosition');
+  if(position > 0){
+    var trackAction = {
+        "prompt": "Continue reading from where you left off",
+        "do": function() {$(window).scrollTop(position);}
+      };
+    dialogue.push(trackAction);
+    dialogue[0].do;
+  } else {
+  console.log("hello there!");
+}
+}());
 //input validation
 var lenCheck = debounce(function(){
   if($('md-input-container').hasClass('md-input-has-value') && $('.input').hasClass('ng-valid')){
