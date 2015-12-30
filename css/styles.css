@@ -167,8 +167,9 @@ md-backdrop.md-sidenav-backdrop.md-opaque {
 	text-align: center;
 }
 /*body content*/
-.disable-scroll {
-	overflow: hidden;
+md-card {
+	padding-left: 1vw;
+	padding-right: 1vw;
 }
 .main {
 	background-color: #f8f8f8;
@@ -244,6 +245,12 @@ md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-ta
 	float: left;
 	padding-right: 1.5vw;
 	width: 50%;
+}
+#yesbtn, #nobtn {
+	bottom: .5vw;
+	color: #cc5527;
+	float: right;
+	position: relative;
 }
 /*activity1*/
 .activity-card {
