@@ -1,5 +1,15 @@
 <div layout="column" layout-align="space-around center" id="float-center">
 	<md-content class="md-padding">
+		<md-card flex class="tracker content-center" id="scrollTrack" ng-controller="TrackingController">
+			<md-card-content>
+				<h3 class="content-head">Welcome back!</h3>
+				<p class="content-inject">Continue reading from where you left off?</p>
+			</md-card-content>
+			<md-card-actions layout="row" layout-align="end center">
+				<md-button id="nobtn" ng-click="no()">No</md-button>
+				<md-button id="yesbtn" ng-click="yes()">Yes</md-button>
+			</md-card-actions>
+		</md-card>
 		<md-card flex class="content-center">
 			<md-card-content>
 				<p class="content-inject">{{module.introduction}}</p>
