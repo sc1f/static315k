@@ -1,6 +1,14 @@
 //debounce function
 function debounce(n,t,u){var e;return function(){var a=this,i=arguments,o=function(){e=null,u||n.apply(a,i)},r=u&&!e;clearTimeout(e),e=setTimeout(o,t),r&&n.apply(a,i)}};
 var scrollPos = {};
+//scroll tracking, which takes the scrollTop() and pushes it to localStorage for later use
+var updateScroll = debounce(function(){
+  $(document).scroll(function(){
+    scrollPos.position = $(window).scrollTop();
+    localStorage.setItem('scrollPosition', scrollPos.position);
+    });
+}, 200, true);
+window.addEventListener("scroll", updateScroll);
 //navbar function, which reads the scrollTop() to decide when to change class from regular to expanded
 var updateNav = debounce(function(){
   $(document).scroll(function(){
@@ -17,30 +25,6 @@ var updateNav = debounce(function(){
   });
 }, 200, true);
 window.addEventListener("scroll", updateNav);
-//scroll tracking, which takes the scrollTop() and pushes it to localStorage for later use
-var updateScroll = debounce(function(){
-  $(document).scroll(function(){
-    scrollPos.position = $(window).scrollTop();
-    localStorage.setItem('scrollPosition', scrollPos.position);
-    });
-}, 200, true);
-
-window.addEventListener("scroll", updateScroll);
-/*tracker implementation, inspired by PaulBot from http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/
-  the tracker grabs the localStorage value of scrollTop, and uses it to decide whether the card prompting the user
-  actually shows up or not. The click handlers are implemented in ng-click further down the file.*/
-var position = localStorage.getItem('scrollPosition');
-var trackAction = function(){$(window).scrollTop(position)};
-$(document).ready(function() {
-  $('#scrollTrack').hide();
-  if(position > 0) {
-    $('#scrollTrack').show();
-    console.log('true');
-  } else if (position === 0){
-    $('#scrollTrack').hide();
-    return false;
-  };
-});
 /*input validation: uses the inherent classes created by angularJS in an input form to see if the input fits angular's
   built-in valudation checks. If the input is good, it will remove the disabled attribute from the button.*/
 var lenCheck = debounce(function(){
@@ -159,6 +143,19 @@ app.controller('TrackingController', function($scope){
   };
   $scope.no = function($event){
     $('#scrollTrack').hide();
+  }
+  /*tracker implementation, inspired by PaulBot from http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/
+  the tracker grabs the localStorage value of scrollTop, and uses it to decide whether the card prompting the user
+  actually shows up or not. The click handlers are implemented in ng-click further down the file.*/
+  var position = localStorage.getItem('scrollPosition');
+  var trackAction = function(){$(window).scrollTop(position)};
+  $scope.position = function($event){
+    if(position > 0){
+      return true;
+    }
+    else if(position === 0){
+      return false;
+    }
   }
 });
 app.controller('FABController', function(){
