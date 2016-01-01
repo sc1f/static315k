@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="MintzApp">
+<html lang="en-us" ng-app="MintzApp">
 	<head>
 		<title ng-bind="title"></title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,300italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/styles.css">
-		
 	</head>
 	<body class="main">
 		<!--dropdown menus-->
@@ -117,36 +117,13 @@
 				<li id="main-head"></li>
 			</div>
 		</div>
-		<!--contact FAB USE FAB SPEED DIAL-->
-		<section id="contact-fab">
-			<!--<div class="fab-contain" layout="column" ng-controller="FABController as fab">
-				<div class="contact-dial" layout-align="center center">
-				<md-fab-speed-dial md-open="fab.isOpen" md-direction="{{fab.direction}}" ng-class="fab.mode">
-					<md-fab-trigger>
-						<md-button aria-label="contact" class="md-fab contact-button">
-							<i class="material-icons chat-icon">chat</i>
-						</md-button>
-					</md-fab-trigger>
-
-					<md-fab-actions>
-						<md-button aria-label="Professor Steven Mintz" class="md-fab md-raised md-mini">
-							<i class="material-icons chat-icon">chat</i>
-						</md-button>
-						<md-button aria-label="Professor Steven Mintz" class="md-fab md-raised md-mini">
-							<i class="material-icons chat-icon">chat</i>
-						</md-button>
-						<md-button aria-label="Professor Steven Mintz" class="md-fab md-raised md-mini">
-							<i class="material-icons chat-icon">chat</i>
-						</md-button>
-					</md-fab-actions>
-				</md-fab-speed-dial>
-			</div>	
-		</div>-->
+		<!--contact FAB-->
 		<md-button class="md-fab contact-button" aria-label="contact">
-				 <i class="material-icons chat-icon">chat</i>
-				<md-tooltip md-direction="down">
-          		Connect with your classmates!
-        		</md-tooltip>
+			<i class="material-icons chat-icon">chat</i>
+			<md-tooltip md-direction="down">
+          	Connect with your classmates!
+        	</md-tooltip>
+        </md-button>
 		</section>
 		<section id="content">
 			<div class="content-container" ng-view autoscroll="true">
