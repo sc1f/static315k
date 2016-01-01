@@ -4,7 +4,9 @@
   background-image: url("img/background.jpg");
   background-position: 0px -30px;
   background-size: cover;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 
+  0px 1px 1px 0px rgba(0, 0, 0, 0.14), 
+  0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   height: 10vw;
   min-height: 4vw;
   overflow: hidden;
@@ -102,7 +104,10 @@
 button.md-fab.contact-button.md-button.md-default-theme{
   background: #4290D3;
 }
-a.md-button.md-default-theme.md-fab:not([disabled]):hover, a.md-button.md-fab:not([disabled]):hover, .md-button.md-default-theme.md-fab:not([disabled]):hover, .md-button.md-fab:not([disabled]):hover {
+a.md-button.md-default-theme.md-fab:not([disabled]):hover, 
+a.md-button.md-fab:not([disabled]):hover, 
+.md-button.md-default-theme.md-fab:not([disabled]):hover, 
+.md-button.md-fab:not([disabled]):hover {
   background: #3084cc;
 }
 .contact-button-scroll {
@@ -176,6 +181,9 @@ md-card {
   height: 100%;
   width: 100%;
 }
+.hide-tracker {
+  display: none;
+}
 md-content {
   background: #f7f7f7;
 }
@@ -211,7 +219,8 @@ h3.question {
 md-toast {
   position: fixed;
 }
-md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+md-input-container:not(.md-input-invalid).md-input-focused 
+.md-input {
   border-color: #cc5527;
 }
 md-input-container:not(.md-input-invalid).md-input-focused label {
@@ -231,10 +240,13 @@ md-input-container {
 .a-intro {
   margin: 0;
 }
-md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused {
+md-toolbar.md-warn > md-tabs.md-default-theme, 
+md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, 
+md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused {
   color: #404040;
 }
-md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]){
+md-toolbar.md-warn > md-tabs.md-default-theme, 
+md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]){
   color: #808080;
 }
 .md-padding.tab-bg {
@@ -388,4 +400,31 @@ md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-ta
 md-card.video {
   height: 36.5625vw;
   max-height: 100vh;
+}
+/*responsive design*/
+@media (max-width: 1024px) {
+  .header-container {
+    left: 41%;
+  }
+  .contact-button {
+    left: 82vw;
+    top: 1vw;
+  }
+}
+@media (max-width: 720px) {
+  .header-container {
+    left: 37%
+  }
+  .contact-button {
+    left: 82vw;
+    top: 0vw;
+  }
+  .nav-element {
+    font-size: .7em;
+  }
+}
+@media (max-width: 540px) {
+  .header-container {
+    left: 33%;
+  }
 }
