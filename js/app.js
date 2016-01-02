@@ -11,16 +11,27 @@ var updateScroll = debounce(function(){
 window.addEventListener("scroll", updateScroll);
 //navbar function, which reads the scrollTop() to decide when to change class from regular to expanded
 var updateNav = debounce(function(){
+  var w = window.innerWidth;
   $(document).scroll(function(){
-    if ($(window).scrollTop() > 40) {
+    if ($(window).scrollTop() > 40 && w > 540) {
       $('.nav-bar').addClass('nav-bar-scroll');
       $('#main-head').css('padding-top', '1vw').css('font-size','1.5vw');
       $('.contact-button').css('top','1.5vw');
     }
-  else if ($(window).scrollTop() === 0) {
+  else if ($(window).scrollTop() === 0 && w > 540) {
       $('.nav-bar').removeClass('nav-bar-scroll');
       $('#main-head').css('padding-top', '5vw').css('font-size','3vw');
       $('.contact-button').css('top','7.5vw');
+    }
+  else if ($(window).scrollTop() > 40 && w < 540) {
+      $('.nav-bar').removeClass('nav-bar-scroll');
+      $('#main-head').css('padding-top', '5vw').css('font-size','3vw');
+      $('.contact-button').css('top','90%');
+    }
+  else if ($(window).scrollTop() === 0 && w < 540) {
+      $('.nav-bar').removeClass('nav-bar-scroll');
+      $('#main-head').css('padding-top', '5vw').css('font-size','3vw');
+      $('.contact-button').css('top','90%');
     }
   });
 }, 200, true);
@@ -146,7 +157,10 @@ app.controller('TrackingController', function($scope){
   }
   /*tracker implementation, inspired by PaulBot from http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/
   the tracker grabs the localStorage value of scrollTop, and uses it to decide whether the card prompting the user
-  actually shows up or not. The click handlers are implemented in ng-click further down the file.*/
+  actually shows up or not. The click handlers are implemented above, 
+  and the code below simply checks the position in localStorage and returns
+  true if it is above 0, thus allowing the card to show.
+  .*/
   var position = localStorage.getItem('scrollPosition');
   var trackAction = function(){$(window).scrollTop(position)};
   $scope.position = function($event){
