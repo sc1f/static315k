@@ -118,13 +118,14 @@
 			</div>
 		</div>
 		<!--contact FAB-->
-		<md-button class="md-fab contact-button" aria-label="contact">
+		<div ng-controller="TooltipController">
+		<md-button class="md-fab contact-button" aria-label="contact" ng-controller="TooltipController">
 			<i class="material-icons chat-icon">chat</i>
-			<md-tooltip md-direction="down">
+			<md-tooltip md-direction="{{direction}}">
           	Connect with your classmates!
         	</md-tooltip>
         </md-button>
-		</section>
+        <div>
 		<section id="content">
 			<div class="content-container" ng-view autoscroll="true">
 			</div>
