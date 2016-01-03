@@ -110,6 +110,17 @@ app.filter('unsafe', function($sce) {
     return $sce.trustAsHtml(val);
   };
 });
+//determines the window width and refactors the tooltip direction
+app.controller('TooltipController', function($scope){
+  $scope.direction = function($event){
+   var w = window.innerWidth;
+   if (w < 540){
+    return "top";
+   } else {
+    return "bottom";
+   }
+  }
+});
 //content storage, double line break = \n\n, break quotes = \
 app.controller("ModuleController", function() {
   (function(){
