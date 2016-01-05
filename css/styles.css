@@ -352,7 +352,6 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
   position: absolute;
   right: 0;
   top: 0;
-
 }
 #arrow-left {
   color: #ffffff;
@@ -387,6 +386,10 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
   position: relative;
   right: 2.5%;
   top: -26%;
+}
+.carousel-title-contain {
+  position: absolute;
+  top: 32vw;
 }
 /*activity 2*/
 .a2-entry-contain {
@@ -423,6 +426,12 @@ md-card.video {
   	padding-left: 2vw;
   	padding-top: 2vw;
   }
+  .number-display {
+    top: -35%;
+  }
+  .a1-entry-contain {
+    top: -5vw;
+  }
 }
 @media (max-width: 720px) {
   .header-container {
@@ -453,6 +462,10 @@ md-card.video {
   	font-size: 6vw;
   	padding-left: 3vw;
   	padding-top: 3vw;
+  }
+  .number-display {
+    font-size: 4em;
+    top: -43%;
   }
 }
 @media (max-width: 540px) {
