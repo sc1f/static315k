@@ -8,7 +8,7 @@ var updateScroll = debounce(function(){
     localStorage.setItem('scrollPosition', scrollPos.position);
     });
 }, 200, true);
-window.addEventListener("scroll", updateScroll);
+window.addEventListener('scroll', updateScroll)
 //navbar function, which reads the scrollTop() to decide when to change class from regular to expanded
 var updateNav = debounce(function(){
   var w = window.innerWidth;
@@ -51,7 +51,7 @@ window.addEventListener("keyup", lenCheck);
 $(document).ready(function() {
   $(this).scrollTop(0);
 });
-//angularJS
+//angularJS app
 var app = angular.module("MintzApp", [
     'ngMaterial',
     'ngRoute',
@@ -240,16 +240,19 @@ app.directive('carousel', function($timeout) {
     link: function(scope, elem, attrs){
       scope.currentIndex = 0;
       //figure out how to change credits on photo change
-      scope.paintingCredits = ['John Vanderlyn, Landing of Christopher Columbus, U.S. Capitol, 1846', 'Diego Rivera, Disembarkation of the Spanish at Vera Cruz (Colonial Domination), National Palace, Mexico City, 1951'];
       scope.next = function(){
         scope.currentIndex < scope.images.length -1 ? scope.currentIndex++ : scope.currentIndex = 0;
         scope.cleanIndex = scope.currentIndex + 1;
         $('.number-display').text(scope.cleanIndex);
+        scope.title = "{{image.title}}";
+        $('#title').text("hello");
       };
       scope.prev = function(){
         scope.currentIndex > 0? scope.currentIndex -- : scope.currentIndex = scope.images.length -1;
         scope.cleanIndex = scope.currentIndex + 1;
         $('.number-display').text(scope.cleanIndex);
+        scope.title = "{{title}}";
+        $('#title').text("hello 1");
       };
       scope.$watch('currentIndex', function(){
         scope.images.forEach(function(image){
@@ -265,31 +268,31 @@ app.directive('carousel', function($timeout) {
 app.controller('CarouselController', function($scope){
   $scope.a1_images = [{
     src: '1.jpg',
-    title: 'Columbus 1',
+    title: 'Christopher Colombus, head-and-shoulders portrait, facing slightly right. Photomechanical print : halftone, color. Created between 1890 and 1940. Library of Congress',
     number: '1'
   },{
     src: '2.jpg',
-    title: 'Columbus 2',
+    title: 'First landing of Columbus on the shores of the New World: At San Salvador, W.I., Oct. 12th 1492 lithograph. Published by Currier & Ives, c.1892. Library of Congress',
     number: '2'
   },{
     src: '3.jpg',
-    title: 'Columbus 3',
+    title: '[Christopher Columbus, half-length portrait, facing slightly right] photographic print [between 1900 and 1950] of a painting by Sebastiano, del Piombo, 1485-1547. Library of Congress.',
     number: '3'
   },{
     src: '4.jpg',
-    title: 'Columbus 4',
+    title: 'The landing of Columbus Oct. 11th 1492. Lithograph, hand-colored. Published by N. Currier, c. 1846. Library of Congress.',
     number: '4'
   },{
     src: '5.jpg',
-    title: 'Columbus 5',
+    title: 'The landing of Columbus 1492. Print. c. 1893 Jan. 26. Library of Congress.',
     number: '5'
   },{
     src: '6.jpg',
-    title: 'Columbus 6',
+    title: 'Christopher Columbus. Engraving by Johann Thedor DeBry. 16th century, Library of Congress.',
     number: '6'
   },{
     src: '7.jpg',
-    title: 'Columbus 7',
+    title: 'The landing of Columbus at San Salvador, October 12, 1492. Lithograph. Published by Currier & Ives, c. 1876. Library of Congress',
     number: '7'
   }];
   $scope.a4_images = [{
