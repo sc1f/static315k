@@ -239,20 +239,47 @@ app.directive('carousel', function($timeout) {
     },
     link: function(scope, elem, attrs){
       scope.currentIndex = 0;
-      //figure out how to change credits on photo change
+      scope.caption = function(){
+        $(document).ready(function() {
+      
+      if($('.carousel > .slide > img').length){
+        alert('found');
+      } else {
+        alert('not found');
+      }
+        var selected = $('.carousel>.slide>img');
+        if(selected.src === "img/carousel/1.jpg"){
+            $('#caption').text('Christopher Colombus, head-and-shoulders portrait, facing slightly right. Photomechanical print : halftone, color. Created between 1890 and 1940. Library of Congress');
+        } else if (selected.src === "img/carousel/2.jpg"){
+            $('#caption').text('First landing of Columbus on the shores of the New World: At San Salvador, W.I., Oct. 12th 1492 lithograph. Published by Currier & Ives, c.1892. Library of Congress');
+        } else if (selected.src === "img/carousel/3.jpg"){
+            $('#caption').text('[Christopher Columbus, half-length portrait, facing slightly right] photographic print [between 1900 and 1950] of a painting by Sebastiano, del Piombo, 1485-1547. Library of Congress.')
+        } else if (selected.src === "img/carousel/4.jpg"){
+            $('#caption').text('The landing of Columbus Oct. 11th 1492. Lithograph, hand-colored. Published by N. Currier, c. 1846. Library of Congress.');
+        } else if (selected.src === "img/carousel/5.jpg"){
+            $('#caption').text('The landing of Columbus 1492. Print. c. 1893 Jan. 26. Library of Congress.');
+        } else if (selected.src === "img/carousel/6.jpg"){
+            $('#caption').text('Christopher Columbus. Engraving by Johann Thedor DeBry. 16th century, Library of Congress.');
+        } else if (selected.src === "img/carousel/7.jpg"){
+            $('#caption').text('The landing of Columbus at San Salvador, October 12, 1492. Lithograph. Published by Currier & Ives, c. 1876. Library of Congress');
+        } else if (selected.src === "img/carousel/vanderlyn.jpg"){
+            $('#caption').text('John Vanderlyn, Landing of Christopher Columbus, U.S. Capitol, 1846');
+        } else if (selected.src === "img/carousel/rivera.jpg"){
+            $('#caption').text('Diego Rivera, Disembarkation of the Spanish at Vera Cruz (Colonial Domination), National Palace, Mexico City, 1951');
+        } else{
+            $('#caption').text();
+        }
+        });
+      };
       scope.next = function(){
         scope.currentIndex < scope.images.length -1 ? scope.currentIndex++ : scope.currentIndex = 0;
         scope.cleanIndex = scope.currentIndex + 1;
-        $('.number-display').text(scope.cleanIndex);
-        scope.title = "{{image.title}}";
-        $('#title').text("hello");
+        $('.number-display').text(scope.cleanIndex);    
       };
       scope.prev = function(){
         scope.currentIndex > 0? scope.currentIndex -- : scope.currentIndex = scope.images.length -1;
         scope.cleanIndex = scope.currentIndex + 1;
         $('.number-display').text(scope.cleanIndex);
-        scope.title = "{{title}}";
-        $('#title').text("hello 1");
       };
       scope.$watch('currentIndex', function(){
         scope.images.forEach(function(image){

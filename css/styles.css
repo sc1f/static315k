@@ -387,9 +387,8 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
   right: 2.5%;
   top: -26%;
 }
-.carousel-title-contain {
+.carousel-caption-contain {
   position: absolute;
-  top: 32vw;
 }
 /*activity 2*/
 .a2-entry-contain {
