@@ -389,6 +389,8 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
 }
 .carousel-caption-contain {
   position: absolute;
+  padding-right: 3vw;
+  bottom: 2vw;
 }
 /*activity 2*/
 .a2-entry-contain {
