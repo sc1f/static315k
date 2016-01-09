@@ -418,14 +418,14 @@ md-card.video {
     line-height: 45px;
   }
    .element-drop {
-  	height: 8vw;
-  	margin-left: 0px;
-  	width: 8vw;
+    height: 8vw;
+    margin-left: 0px;
+    width: 8vw;
   }
   .drop-icon {
-  	font-size: 4vw;
-  	padding-left: 2vw;
-  	padding-top: 2vw;
+    font-size: 4vw;
+    padding-left: 2vw;
+    padding-top: 2vw;
   }
   .number-display {
     top: -35%;
@@ -449,9 +449,9 @@ md-card.video {
     font-size: .7em;
   }
   .element-drop {
-  	height: 12vw;
-  	margin-left: 8px;
-  	width: 12vw;
+    height: 12vw;
+    margin-left: 8px;
+    width: 12vw;
   }
   md-sidenav {
     height: 100%;
@@ -460,9 +460,9 @@ md-card.video {
     width: 25vw;
   }
   .drop-icon {
-  	font-size: 6vw;
-  	padding-left: 3vw;
-  	padding-top: 3vw;
+    font-size: 6vw;
+    padding-left: 3vw;
+    padding-top: 3vw;
   }
   .number-display {
     font-size: 4em;
@@ -474,13 +474,13 @@ md-card.video {
     left: 38%;
   }
   .content-center {
-  	width: 80%;
+    width: 80%;
   }
   .md-button.md-fab, 
   .contact-button {
-  	height: 56px;
-  	width: 56px;
-  	line-height: 56px;
+    height: 56px;
+    width: 56px;
+    line-height: 56px;
     left: 80vw;
     top: 90%;
   }
@@ -491,13 +491,13 @@ md-card.video {
     width: 50vw;
   }
   .element-drop {
-  	height: 25vw;
-  	margin-left: 4px;
-  	width: 25vw;
+    height: 25vw;
+    margin-left: 4px;
+    width: 25vw;
   }
   .drop-icon {
-  	font-size: 14vw;
-  	padding-left: 5.5vw;
-  	padding-top: 5.5vw;
+    font-size: 14vw;
+    padding-left: 5.5vw;
+    padding-top: 5.5vw;
   }
 }
