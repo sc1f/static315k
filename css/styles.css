@@ -1,7 +1,7 @@
 /*navigation + header*/
 .nav-bar {
   background-color: #cc5527;
-  background-image: url("img/background.jpg");
+  background-image: url("/img/background.jpg");
   background-position: 0px -30px;
   background-size: cover;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 

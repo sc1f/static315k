@@ -1,6 +1,22 @@
 //debounce function
 function debounce(n,t,u){var e;return function(){var a=this,i=arguments,o=function(){e=null,u||n.apply(a,i)},r=u&&!e;clearTimeout(e),e=setTimeout(o,t),r&&n.apply(a,i)}};
 var scrollPos = {};
+//localstorage compatibility test
+function localStorageTest (){
+  try {
+    var test_val = 'test';
+    localStorage.setItem(test_val, test_val);
+    localStorage.removeItem(test_val);
+  return true;
+  } catch(e) {
+    return false;
+  }
+}
+if(localStorageTest() === true){
+  //all good
+} else {
+  alert('Local Storage is not compatible with this browser. Please upgrade to a modern browser to use this module');
+}
 //scroll tracking, which takes the scrollTop() and pushes it to localStorage for later use
 var updateScroll = debounce(function(){
   $(document).scroll(function(){
@@ -40,7 +56,7 @@ window.addEventListener('scroll', updateNav);
 var lenCheck = debounce(function(){
   if($('md-input-container').hasClass('md-input-has-value') && $('.input').hasClass('ng-valid')){
     $('.activity-btn').removeAttr('disabled');
-    } 
+  }
   else if($('md-input-container').hasClass('md-input-invalid') || $('.input').hasClass('ng-invalid')) {
     $('.activity-btn').attr('disabled', 'disabled');
     }
@@ -89,7 +105,7 @@ app.config(function($routeProvider){
     .when('/columbus_movies', {
       templateUrl: 'columbus_movies.html',
       controller: 'ColumbusMovieController as movie',
-      title: 'Columbus at the Movies'
+      title: "Columbus at the Movies"
     })
     .when('/primarysrc', {
       templateUrl: "primarysrc.html",
@@ -148,7 +164,7 @@ app.controller('ContactController', function($scope, $mdSidenav) {
   };
   $scope.openRightMenu = function() {
     $mdSidenav('right').toggle();
-  };  
+  };
 });
 app.controller('EntryController', function($scope, $mdToast){
   $scope.submit = function($event) {
@@ -160,17 +176,12 @@ app.controller('EntryController', function($scope, $mdToast){
 app.controller('TrackingController', function($scope){
   $scope.yes = function($event){
     trackAction();
-    $('#scrollTrack').hide(); 
+    $('#scrollTrack').hide();
   };
   $scope.no = function($event){
     $('#scrollTrack').hide();
   }
-  /*tracker implementation, inspired by PaulBot from http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/
-  the tracker grabs the localStorage value of scrollTop, and uses it to decide whether the card prompting the user
-  actually shows up or not. The click handlers are implemented above, 
-  and the code below simply checks the position in localStorage and returns
-  true if it is above 0, thus allowing the card to show.
-  .*/
+//tracker implementation, inspired by PaulBot from http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/ the tracker grabs the localStorage value of scrollTop, and uses it to decide whether the card prompting the user actually shows up or not. The click handlers are implemented above, and the code below simply checks the position in localStorage and returns true if it is above 0, thus allowing the card to show.
   var position = localStorage.getItem('scrollPosition');
   var trackAction = function(){$(window).scrollTop(position);};
   $scope.position = function($event){
@@ -242,7 +253,7 @@ app.directive('carousel', function($timeout) {
       //the array stores the strings of captions in the order they appear on the carousel.
       var caption = [
           //activity 1 carousel
-          'Christopher Colombus, head-and-shoulders portrait, facing slightly right. Photomechanical print : halftone, color. Created between 1890 and 1940. Library of Congress', 
+          'Christopher Colombus, head-and-shoulders portrait, facing slightly right. Photomechanical print : halftone, color. Created between 1890 and 1940. Library of Congress',
           'First landing of Columbus on the shores of the New World: At San Salvador, W.I., Oct. 12th 1492 lithograph. Published by Currier & Ives, c.1892. Library of Congress.',
           'Christopher Columbus, half-length portrait, facing slightly right. Photographic print (between 1900 and 1950) of a painting by Sebastiano, del Piombo, 1485-1547. Library of Congress.',
           'The landing of Columbus Oct. 11th 1492. Lithograph, hand-colored. Published by N. Currier, c. 1846. Library of Congress.',
@@ -295,40 +306,6 @@ app.directive('carousel', function($timeout) {
 });
 //linked images for the carousel
 app.controller('CarouselController', function($scope){
-  $scope.a1_images = [{
-    src: '1.jpg',
-    title: 'Christopher Colombus, head-and-shoulders portrait, facing slightly right. Photomechanical print : halftone, color. Created between 1890 and 1940. Library of Congress',
-    number: '1'
-  },{
-    src: '2.jpg',
-    title: 'First landing of Columbus on the shores of the New World: At San Salvador, W.I., Oct. 12th 1492 lithograph. Published by Currier & Ives, c.1892. Library of Congress',
-    number: '2'
-  },{
-    src: '3.jpg',
-    title: '[Christopher Columbus, half-length portrait, facing slightly right] photographic print [between 1900 and 1950] of a painting by Sebastiano, del Piombo, 1485-1547. Library of Congress.',
-    number: '3'
-  },{
-    src: '4.jpg',
-    title: 'The landing of Columbus Oct. 11th 1492. Lithograph, hand-colored. Published by N. Currier, c. 1846. Library of Congress.',
-    number: '4'
-  },{
-    src: '5.jpg',
-    title: 'The landing of Columbus 1492. Print. c. 1893 Jan. 26. Library of Congress.',
-    number: '5'
-  },{
-    src: '6.jpg',
-    title: 'Christopher Columbus. Engraving by Johann Thedor DeBry. 16th century, Library of Congress.',
-    number: '6'
-  },{
-    src: '7.jpg',
-    title: 'The landing of Columbus at San Salvador, October 12, 1492. Lithograph. Published by Currier & Ives, c. 1876. Library of Congress',
-    number: '7'
-  }];
-  $scope.a4_images = [{
-    src: 'vanderlyn.jpg',
-    title: 'John Vanderlyn, Landing of Christopher Columbus, U.S. Capitol, 1846'
-  },{
-    src: 'rivera.jpg',
-    title: 'Diego Rivera, Disembarkation of the Spanish at Vera Cruz (Colonial Domination), National Palace, Mexico City, 1951'
-  }];
+  $scope.a1_images = [{src: '1.jpg'},{src: '2.jpg'},{src: '3.jpg'},{src: '4.jpg'},{src: '5.jpg'},{src: '6.jpg'},{src: '7.jpg'}];
+  $scope.a4_images = [{src: 'vanderlyn.jpg'},{src: 'rivera.jpg'}];
 });
