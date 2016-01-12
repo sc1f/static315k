@@ -1,3 +1,10 @@
+/*footer dependencies*/
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  z-index: 0;
+}
 /*navigation + header*/
 .nav-bar {
   background-color: #cc5527;
@@ -82,6 +89,40 @@
   -ms-transition: padding-top font-size 0.1s linear;
   -o-transition: padding-top font-size 0.1s linear;
   transition: padding-top font-size 0.1s linear;
+}
+/*footer*/
+.footer-wrap {
+  padding-top: 2.5vw;
+  z-index: 0;
+}
+.footer {
+  background-color: #eeeeee;
+  bottom: 0;
+  height: 2.5vw;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+}
+.node {
+  background-color: #d0d0d0;
+  border-radius: 50%;
+  display: inline-block;
+  height: 1vw;
+  width: 1vw;
+  margin-left: 7vw;
+  margin-top: .75vw;
+}
+.node:hover {
+  background-color: #888888;
+}
+.node.selected {
+  background-color: #787878;
+}
+.node.first {
+  margin-left: 0;
 }
 /*FAB*/
 .chat-icon {
@@ -179,7 +220,10 @@ md-card {
 .main {
   background-color: #f8f8f8;
   height: 100%;
+  min-height: 100%;
+  position: relative;
   width: 100%;
+  padding-bottom: 2.5vw;
 }
 .hide-tracker {
   display: none;
@@ -499,5 +543,8 @@ md-card.video {
     font-size: 14vw;
     padding-left: 5.5vw;
     padding-top: 5.5vw;
+  }
+  .footer-wrap {
+    display: none;
   }
 }

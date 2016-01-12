@@ -3,6 +3,91 @@
 		<md-card flex class="content-center">
 			<md-card-content>
 				<md-tabs md-dynamic-height="true">
+					<md-tab label="Debating the Issues">
+						<md-content class="md-padding tab-bg">
+						<h3 class="content-head">Debating the Issues</h3>
+							<div ng-controller="EntryController">
+								<h3 class="question"> In the late eighteenth century, a French philosopher, Abbé Raynal offered a prize for the best answer to the question: "Has the discovery of American been beneficial or harmful to the human race?"  How would you answer this question?</h3>
+								<md-input-container>
+									<form name="answer-input">
+										<label>Type your answer here</label>
+										<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+									</form>
+								</md-input-container>
+							</div>
+							<div ng-controller="EntryController">
+								<h3 class="question"> Christopher Columbus has been hailed as a great discoverer who brought European culture to a previously unknown world and condemned as a man who brought devastating diseases to unprotected people and initiated the Atlantic slave trade. How would you evaluate Columbus and his legacy?</h3>
+								<md-input-container>
+									<form name="answer-input">
+										<label>Type your answer here</label>
+										<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+									</form>
+								</md-input-container>
+							</div>
+							<div ng-controller="EntryController">
+								<h3 class="question"> Why did European colonizers introduce slavery in their New World possessions?</h3>
+								<md-input-container>
+									<form name="answer-input">
+										<label>Type your answer here</label>
+										<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+									</form>
+								</md-input-container>
+							</div>
+							<div ng-controller="EntryController">
+								<h3 class="question"> Following the discovery of the New World, new ways of thinking--built around the concepts of progress and human perfectibility--became more common in Europe. Writers like Thomas More envisioned ideal perfection in laws, government, and social conditions and advocated various schemes for social improvement. Why did the discovery of the New World give rise to utopian thinking?</h3>
+								<md-input-container>
+									<form name="answer-input">
+										<label>Type your answer here</label>
+										<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+									</form>
+								</md-input-container>
+							</div>
+							<div ng-controller="EntryController">
+								<h3 class="question"> What farreaching changes did Columbus's voyages of discovery bring to the Americas?</h3>
+								<md-input-container>
+									<form name="answer-input">
+										<label>Type your answer here</label>
+										<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+									</form>
+								</md-input-container>
+								<md-button class="activity-btn" ng-disabled="true" ng-click="submit()">Continue</md-button>
+							</div>
+						</md-content>
+					</md-tab>
+					<md-tab label="What if?">
+					<md-content class="md-padding tab-bg">
+						<h3 class="content-head">What if?</h3>
+						<p class="content-inject">How might American history have been different...</p>
+						<div ng-controller="EntryController">
+							<h3 class="question"> If Indians had greater resistance to Old World diseases?</h3>
+							<md-input-container>
+								<form name="answer-input">
+									<label>Type your answer here</label>
+									<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+								</form>
+							</md-input-container>
+						</div>
+						<div ng-controller="EntryController">
+							<h3 class="question"> If ocean currents had not favored shipping from Africa toward Brazil and the Caribbean?</h3>
+							<md-input-container>
+								<form name="answer-input">
+									<label>Type your answer here</label>
+									<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+								</form>
+							</md-input-container>
+						</div>
+						<div ng-controller="EntryController">
+							<h3 class="content-head">Making Ethical Judgments:</h2>
+							<h3 class="question"> How should we regard Bartolomé de las Casas--as a outspoken defender of Indians against harsh Spanish policies or as a man who helped open the way to slavery?</h3>
+							<md-input-container>
+								<form name="answer-input">
+									<label>Type your answer here</label>
+									<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+								</form>
+							</md-input-container>
+						</div>
+					</md-content>
+				</md-tab>
 					<md-tab label="A Critique of the Slave Trade">
 						<md-content class="md-padding tab-bg">
 							<h3 class="content-head">A Critique of the Slave Trade</h3>
@@ -72,22 +157,22 @@
 						</md-content>
 					</md-tab>
 				<md-tab label="Utilizing the Local Labor Force">
-						<md-content class="md-padding tab-bg">
-							<h3 class="content-head">Utilizing the Local Labor Force</h3>
-							<p class="content-inject" ng-bind-html="primary.labor_force | unsafe"></p>
-							<div ng-controller="EntryController">
-								<h2 class="content-head question-head">Question:</h2>
-								<h3 class="question"> Describe how Columbus characterizes the Taino Indians that he encountered in the Caribbean.  How do these people, in his view, differ from Europeans? </h3>
-								<md-input-container>
-									<form name="answer-input">
-										<label>Type your answer here</label>
-										<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
-									</form>
-								</md-input-container>
-								<md-button class="activity-btn" ng-disabled="true" ng-click="submit()">Continue</md-button>
-							</div>
-						</md-content>
-					</md-tab>
+					<md-content class="md-padding tab-bg">
+						<h3 class="content-head">Utilizing the Local Labor Force</h3>
+						<p class="content-inject" ng-bind-html="primary.labor_force | unsafe"></p>
+						<div ng-controller="EntryController">
+							<h2 class="content-head question-head">Question:</h2>
+							<h3 class="question"> Describe how Columbus characterizes the Taino Indians that he encountered in the Caribbean.  How do these people, in his view, differ from Europeans? </h3>
+							<md-input-container>
+								<form name="answer-input">
+									<label>Type your answer here</label>
+									<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+								</form>
+							</md-input-container>
+						<md-button class="activity-btn" ng-disabled="true" ng-click="submit()">Continue</md-button>
+						</div>
+					</md-content>
+				</md-tab>
 				<md-tab label="The Meaning of America">
 					<md-content class="md-padding tab-bg">
 						<h3 class="content-head">The Meaning of America</h3>
@@ -97,4 +182,32 @@
 			</md-tabs>
 		</md-card-content>
 	</md-card>
+</div>
+<div class="footer-wrap">
+	<div class="footer" layout="space-around center">
+		<div class="node first selected">
+			<md-tooltip md-direction="top">1492</md-tooltip>
+		</div>
+		<div class="node">
+			<md-tooltip md-direction="top">1550</md-tooltip>
+		</div>
+		<div class="node">
+			<md-tooltip md-direction="top">1600</md-tooltip>
+		</div>
+		<div class="node">
+			<md-tooltip md-direction="top">1650</md-tooltip>
+		</div>
+		<div class="node">
+			<md-tooltip md-direction="top">1700</md-tooltip>
+		</div>
+		<div class="node">
+			<md-tooltip md-direction="top">1750</md-tooltip>
+		</div>
+		<div class="node">
+			<md-tooltip md-direction="top">1800</md-tooltip>
+		</div>
+		<div class="node">
+		<md-tooltip md-direction="top">1865</md-tooltip>
+		</div>
+    </div>
 </div>

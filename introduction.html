@@ -1,4 +1,4 @@
-<div layout="column" layout-align="space-around center" id="float-center">
+<div class="wrapper" layout="column" layout-align="space-around center" id="float-center">
 	<md-content class="md-padding">
 		<md-card class="tracker content-center" id="scrollTrack" ng-controller="TrackingController" ng-show="position()">
 			<md-card-content>
@@ -105,7 +105,34 @@
 				<md-card-content>
 				<h3 class="content-head">Conclusion</h3>
 				<p class="content-inject">{{module.activity_intro}}</p>
-				</md-card-content>
-				</md-card>
+			</md-card-content>
+		</md-card>
+		<div class="footer-wrap">
+			<div class="footer" layout="space-around center">
+				<div class="node first selected">
+					<md-tooltip md-direction="top">1492</md-tooltip>
 				</div>
-			</div>
+				<div class="node">
+					<md-tooltip md-direction="top">1550</md-tooltip>
+				</div>
+				<div class="node">
+					<md-tooltip md-direction="top">1600</md-tooltip>
+				</div>
+				<div class="node">
+					<md-tooltip md-direction="top">1650</md-tooltip>
+				</div>
+				<div class="node">
+					<md-tooltip md-direction="top">1700</md-tooltip>
+				</div>
+				<div class="node">
+					<md-tooltip md-direction="top">1750</md-tooltip>
+				</div>
+				<div class="node">
+					<md-tooltip md-direction="top">1800</md-tooltip>
+				</div>
+				<div class="node">
+					<md-tooltip md-direction="top">1865</md-tooltip>
+				</div>
+        	</div>
+		</div>
+</div>
