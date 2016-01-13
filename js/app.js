@@ -90,9 +90,10 @@ app.config(function($routeProvider){
       title: "Primary Sources for Module 3"
     })
 });
-//changes the page title on ng-view change
+//changes the page header + title on ng-view change
 app.run(['$rootScope', function($rootScope){
   $rootScope.$on('$routeChangeSuccess', function(event, current, previous){
+    $rootScope.pageTitle = current.$$route.title;
     $('#main-head').text(current.$$route.title);
   });
 }]);
