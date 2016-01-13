@@ -1,30 +1,5 @@
 //debounce function
 function debounce(n,t,u){var e;return function(){var a=this,i=arguments,o=function(){e=null,u||n.apply(a,i)},r=u&&!e;clearTimeout(e),e=setTimeout(o,t),r&&n.apply(a,i)}};
-var scrollPos = {};
-//localstorage compatibility test
-function localStorageTest (){
-  try {
-    var test_val = 'test';
-    localStorage.setItem(test_val, test_val);
-    localStorage.removeItem(test_val);
-  return true;
-  } catch(e) {
-    return false;
-  }
-}
-if(localStorageTest() === true){
-  //all good
-} else {
-  alert('Local Storage is not compatible with this browser. Please upgrade to a modern browser to use this module');
-}
-//scroll tracking, which takes the scrollTop() and pushes it to localStorage for later use
-var updateScroll = debounce(function(){
-  $(document).scroll(function(){
-    scrollPos.position = $(window).scrollTop();
-    localStorage.setItem('scrollPosition', scrollPos.position);
-    });
-}, 200, true);
-window.addEventListener('scroll', updateScroll);
 //navbar function, which reads the scrollTop() to decide when to change class from regular to expanded
 var updateNav = debounce(function(){
   var w = window.innerWidth;
@@ -73,7 +48,8 @@ var app = angular.module("MintzApp", [
     'ngRoute',
     'ngAnimate',
     'ngResource',
-    'ngTouch'
+    'ngTouch',
+    'clio.scrolltracking'
     ]);
 //ng-view configuration
 app.config(function($routeProvider){
@@ -148,26 +124,6 @@ app.controller('EntryController', function($scope, $mdToast){
     $('.input').val('');
     $('.md-char-counter').text('0/300');
     };
-});
-app.controller('TrackingController', function($scope){
-  $scope.yes = function($event){
-    trackAction();
-    $('#scrollTrack').hide();
-  };
-  $scope.no = function($event){
-    $('#scrollTrack').hide();
-  }
-//tracker implementation, inspired by PaulBot from http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/ the tracker grabs the localStorage value of scrollTop, and uses it to decide whether the card prompting the user actually shows up or not. The click handlers are implemented above, and the code below simply checks the position in localStorage and returns true if it is above 0, thus allowing the card to show.
-  var position = localStorage.getItem('scrollPosition');
-  var trackAction = function(){$(window).scrollTop(position);};
-  $scope.position = function($event){
-    if(position > 0){
-      return "true";
-    }
-    else if(position === 0){
-      return "false";
-    }
-  };
 });
 app.controller('FABController', function(){
   this.direction = "down";
