@@ -116,10 +116,10 @@ html, body {
   margin-top: .75vw;
 }
 .node:hover {
-  background-color: #888888;
+  background-color: #a5c7e3;
 }
 .node.selected {
-  background-color: #787878;
+  background-color: #4290d3;
 }
 .node.first {
   margin-left: 0;
@@ -511,6 +511,9 @@ md-card.video {
   .number-display {
     font-size: 4em;
     top: -43%;
+  }
+  .node {
+    margin-top: -2vw;
   }
 }
 @media (max-width: 540px) {

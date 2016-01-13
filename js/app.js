@@ -97,17 +97,6 @@ app.run(['$rootScope', function($rootScope){
     $('#main-head').text(current.$$route.title);
   });
 }]);
-//determines the window width and refactors the tooltip direction (currently broken, needs debugging)
-app.controller('TooltipController', function($scope){
-  $scope.direction = function($event){
-   var w = window.innerWidth;
-   if (w < 540){
-    return "top";
-   } else if (w > 540){
-    return "bottom";
-   }
-  };
-});
 //content storage, double line break = \n\n, break quotes = \
 app.controller("ModuleController", function() {
 });

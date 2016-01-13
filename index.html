@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us" ng-app="MintzApp">
 	<head>
-		<title ng-bind="pageTitle"></title>
+		<title ng-bind="pageTitle + ' | HIS315K'"></title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -118,14 +118,12 @@
 			</div>
 		</div>
 		<!--contact FAB-->
-		<div ng-controller="TooltipController">
-		<md-button class="md-fab contact-button" aria-label="contact" ng-controller="TooltipController">
+		<md-button class="md-fab contact-button" aria-label="contact">
 			<i class="material-icons chat-icon">chat</i>
-			<md-tooltip md-direction="direction()">
+			<md-tooltip md-direction="left">
           	Connect with your classmates!
         	</md-tooltip>
         </md-button>
-        <div>
 <section id="content">
 	<div class="content-container" ng-view autoscroll="true"></div>
 </section>
