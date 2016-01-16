@@ -32,18 +32,18 @@ The event handler runs this module every time a key is pressed.
 var lenCheck = debounce(function(){
   if($('md-input-container').hasClass('md-input-has-value') && $('.input').hasClass('ng-valid')){
     $('.activity-btn').removeAttr('disabled');
-  }
-  else if($('md-input-container').hasClass('md-input-invalid') || $('.input').hasClass('ng-invalid')) {
+  } else if($('md-input-container').hasClass('md-input-invalid') || $('.input').hasClass('ng-invalid')) {
     $('.activity-btn').attr('disabled', 'disabled');
-    }
+  }
 }, 100, true);
-window.addEventListener("keyup", lenCheck);
+window.addEventListener('keyup', lenCheck);
 //resets scroll on document ready
 $(document).ready(function() {
   $(this).scrollTop(0);
+  $('.complete-scrim').hide();
 });
 //angularJS app
-var app = angular.module("MintzApp", [
+var app = angular.module('MintzApp', [
     'ngMaterial',
     'ngRoute',
     'ngAnimate',
@@ -54,41 +54,13 @@ var app = angular.module("MintzApp", [
 //ng-view configuration
 app.config(function($routeProvider){
   $routeProvider
-    .when('/',{
-      templateUrl: "introduction.html",
-      controller: "ModuleController as module",
-      title: "The Significance of 1492"
-    })
-    .when('/activity1',{
-      templateUrl:"activity1.html",
-      controller: "Activity1Controller as activity",
-      title: "What did Columbus Look Like?"
-    })
-    .when('/activity2', {
-      templateUrl: "activity2.html",
-      controller: 'Activity2Controller as activity',
-      title: "Columbus v. Vespucci"
-    })
-    .when('/activity3', {
-      templateUrl: "activity3.html",
-      controller: 'Activity3Controller as activity',
-      title: "Columbus and Mythmaking"
-    })
-    .when('/activity4', {
-      templateUrl: "activity4.html",
-      controller: 'Activity4Controller as activity',
-      title: "Judging Columbus"
-    })
-    .when('/columbus_movies', {
-      templateUrl: 'columbus_movies.html',
-      controller: 'ColumbusMovieController as movie',
-      title: "Columbus at the Movies"
-    })
-    .when('/primarysrc', {
-      templateUrl: "primarysrc.html",
-      controller: 'PrimarySrcController as primary',
-      title: "Primary Sources for Module 3"
-    })
+    .when('/',{templateUrl: 'introduction.html',controller: 'ModuleController as module',title: 'The Significance of 1492'})
+    .when('/activity1',{templateUrl:'activity1.html',controller: 'Activity1Controller as activity',title: 'What did Columbus Look Like?'})
+    .when('/activity2', {templateUrl: 'activity2.html',controller: 'Activity2Controller as activity',title: 'Columbus v. Vespucci'})
+    .when('/activity3', {templateUrl: 'activity3.html',controller: 'Activity3Controller as activity',title: 'Columbus and Mythmaking'})
+    .when('/activity4', {templateUrl: 'activity4.html',controller: 'Activity4Controller as activity',title: 'Judging Columbus'})
+    .when('/columbus_movies', {templateUrl: 'columbus_movies.html',controller: 'ColumbusMovieController as movie',title: 'Columbus at the Movies'})
+    .when('/primarysrc', {templateUrl: 'primarysrc.html',controller: 'PrimarySrcController as primary',title: 'Primary Sources for Module 3'})
 });
 //changes the page header + title on ng-view change
 app.run(['$rootScope', function($rootScope){
@@ -98,7 +70,7 @@ app.run(['$rootScope', function($rootScope){
   });
 }]);
 //content storage, double line break = \n\n, break quotes = \
-app.controller("ModuleController", function() {
+app.controller('ModuleController', function() {
 });
 app.controller('ContactController', function($scope, $mdSidenav) {
   $scope.openLeftMenu = function() {
@@ -111,14 +83,27 @@ app.controller('ContactController', function($scope, $mdSidenav) {
 app.controller('EntryController', function($scope, $mdToast){
   $scope.submit = function($event) {
     $mdToast.showSimple('Your response has been submitted.');
+    $('label').hide();
+    $('.complete-scrim').show();
     $('.input').val('');
-    $('.md-char-counter').text('0/300');
-    };
+    $('.md-char-counter').text('0/500');
+    $('.activity-btn').attr('disabled', 'disabled');
+    var marker = (function(){
+      return true;
+    }());
+  };
+  $scope.scrim = function(){
+    if(marker===true){
+      return "true";
+    } else {
+      return "false";
+    }
+  };
 });
 app.controller('FABController', function(){
-  this.direction = "down";
-  this.isOpen = "false";
-  this.mode = "md-fling";
+  this.direction = 'down';
+  this.isOpen = 'false';
+  this.mode = 'md-fling';
 });
 app.controller('Activity1Controller', function(){
 });
@@ -173,7 +158,7 @@ app.directive('carousel', function($timeout) {
         //adjust the number display to show the new clean index on click
         $('.number-display').text(scope.cleanIndex);
         //detect whether the page is pointed at activity 4
-        if(window.location.href.indexOf("activity4") > -1) {
+        if(window.location.href.indexOf('activity4') > -1) {
           //if activity 4, display the string in the array index + 7 (to compensate for the fact that there are only 2 slides)
           $('#caption').text(caption[scope.currentIndex + 7])
         } else {
@@ -187,7 +172,7 @@ app.directive('carousel', function($timeout) {
         scope.cleanIndex = scope.currentIndex + 1;
         $('.number-display').text(scope.cleanIndex);
         //same as function in scope.next
-        if(window.location.href.indexOf("activity4") > -1) {
+        if(window.location.href.indexOf('activity4') > -1) {
           $('#caption').text(caption[scope.currentIndex + 7])
         } else {
           $('#caption').text(caption[scope.currentIndex]);

@@ -72,12 +72,18 @@ The collision of cultures that took place in 1492 has consequences that are stil
 				<!--text entry for question-->
 				<md-card flex class="content-center" ng-controller="EntryController">
 				<md-card-content>
+				<div class="a-display content-center complete-scrim">
+				<div class="complete-icon">
+					<i class="material-icons">done</i>
+				</div>
+				<p class="complete-text">You've completed this activity!</p>
+			</div>
 				<h2 class="content-head question-head">Question:</h2>
 				<h3 class="question"> How do you think such images may have influenced Columbus’s ideas about the New World Indians?</h3>
 				<md-input-container>
 				<form name="answer-input">
 				<label>Type your answer here</label>
-				<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5"></textarea>
+				<textarea class="input" ng-model="EntryController" required md-maxlength="500" minlength="150" rows="5"></textarea>
 				</md-input-container>
 				</md-card-content>
 				</form>

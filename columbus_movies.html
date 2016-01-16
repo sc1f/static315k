@@ -18,12 +18,18 @@
 		<!--text entry-->
 		<md-card class="a-display content-center" id="text-entry" layout-align="space-around center" ng-controller="EntryController">
 			<md-card-content>
+			<div class="a-display content-center complete-scrim">
+				<div class="complete-icon">
+					<i class="material-icons">done</i>
+				</div>
+				<p class="complete-text">You've completed this activity!</p>
+			</div>
 			<div class="a3-entry-contain">
 				<h3 class="question"> How do the movie trailers depict Columbus? How do they seek to generate your interest in a figure first met in grade school?</h3>
 				<md-input-container>
 			<form name="answer-input"></form>
 			<label>Type your answer here</label>
-			<textarea ng-model="EntryController" md-maxlength="300" rows="5" md-no-autogrow="true"></textarea>
+			<textarea ng-model="EntryController" md-maxlength="500" minlength="150" rows="5" md-no-autogrow="true"></textarea>
 			</md-input-container>
 			</md-card-content>
 			</form>

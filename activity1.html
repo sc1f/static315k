@@ -15,12 +15,18 @@
 			<!--text entry-->
 			<md-card class="activity-card" id="text-entry" layout flex="33" layout-align="space-around center" ng-controller="EntryController">
 			<md-card-content>
+			<div class="activity-card complete-scrim">
+				<div class="complete-icon">
+					<i class="material-icons">done</i>
+				</div>
+				<p class="complete-text">You've completed this activity!</p>
+			</div>
 			<div class="a1-entry-contain">
 				<h3 class="question"> Based on these descriptions, explain which of the following portraits is probably most accurate.</h3>
 				<md-input-container>
 			<form name="answer-input">
 			<label>Type your answer here</label>
-			<textarea class="input" ng-model="EntryController" required md-maxlength="300" minlength="50" rows="5" md-no-autogrow="true"></textarea>
+			<textarea class="input" ng-model="EntryController" required md-maxlength="500" minlength="150" rows="5" md-no-autogrow="true"></textarea>
 			</md-input-container>
 			</md-card-content>
 			</form>
