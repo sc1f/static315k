@@ -323,6 +323,14 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
   height: 90.5%;
   z-index: 1;
 }
+#scrim-33 {
+  left: 68%;
+  height: 50vw;
+  bottom: .5%;
+  margin-left: 0;
+  margin-right: 0;
+  width: 30% !important;
+}
 .complete-icon {
   position: relative;
   margin: auto;
@@ -342,6 +350,9 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
   left: 15%;
   top: 15%;
 }
+.33-icon {
+
+}
 .complete-text {
   position: relative;
   margin: auto;
@@ -352,6 +363,9 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
   font-size: 1.5em;
   z-index: 2;
   opacity: 1;
+}
+.33-text {
+
 }
 /*activity1*/
 .activity-card {
