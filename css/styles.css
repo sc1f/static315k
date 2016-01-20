@@ -109,23 +109,24 @@ label {
   width: 100%;
   z-index: 10;
 }
-.node {
-  background-color: #d0d0d0;
-  border-radius: 50%;
-  display: inline-block;
-  height: 1vw;
-  width: 1vw;
-  margin-left: 7vw;
-  margin-top: .75vw;
+.date-container.left {
+  position: relative;
+  float: left;
 }
-.node:hover {
-  background-color: #a5c7e3;
+.date-container.center {
+  margin: auto;
+  position: relative;
+  width: 10%;
 }
-.node.selected {
-  background-color: #4290d3;
+.date-container.right {
+  position: relative;
+  float: right;
 }
-.node.first {
-  margin-left: 0;
+.date-display {
+  font-size: 2.5em;
+}
+.date-display-small {
+  font-size: 1em;
 }
 /*FAB*/
 .chat-icon {
@@ -350,9 +351,6 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
   left: 15%;
   top: 15%;
 }
-.33-icon {
-
-}
 .complete-text {
   position: relative;
   margin: auto;
@@ -363,9 +361,6 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
   font-size: 1.5em;
   z-index: 2;
   opacity: 1;
-}
-.33-text {
-
 }
 /*activity1*/
 .activity-card {
@@ -570,9 +565,6 @@ md-card.video {
   .number-display {
     font-size: 4em;
     top: -43%;
-  }
-  .node {
-    margin-top: -2vw;
   }
 }
 @media (max-width: 540px) {

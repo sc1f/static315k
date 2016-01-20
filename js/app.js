@@ -122,7 +122,10 @@ app.directive('module-footer', function(){
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: 'templates/footer.html'
+    templateUrl: 'templates/footer.html',
+    controller: ['$scope', function($scope){
+      //figure out interactivity part of footer
+    }]
   }
 });
 //carousel directive
