@@ -101,7 +101,7 @@ label {
 .footer {
   background-color: #eeeeee;
   bottom: 0;
-  height: 2.5vw;
+  height: 3vw;
   left: 0;
   margin: auto;
   position: absolute;
@@ -109,23 +109,30 @@ label {
   width: 100%;
   z-index: 10;
 }
-.date-container.left {
+.date-container {
   position: relative;
+}
+.date-container.left {
+  top: 2.5vw;
+  margin-left: 2vw;
   float: left;
 }
 .date-container.center {
   margin: auto;
-  position: relative;
   width: 10%;
+  top: .8vw;
 }
 .date-container.right {
-  position: relative;
   float: right;
+  margin-right: 2vw;
+  bottom: 4.6vw;
 }
 .date-display {
-  font-size: 2.5em;
+  font-size: 2em;
+  font-style: 500;
+  color: #808080;
 }
-.date-display-small {
+.date-display.small {
   font-size: 1em;
 }
 /*FAB*/
@@ -300,6 +307,10 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
 }
 .md-padding.tab-bg {
   background: none;
+}
+md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-ink-bar {
+  color: #4290d3;
+  background-color: #4290d3;
 }
 .img-display {
   height: auto;

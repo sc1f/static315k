@@ -1,4 +1,5 @@
 //debounce function
+var i = 0;
 function debounce(n,t,u){var e;return function(){var a=this,i=arguments,o=function(){e=null,u||n.apply(a,i)},r=u&&!e;clearTimeout(e),e=setTimeout(o,t),r&&n.apply(a,i)}};
 //navbar function, which reads the scrollTop() to decide when to change class from regular to expanded
 var updateNav = debounce(function(){
@@ -37,10 +38,12 @@ var lenCheck = debounce(function(){
   }
 }, 100, true);
 window.addEventListener('keyup', lenCheck);
-//resets scroll on document ready
+//resets scroll + hides scrim on document ready
 $(document).ready(function() {
   $(this).scrollTop(0);
   $('.complete-scrim').hide();
+  //makes sure we don't parse angular expressions through user input
+  $('textarea').attr('ng-non-bindable', '');
 });
 //angularJS app
 var app = angular.module('MintzApp', [
@@ -69,7 +72,7 @@ app.run(['$rootScope', function($rootScope){
     $('#main-head').text(current.$$route.title);
   });
 }]);
-//content storage, double line break = \n\n, break quotes = \
+//module controllers
 app.controller('ModuleController', function() {
 });
 app.controller('ContactController', function($scope, $mdSidenav) {
@@ -84,21 +87,35 @@ app.controller('EntryController', function($scope, $mdToast){
   $scope.submit = function($event) {
     $mdToast.showSimple('Your response has been submitted.');
     $('label').hide();
-    $('.complete-scrim').show();
+    $('#caption').hide();
     $('.input').val('');
     $('.md-char-counter').text('0/500');
     $('.activity-btn').attr('disabled', 'disabled');
-    var marker = (function(){
-      return true;
+    $('.complete-scrim').show();
+    //scrim persistence using localstorage
+    //gives us the name of our localstorage var for each activity
+    function return_number(){
+      var n = window.location.href;
+      var p = n.indexOf('/#');
+      var o = n.substr(p) + "_complete";
+      return o;
+    };
+    //stores that var under a unique url name
+    var persistence = (function(){
+      localStorage.setItem(return_number(), true);
+      return return_number();
     }());
-  };
-  $scope.scrim = function(){
-    if(marker===true){
-      return "true";
-    } else {
-      return "false";
-    }
-  };
+    //grabs the localstorage value and uses it to determine scrim persistence
+    var scrim_ctl = (function(){
+      return_number();
+      var s = localStorage.getItem(return_number());
+      if(s !== true){
+        $('.complete-scrim').hide();
+      } else if (s === true){
+        $('.complete-scrim').show();
+      }
+    });
+  }
 });
 app.controller('FABController', function(){
   this.direction = 'down';
@@ -198,3 +215,32 @@ app.controller('CarouselController', function($scope){
   $scope.a1_images = [{src: '1.jpg'},{src: '2.jpg'},{src: '3.jpg'},{src: '4.jpg'},{src: '5.jpg'},{src: '6.jpg'},{src: '7.jpg'}];
   $scope.a4_images = [{src: 'vanderlyn.jpg'},{src: 'rivera.jpg'}];
 });
+//debugging ONLY: allows for clearance of localstorage
+function clear(){
+  var s = window.location.href;
+  var q = s.substr('/#') + '_complete';
+  for (i, len=localStorage.length; i<len; i++){
+    localStorage.removeItem(q);
+  }
+}
+//TESTING: new tracker; grab no. of md-cards on the document and generate a unique ID for each one, storing it in an array
+var track = function(){
+  var num = $('md-card').length;
+  var sel = $('md-card');
+  var stor = [];
+  for (i; i < num; i++){
+    stor.push([i,false]);
+    //pushes the values of that array to each md-card as a -data attribute, needs fixing
+    sel.data('id', stor[i].toString());
+    }
+  return stor;
+  $(window).on('scroll',function(){
+  var s = window.pageYOffset;
+  var cs = [];
+  cs.push(a[i[0]]);
+  return cs;
+  });
+  //create scrollPos for each data ID
+//refactor button to allow student to scroll to data-id pos
+//when student passes the card change the value to true in the array
+}
