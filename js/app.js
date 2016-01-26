@@ -10,7 +10,7 @@ $(document).ready(function() {
   (function(){
   localStorage.setItem('has_visits', true);
   }());
-  //$('.popup').hide();
+  $('.popup').hide();
   /*(function(){
     var value = localStorage.getItem('has_visits');
     if(value === true){
@@ -96,6 +96,7 @@ app.run(['$rootScope', function($rootScope){
 }]);
 //module controllers
 app.controller('ModuleController', function() {
+  $('.popup').show();
 });
 app.controller('ContactController', function($scope, $mdSidenav) {
   $scope.openLeftMenu = function() {
@@ -145,10 +146,17 @@ app.controller('FABController', function(){
   this.mode = 'md-fling';
 });
 app.controller('Activity1Controller', function(){
+  $('.popup').show();
+  $('#popup-head').text("You've already completed this activity!");
+  $('#popup-body').html("It seems like you've completed this activity already. Your latest activity is <b>Activity 3</b>. Start from there?");
 });
 app.controller('Activity2Controller', function(){
+  $('.popup').show();
+  $('#popup-head').text("You've already completed this activity!");
+  $('#popup-body').html("It seems like you've completed this activity already. Your latest activity is <b>Activity 3</b>. Start from there?");
 });
 app.controller('Activity3Controller', function(){
+  $('.popup').hide();
 });
 app.controller('Activity4Controller', function(){
 });
