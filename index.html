@@ -125,6 +125,18 @@
         	</md-tooltip>
         </md-button>
 <section id="content">
+	<div class="popup">
+			<div class="main-scrim" onmouseover="document.body.style.overflow='hidden'"></div>
+			<md-card class="content-center" onmouseover="document.body.style.overflow='hidden'">
+				<md-card-content layout="row" layout-align="end center">
+					<h1 id="popup-head">Welcome back to Module 3, Jun!</h1>
+					<p id="popup-body">You left off at <b>Activity 3</b>. Let's start from there.</p>
+				</md-card-content>
+				<div class="md-actions" layout="row|column" layout-align="start|end|center start|end|center">
+				   <md-button class="activity-btn" id="go-to">Go to Activity 3</md-button>
+				 </div>
+			</md-card>
+		</div>
 	<div class="content-container" ng-view autoscroll="true"></div>
 </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

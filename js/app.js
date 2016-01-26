@@ -1,6 +1,27 @@
-//debounce function
+/*popup: store var has_visits in localstorage, if has_visits >= 1 then display div. assign arbitary complete values to intro, 1, and 2. 
+  build debugging mechanism for us to clear all localstorage values, provide dynamic activity number injection in the popup,
+  provide for dynamic a hrefs too*/
+//helper functions
 var i = 0;
 function debounce(n,t,u){var e;return function(){var a=this,i=arguments,o=function(){e=null,u||n.apply(a,i)},r=u&&!e;clearTimeout(e),e=setTimeout(o,t),r&&n.apply(a,i)}};
+function clear(){localStorage.removeItem('has_visits');$('.popup').hide()}
+//has_visits
+$(document).ready(function() {
+  (function(){
+  localStorage.setItem('has_visits', true);
+  }());
+  /*(function(){
+    var value = localStorage.getItem('has_visits');
+    if(value === true){
+      $('.popup').show();
+      } else {
+      $('.popup').hide();
+    }
+  }());*/
+  //debug: clears the value for testing
+});
+//if has_visits = true then display the div
+//inject values into the button
 //navbar function, which reads the scrollTop() to decide when to change class from regular to expanded
 var updateNav = debounce(function(){
   var w = window.innerWidth;

@@ -5,9 +5,6 @@ html, body {
   height: 100%;
   z-index: 0;
 }
-label {
-  z-index: 0;
-}
 /*navigation + header*/
 .nav-bar {
   background-color: #cc5527;
@@ -94,17 +91,8 @@ label {
   transition: padding-top font-size 0.1s linear;
 }
 /*footer*/
-.footer-wrap {
-  padding-top: 2.5vw;
-  z-index: 0;
-}
-.footer {
+.module-footer {
   background-color: #eeeeee;
-  bottom: 0;
-  height: 3vw;
-  left: 0;
-  margin: auto;
-  position: absolute;
   text-align: center;
   width: 100%;
   z-index: 10;
@@ -134,6 +122,9 @@ label {
 }
 .date-display.small {
   font-size: 1em;
+}
+.module-footer, .content-container:after {
+  height: 2vw;
 }
 /*FAB*/
 .chat-icon {
@@ -245,7 +236,13 @@ md-content {
 .content-container {
   position: absolute;
   top: 9.5vw;
+  /*min-height: 100%;
+  margin-bottom: 2vw;*/
 }
+/*.content-container:after {
+  content: '';
+  display: block;
+}*/
 .content-center {
   margin: auto;
   width: 65%;
@@ -287,6 +284,38 @@ md-input-container {
 }
 .input {
   width: 100% !important;
+}
+/*popup*/
+.popup {
+  width: 100%;
+}
+.main-scrim {
+  background-color: #000000;
+  opacity: .48;
+  position: absolute; 
+  left: 0;
+  top: 0;
+  z-index: 500;
+  min-width: 100vw;
+  min-height: 100vw;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.popup > md-card {
+  position: absolute;
+  left: 27%;
+  top: 25%;
+  z-index: 1500;
+  width: 45%;
+  height: 15vw;
+}
+#go-to {
+ bottom: -1vw !important; 
+ right: 1vw;
+}
+#popup-head {
+  color: #cc5527;
 }
 /*activity general*/
 .a-display {
@@ -407,6 +436,9 @@ md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-
   float: right;
   right: -1.5vw;
   position: relative;
+}
+.activity-btn#movie-btn {
+  bottom: 0;
 }
 .grid-display {
   height: 100%;
