@@ -18,14 +18,14 @@
 	<md-sidenav id="a-dropdown" class="md-sidenav-left md-whiteframe-z2 nav-dropdown" md-component-id="left" md-is-locked-open="false" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
 	<ul class="left-drop" layout="column" layout-align="space-around center">
 		<li class="left-drop-contain" layout="column" layout-align="space-around center">
-			<div class="element-drop">
+			<div class="element-drop done">
 				<a href="#/"><i class="material-icons drop-icon">library_books</i>
 				</a>
 			</div>
 		<p class="drop-tag">Introduction</p>
 		</li>
 		<li class="left-drop-contain" layout="column" layout-align="space-around center">
-			<div class="element-drop" id="1">
+			<div class="element-drop done" id="1">
 				<a href="#/activity1">
 				<i class="material-icons drop-icon">insert_photo</i>
 				</a>
@@ -33,7 +33,7 @@
 			<p class="drop-tag">Activity 1</p>
 		</li>
 		<li class="left-drop-contain" layout="column" layout-align="space-around center">
-			<div class="element-drop" id="2">
+			<div class="element-drop done" id="2">
 				<a href="#/activity2">
 				<i class="material-icons drop-icon">mode_edit</i>
 				</a>
@@ -49,16 +49,16 @@
 			<p class="drop-tag">Activity 3</p>
 		</li>
 		<li class="left-drop-contain" layout="column" layout-align="space-around center">
-			<div class="element-drop" id="4">
-				<a href="#/activity4">
+			<div class="element-drop locked" ng-disabled="true" id="4">
+				<!-- <a href="#/activity4" ng-disabled="true">  -->
 				<i class="material-icons drop-icon">insert_photo</i>
 				</a>
 			</div>
 			<p class="drop-tag">Activity 4</p>
 		</li>
 		<li class="left-drop-contain" layout="column" layout-align="space-around center">
-			<div class="element-drop" id="5">
-				<a href="#/columbus_movies">
+			<div class="element-drop locked" ng-disabled="true" id="5">
+				<!-- <a href="#/columbus_movies" ng-disabled="true"> -->
 				<i class="material-icons drop-icon">video_library</i>
 				</a>
 			</div>
@@ -132,9 +132,11 @@
 					<h1 id="popup-head">Welcome back to Module 3, Jun!</h1>
 					<p id="popup-body">You left off at <b>Activity 3</b>. Let's start from there.</p>
 				</md-card-content>
-				<div class="md-actions" layout="row|column" layout-align="start|end|center start|end|center">
-				   <md-button class="activity-btn" id="go-to">Go to Activity 3</md-button>
-				 </div>
+				<md-card-actions layout="row" layout-align="end center">
+				   <a href="#/activity3">
+				   <md-button class="activity-btn" id="go-to" onclick="$('.popup').hide().attr('onmouseover','');$('.main-scrim, md-card').attr('onmouseover','');">Go to Activity 3</md-button>
+				   </a>
+				</md-card-actions>
 			</md-card>
 		</div>
 	<div class="content-container" ng-view autoscroll="true"></div>

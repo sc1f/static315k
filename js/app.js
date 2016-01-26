@@ -10,6 +10,7 @@ $(document).ready(function() {
   (function(){
   localStorage.setItem('has_visits', true);
   }());
+  //$('.popup').hide();
   /*(function(){
     var value = localStorage.getItem('has_visits');
     if(value === true){
