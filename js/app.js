@@ -150,13 +150,14 @@ app.controller('Activity1Controller', function(){
   $('.main-scrim, md-card').attr('onmouseover',"document.body.style.overflow='hidden'");
   $('#popup-head').text("You've already completed this activity!");
   $('#popup-body').html("It seems like you've completed this activity already. Your latest activity is <b>Activity 3</b>. Start from there?");
-  $('.re-do').attr('url', '#/activity1');
+  $('.re-do').attr('href', '#/activity1');
 });
 app.controller('Activity2Controller', function(){
   $('.popup').show().attr('onmouseover', "document.body.style.overflow='hidden'");
+  $('.main-scrim, md-card').attr('onmouseover',"document.body.style.overflow='hidden'");
   $('#popup-head').text("You've already completed this activity!");
   $('#popup-body').html("It seems like you've completed this activity already. Your latest activity is <b>Activity 3</b>. Start from there?");
-  $('.re-do').attr('url', '#/activity2');
+  $('.re-do').attr('href', '#/activity2');
 });
 app.controller('Activity3Controller', function(){
   $('.popup').hide().attr('onmouseover', "document.body.style.overflow='auto'");
