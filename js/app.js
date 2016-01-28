@@ -146,17 +146,19 @@ app.controller('FABController', function(){
   this.mode = 'md-fling';
 });
 app.controller('Activity1Controller', function(){
-  $('.popup').show();
+  $('.popup').show().attr('onmouseover', "document.body.style.overflow='hidden'");
+  $('.main-scrim, md-card').attr('onmouseover',"document.body.style.overflow='hidden'");
   $('#popup-head').text("You've already completed this activity!");
   $('#popup-body').html("It seems like you've completed this activity already. Your latest activity is <b>Activity 3</b>. Start from there?");
 });
 app.controller('Activity2Controller', function(){
-  $('.popup').show();
+  $('.popup').show().attr('onmouseover', "document.body.style.overflow='hidden'");
   $('#popup-head').text("You've already completed this activity!");
   $('#popup-body').html("It seems like you've completed this activity already. Your latest activity is <b>Activity 3</b>. Start from there?");
 });
 app.controller('Activity3Controller', function(){
-  $('.popup').hide();
+  $('.popup').hide().attr('onmouseover', "document.body.style.overflow='auto'");
+  $('.main-scrim, md-card').attr('onmouseover',"document.body.style.overflow='auto'");
 });
 app.controller('Activity4Controller', function(){
 });
