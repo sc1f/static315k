@@ -85,7 +85,7 @@ app.config(function($routeProvider){
     .when('/activity4', {templateUrl: 'activity4.html',controller: 'Activity4Controller as activity',title: 'Judging Columbus'})
     .when('/columbus_movies', {templateUrl: 'columbus_movies.html',controller: 'ColumbusMovieController as movie',title: 'Columbus at the Movies'})
     .when('/primarysrc', {templateUrl: 'primarysrc.html',controller: 'PrimarySrcController as primary',title: 'Primary Sources for Module 3'})
-    .when('/impact', {templateUrl: 'impact.html', controller: 'ImpactController as impact', title: "Impact of Columbus' Voyage"})
+    .when('/impact', {templateUrl: 'impact.html', controller: 'ImpactController as impact', title: "Why Columbus’s Voyages Mattered"})
 });
 //changes the page header + title on ng-view change
 app.run(['$rootScope', function($rootScope){
