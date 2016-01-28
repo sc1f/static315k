@@ -214,6 +214,12 @@ md-backdrop.md-sidenav-backdrop.md-opaque {
   padding-top: 1.5vw;
   text-align: center;
 }
+#a1, #a2, #a3, #a4, #a5, #a6 {
+  background-color: #dcdcdc;
+}
+#a1:hover, #a2:hover, #a3:hover, #a4:hover, #a5:hover, #a6:hover {
+  background-color: #dcdcdc;
+}
 /*body content*/
 md-card {
   padding-left: 1vw;
