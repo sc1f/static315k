@@ -59,6 +59,21 @@ var lenCheck = debounce(function(){
   }
 }, 100, true);
 window.addEventListener('keyup', lenCheck);
+//true-false input validation: all boxes have to be marked in order for button to be valid
+var tfCheck = debounce(function(){
+  $('.radio').each(function(){
+    if($('.true').attr('aria-checked') === 'true' || $('.false').attr('aria-checked') === 'true'){
+      $('.activity-btn').removeAttr('disabled');
+    } else if($('.true').attr('aria-checked') === 'false' || $('.false').attr('aria-checked') === 'false') {
+      $('.activity-btn').attr('disabled', 'disabled');
+    }
+  });
+}, 200, true);
+(function(){
+  $('.true-false').bind('mouseenter', function(event){
+    tfCheck();
+  });
+});
 //resets scroll + hides scrim on document ready
 $(document).ready(function() {
   $(this).scrollTop(0);
@@ -86,6 +101,7 @@ app.config(function($routeProvider){
     .when('/columbus_movies', {templateUrl: 'columbus_movies.html',controller: 'ColumbusMovieController as movie',title: 'Columbus at the Movies'})
     .when('/primarysrc', {templateUrl: 'primarysrc.html',controller: 'PrimarySrcController as primary',title: 'Primary Sources for Module 3'})
     .when('/impact', {templateUrl: 'impact.html', controller: 'ImpactController as impact', title: "Why Columbus’s Voyages Mattered"})
+    .when('/truefalse', {templateUrl: 'truefalse.html', controller: 'TFController as tf', title: "True/False Question Mockup"})
 });
 //changes the page header + title on ng-view change
 app.run(['$rootScope', function($rootScope){
@@ -96,6 +112,14 @@ app.run(['$rootScope', function($rootScope){
 }]);
 //module controllers
 app.controller('ModuleController', function() {
+});
+app.controller('TFController', function($scope){
+  $scope.submit = function($event){
+    $mdToast.showSimple('Your response has been submitted.');
+    $('.radio').each(function(){
+      $(this).removeClass('md-checked');
+    });
+  }
 });
 app.controller('ContactController', function($scope, $mdSidenav) {
   $scope.openLeftMenu = function() {
@@ -157,7 +181,6 @@ app.controller('ColumbusMovieController', function(){
 app.controller('PrimarySrcController', function(){
 });
 app.controller('ImpactController', function(){
-
 });
 //footer directive
 app.directive('module-footer', function(){

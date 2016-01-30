@@ -455,6 +455,13 @@ md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-
   overflow: hidden;
   width: 100%;
 }
+/*truefalse*/
+p.tf_question {
+  font-weight: 500;
+}
+md-radio-button.md-default-theme.md-checked, md-radio-button.md-checked .md-off {
+  border-color: #cc5527;
+}
 /*carousel*/
 .carousel {
   height: 100%;

@@ -1,0 +1,63 @@
+<div ng-controller="Activity2Controller as activity">
+	<div layout="column" layout-align="space-around center">
+		<md-content layout-padding>
+		<!--intro-->
+		<md-card flex class="content-center a-display">
+		<md-card-content>
+		<p class="content-inject a-intro">Slavery occupies a central place in this country’s history and carries consequences that continue to today. More than a century after its abolition, slavery has left a lasting legacy--a legacy evident in racism, economic inequality, and the social and economic underdevelopment of large parts of the Third World.</p>
+		<p class="content-inject">Far from being a marginal aspect of the American past, slavery played a highly significant role in this country’s development. A majority of the 650 workers who built the White House and the U.S. Capitol were enslaved African Americans. Before the Revolution, every colony permitted slavery.</p>
+		<p class="content-inject">Even after the institution was abolished in the North following the Revolution, Northerners continued to benefit from slavery. Northern textile factories relied on slave-grown cotton, northern shipping interests transported the crop, Midwestern meatpackers and farmers sold pork and corn to slave plantations, and northern banks and insurance companies financed and insured the production of cotton by slave labor.</p>
+		<p class="content-inject">Slavery also occupied a central place in the American constitutional and political order during the nation’s formative years. At the Constitutional Convention, slavery was debated from the first day of substantive debates until the last. The Constitution’s Three-Fifths clause not only greatly enhanced southern power in the House of Representatives and the electoral college, it played a critical role in the two most important presidential elections before 1860: the election of Thomas Jefferson in 1800 and of Andrew Jackson in 1828.</p>
+		<p class="content-inject">Even though the South had a free population just half that of the North as early as 1812, it held equal power in the U.S. Senate for most of the pre-Civil War era. The South was over-represented on the U.S. Supreme Court, where slaveholders comprised 18 of the first 31 justices. Slaveholders occupied the presidency for 50 of the nation’s first 72 years.</p>
+		<p class="content-inject">Slavery was deeply embedded in the nation’s economy as well as its political system. During the decades before the Civil War, slave-grown cotton generated three-quarters of the nation’s exports, attracting the foreign capital that helped finance the nation’s transportation system and industry. At the same time, slaveholders not only dominated the presidency and the Supreme Court, but chaired the most important Congressional committees and made up a disproportionate share of the nation’s diplomats. Yet this makes it all the more remarkable that a small group of abolitionists, black and white, succeeded in transforming slavery.</p>
+		<p class="content-inject">To understand slavery, we must first grasp slavery’s horrors. These include the brutal process of enslavement in Africa; the extreme cruelties of the Middle Passage, the trans-Atlantic voyage to the New World; the harsh process of “seasoning,” as enslaved Africans adjusted to the New World environment: and the severe hardships of life under slavery, including oppressive labor, family separation, vicious whippings, and the daily denial of freedom.</p>
+		<p class="content-inject">Yet it is also essential to appreciate the ability of enslaved African Americans to resist slavery’s cruelties. Resistance took many forms. There was “day-to-day” resistance, including acts of sabotage; running away; and outright physical revolts. A crucial, if sometimes underappreciated form of resistance, was cultural resistance. Through rich cultural and religious traditions and the strength of kinship ties, enslaved African Americans maintained a sense of dignity and carved out space where they could control their own lives.</p>
+		<p class="content-inject">Yet another essential story about slavery involves the way that an oppressed people shaped everything that we think of as American. Our music, language, foodways, religion, and, above all, our ideal of freedom owes a huge debt to people who toiled for generations in bondage.</p>
+		</md-card-content>
+		</md-card>
+		<!--text entry-->
+		<md-card class="a-display content-center true-false" layout-align="space-around center" ng-controller="TFController">
+			<md-card-content>
+			<div class="a-display content-center complete-scrim">
+				<div class="complete-icon">
+					<i class="material-icons">done</i>
+				</div>
+				<p class="complete-text">You've completed this activity!</p>
+			</div>
+			<div class="a2-entry-contain">
+				<h3 class="question"> Check for Understanding</h3>
+				<h4>True or False?</h4>
+				<p class="tf_question">1: Slave labor helped build the Capitol and White House.</p>
+				<md-radio-group>
+					<md-radio-button class="radio true" value="true" aria-label="true">True</md-radio-button>
+					<md-radio-button class="radio false" value="false" aria-label="false">False</md-radio-button>
+				</md-radio-group>
+				<p class="tf_question">2: Enslaved Africans and slaves could be found in each of the original 13 British colonies.</p>
+				<md-radio-group>
+					<md-radio-button class="radio true" value="true" aria-label="true">True</md-radio-button>
+					<md-radio-button class="radio false" value="false" aria-label="false">False</md-radio-button>
+				</md-radio-group>
+				<p class="tf_question">3: Slaveowners held the presidency for 50 of the nation’s first 72 years.</p>
+				<md-radio-group>
+					<md-radio-button class="radio true" value="true" aria-label="true">True</md-radio-button>
+					<md-radio-button class="radio false" value="false" aria-label="false">False</md-radio-button>
+				</md-radio-group>
+				<p class="tf_question">4: Slave-grown crops made up 3/4ths of the nation’s exports before the Civil War.</p>
+				<md-radio-group>
+					<md-radio-button class="radio true" value="true" aria-label="true">True</md-radio-button>
+					<md-radio-button class="radio false" value="false" aria-label="false">False</md-radio-button>
+				</md-radio-group>
+				<p class="tf_question">5: Slaves resisted slavery through physical revolts, day-to-day resistance, and the use of religion and other cultural practices.</p>
+				<md-radio-group>
+					<md-radio-button class="radio true" value="true" aria-label="true">True</md-radio-button>
+					<md-radio-button class="radio false" value="false" aria-label="false">False</md-radio-button>
+				</md-radio-group>
+				<md-card-actions layout="row" layout-align="end center" ng-controller="TFController">
+					<md-button class="activity-btn" ng-disabled="true" ng-click="submit()">Submit</md-button>
+				</md-card-actions>
+			</div>
+			</md-card-content>
+		</md-card>
+	</div>
+	<module-footer/>
+</div>
