@@ -1,4 +1,5 @@
-# static315k
+# static315k<br>
+# THIS REPOSITORY WILL BE DEPRECATED SOON AND WILL EXIST FOR SOLELY ARCHIVAL PURPOSES.
 LAITS static mockup<br>
 HTML/CSS/Angular/JQuery
 <br>Junyuan Tan, LAITS STA, 2015
