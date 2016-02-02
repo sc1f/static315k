@@ -28,19 +28,19 @@ var updateNav = debounce(function(){
   $(document).scroll(function(){
     if ($(window).scrollTop() > 40 && w > 540) {
       $('.nav-bar').addClass('nav-bar-scroll');
-      $('#main-head').css('padding-top', '1vw').css('font-size','1.5vw');
+      $('#module-title').css('padding-top', '1vw').css('font-size','1.5vw');
       $('.contact-button').css('top','1.5vw');
     } else if ($(window).scrollTop() === 0 && w > 540) {
       $('.nav-bar').removeClass('nav-bar-scroll');
-      $('#main-head').css('padding-top', '5vw').css('font-size','3vw');
+      $('#module-title').css('padding-top', '5vw').css('font-size','3vw');
       $('.contact-button').css('top','7.5vw');
     } else if ($(window).scrollTop() > 40 && w < 540) {
       $('.nav-bar').removeClass('nav-bar-scroll');
-      $('#main-head').css('padding-top', '5vw').css('font-size','3vw');
+      $('#module-title').css('padding-top', '5vw').css('font-size','3vw');
       $('.contact-button').css('top','90%');
     } else if ($(window).scrollTop() === 0 && w < 540) {
       $('.nav-bar').removeClass('nav-bar-scroll');
-      $('#main-head').css('padding-top', '5vw').css('font-size','3vw');
+      $('#module-title').css('padding-top', '5vw').css('font-size','3vw');
       $('.contact-button').css('top','90%');
     }
   });
@@ -107,7 +107,7 @@ app.config(function($routeProvider){
 app.run(['$rootScope', function($rootScope){
   $rootScope.$on('$routeChangeSuccess', function(event, current, previous){
     $rootScope.pageTitle = current.$$route.title;
-    $('#main-head').text(current.$$route.title);
+    $('#module-title').text(current.$$route.title);
   });
 }]);
 //module controllers
