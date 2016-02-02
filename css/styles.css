@@ -214,10 +214,16 @@ md-backdrop.md-sidenav-backdrop.md-opaque {
   padding-top: 1.5vw;
   text-align: center;
 }
-#a1, #a2, #a3, #a4, #a5, #a6 {
+.done {
+  background-color: #a8a8a8;
+}
+.done:hover {
+  background: #a8a8a8;
+}
+.locked {
   background-color: #dcdcdc;
 }
-#a1:hover, #a2:hover, #a3:hover, #a4:hover, #a5:hover, #a6:hover {
+.locked:hover {
   background-color: #dcdcdc;
 }
 /*body content*/
@@ -232,9 +238,6 @@ md-card {
   position: relative;
   width: 100%;
   padding-bottom: 2.5vw;
-}
-.hide-tracker {
-  display: none;
 }
 md-content {
   background: #f7f7f7;
@@ -306,7 +309,6 @@ md-input-container {
   min-height: 100vw;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 .popup > md-card {
   position: absolute;
@@ -318,6 +320,10 @@ md-input-container {
 }
 #go-to {
  bottom: -1vw !important; 
+ right: 1vw;
+}
+#re-do {
+   bottom: -1vw !important; 
  right: 1vw;
 }
 #popup-head {
@@ -454,16 +460,6 @@ md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-
   height: 100%;
   overflow: hidden;
   width: 100%;
-}
-/*truefalse*/
-p.tf_question {
-  font-weight: 500;
-}
-md-radio-button.md-default-theme.md-checked, md-radio-button.md-checked .md-off {
-  border-color: #cc5527;
-}
-md-radio-button.md-default-theme, md-radio-button .md-on {
-  background-color: #cc5527;
 }
 /*carousel*/
 .carousel {
