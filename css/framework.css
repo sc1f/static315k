@@ -1,0 +1,214 @@
+/** Styles for the HIS 315K module framework. Created by Junyuan Tan and Chris Pittman, LAITS.
+  *
+  * CONTENTS
+  *
+  * NAVIGATION_ - Main navigation elements
+  * FAB_ - Styles for the Material Design Floating Action Button
+  * TRACKING_ - Styles for tracking elements that may appear on the page
+  *
+*/
+
+/*------------------------------------*\
+  #NAVIGATION_TOP
+\*------------------------------------*/
+
+.nav-bar {
+  background-color: #cc5527;
+  background-image: url("/img/background.jpg");
+  background-position: 0px -30px;
+  background-size: cover;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+  0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+  0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  height: 10vw;
+  min-height: 4vw;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  /*transitions*/
+  -webkit-transition: height 0.1s linear;
+  -moz-transition: height 0.1s linear;
+  -ms-transition: height 0.1s linear;
+  -o-transition: height 0.1s linear;
+  transition: height 0.1s linear;
+}
+.nav-bar-scroll {
+  background: #a0a0a0;
+  background-image: none;
+  height: 4vw;
+}
+
+/*------------------------------------*\
+  #NAVIGATION_TAGS
+\*------------------------------------*/
+
+.nav-element {
+  color: #ffffff;
+  display: inline;
+  font: 1.1vw Roboto 400;
+  list-style-type: none;
+  margin: 0
+  padding: 0;
+  padding-top: 1.3vw;
+  text-transform: uppercase;
+  z-index: 15;
+}
+.nav-element:hover {
+  text-shadow: 0 0 .5px #ffffff;
+}
+.nav-element:focus {
+  outline: none;
+  border: 0;
+}
+#activities-select {
+  float: left;
+  padding-left: 1.5vw;
+}
+#resources-select {
+  float: right;
+  padding-right: 1.5vw;
+}
+
+/*------------------------------------*\
+  #NAVIGATION_HEADING
+\*------------------------------------*/
+
+#module-title {
+  color: white;
+  float: left;
+  font-family: "Roboto Slab";
+  font-size: 3vw;
+  font-weight: 400;
+  left: -50%;
+  list-style-type: none;
+  padding-top: 5vw;
+  position: relative;
+  z-index: 11;
+  /*transitions*/
+  -webkit-transition: padding-top font-size 0.1s linear;
+  -moz-transition: padding-top font-size 0.1s linear;
+  -ms-transition: padding-top font-size 0.1s linear;
+  -o-transition: padding-top font-size 0.1s linear;
+  transition: padding-top font-size 0.1s linear;
+}
+
+/*------------------------------------*\
+  #NAVIGATION_DROPDOWNS
+\*------------------------------------*/
+
+.dropdowns {
+  height: 100%;
+}
+#a-dropdown {
+  float: left;
+  left: 0;
+  position: fixed;
+  top: 0;
+}
+#d-dropdown{
+  float: right;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+md-sidenav {
+  height: 100%;
+  max-width: 15vw;
+  min-width: 15vw;
+  width: 15vw;
+}
+md-backdrop.md-sidenav-backdrop.md-opaque {
+  position: fixed;
+}
+.left-drop, .right-drop{
+  padding-right: 40px;
+}
+.element-drop {
+  background-color: #a5c7e3;
+  border-radius: 50%;
+  display: inline-block;
+  height: 6vw;
+  width: 6vw;
+  margin-left: 25px;
+}
+.element-drop:hover {
+  background: #4290d3;
+}
+.drop-tag {
+  color: #404040;
+  text-align: center;
+  text-transform: uppercase;
+}
+.drop-icon {
+  color: #ffffff;
+  font-size: 3vw;
+  padding-left: 1.5vw;
+  padding-top: 1.5vw;
+  text-align: center;
+}
+.element-drop.done {
+  background-color: #a8a8a8;
+}
+.element-drop.done:hover {
+  background: #a8a8a8;
+}
+.element-drop.locked {
+  background-color: #dcdcdc;
+}
+.element-drop.locked:hover {
+  background-color: #dcdcdc;
+}
+
+/*------------------------------------*\
+  #FAB_CONTACT
+\*------------------------------------*/
+
+.chat-icon {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+.md-button.md-fab,
+.contact-button {
+  background: #4290D3;
+  left: 85%;
+  position: fixed;
+  top: 7.5vw;
+  -webkit-transition: top 0.1s linear;
+  -moz-transition: top 0.1s linear;
+  -ms-transition: top 0.1s linear;
+  -o-transition: top 0.1s linear;
+  transition: top 0.1s linear;
+}
+button.md-fab.contact-button.md-button.md-default-theme{
+  background: #4290D3;
+}
+a.md-button.md-default-theme.md-fab:not([disabled]):hover,
+a.md-button.md-fab:not([disabled]):hover,
+.md-button.md-default-theme.md-fab:not([disabled]):hover,
+.md-button.md-fab:not([disabled]):hover {
+  background: #3084cc;
+}
+.contact-button-scroll {
+  background: #4290D3;
+  position: fixed;
+  top: 1.5vw;
+  -webkit-transition: top 0.1s linear;
+  -moz-transition: top 0.1s linear;
+  -ms-transition: top 0.1s linear;
+  -o-transition: top 0.1s linear;
+  transition: top 0.1s linear;
+}
+
+/*------------------------------------*\
+  #TRACKING_SCROLL
+\*------------------------------------*/
+
+#yesbtn, #nobtn {
+    bottom: .5vw;
+    color: #cc5527;
+    float: right;
+    position: relative;
+}

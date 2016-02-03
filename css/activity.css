@@ -1,0 +1,291 @@
+/** Styles for the HIS 315K activity content. Created by Junyuan Tan and Chris Pittman, LAITS.
+  *
+  * CONTENTS
+  *
+  * GLOBAL_ - Appears on every kind of activity, regardless of type
+  * ACTIVITY_ - Styles for specific activities
+  * SPECIAL_ - Styles for more interactive parts of the activity, such as carousels and interactives
+  *
+*/
+
+/*------------------------------------*\
+  #GLOBAL_POSITIONS
+\*------------------------------------*/
+
+md-card {
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+.main {
+    background-color: #f8f8f8;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+    padding-bottom: 2.5vw;
+}
+md-content {
+    background: #f7f7f7;
+}
+.content-container {
+    position: absolute;
+    top: 9.5vw;
+}
+.content-center {
+    margin: auto;
+    width: 65%;
+    margin-top: 1.5vw;
+    position: relative;
+}
+/* used for images placed inline */
+.inline-img {
+    height: auto;
+    float: left;
+    padding-right: 1.5vw;
+    width: 50%;
+}
+md-card.video {
+    height: 36.5625vw;
+    max-height: 100vh;
+}
+
+/*------------------------------------*\
+  #GLOBAL_TYPOGRAPHY
+\*------------------------------------*/
+
+md-card-content > p {
+    color: #404040;
+    line-height: 1.4;
+    margin: 0;
+}
+md-card-content > h3 {
+    color: #404040;
+    font-weight: 500 !important;
+    -webkit-margin-after: .5em;
+    -webkit-margin-before: .5em;
+}
+md-card-content > h3.question {
+    color: #505050;
+    font-weight: 400;
+    -webkit-margin-after: .5em;
+}
+md-card-content > h2.content-head.question-head {
+    -webkit-margin-after: 0em;
+    -webkit-margin-before: 0em;
+}
+
+/*------------------------------------*\
+  #GLOBAL_INPUT
+\*------------------------------------*/
+
+md-toast {
+    position: fixed;
+}
+md-input-container:not(.md-input-invalid).md-input-focused
+.md-input {
+    border-color: #cc5527;
+}
+md-input-container:not(.md-input-invalid).md-input-focused label {
+    color: #cc5527;
+}
+md-input-container {
+    margin-bottom: 0vw;
+}
+.input {
+    width: 100% !important;
+}
+
+/*------------------------------------*\
+  #GLOBAL_ACTIVITY_COMPLETE
+\*------------------------------------*/
+
+.complete-scrim {
+    display: none;
+    background-color: #ffffff;
+    opacity: .9;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    width: 100%;
+    height: 90.5%;
+    z-index: 1;
+}
+#scrim-33 {
+    left: 68%;
+    height: 50vw;
+    bottom: .5%;
+    margin-left: 0;
+    margin-right: 0;
+    width: 30% !important;
+}
+.complete-icon {
+    position: relative;
+    margin: auto;
+    border-radius: 50%;
+    width: 8vw;
+    height: 8vw;
+    opacity: 1;
+    background-color: #aad1a0;
+    z-index: 2;
+    top: 20%;
+}
+.complete-icon > i {
+    position: relative;
+    margin: auto;
+    font-size: 5em;
+    color: #ffffff;
+    left: 15%;
+    top: 15%;
+}
+.complete-text {
+    position: relative;
+    margin: auto;
+    top: 28%;
+    color: #808080;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.5em;
+    z-index: 2;
+    opacity: 1;
+}
+
+/*------------------------------------*\
+  #GLOBAL_MD_TAB_CUSTOM
+\*------------------------------------*/
+
+md-toolbar.md-warn > md-tabs.md-default-theme,
+md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active,
+md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused {
+    color: #404040;
+}
+md-toolbar.md-warn > md-tabs.md-default-theme,
+md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]){
+    color: #808080;
+}
+.md-padding.tab-bg {
+    background: none;
+}
+
+/*------------------------------------*\
+  #ACTIVITY_VISUAL
+\*------------------------------------*/
+
+.visual-card {
+    float: left;
+    height: 50vw;
+    margin: 1.5vw;
+    margin-bottom: 0;
+}
+.visual-card#photo-display {
+    width: 65%;
+}
+.visual-card#text-entry {
+    margin-left: 0;
+    margin-right: 0;
+    width: 30.5%;
+}
+.visual-entry-contain {
+    height: 100%;
+    margin-top: -1vw;
+    margin: auto;
+    padding: 5%;
+    padding-top: 0;
+    position: relative;
+    top: -12vw;
+    width: 90%;
+}
+.activity-btn {
+    bottom: -2vw;
+    color: #cc5527;
+    float: right;
+    right: -1.5vw;
+    position: relative;
+}
+
+/*------------------------------------*\
+  #SPECIAL_ELEMENTS_CAROUSEL
+\*------------------------------------*/
+
+.carousel {
+    height: 100%;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.slide {
+    display: inline-block;
+    height: 50vw;
+    min-width: 100%;
+    min-height: 50vw;
+    overflow: hidden;
+    width: 100%;
+}
+.scrim {
+    background: #000000;
+    height: 100%;
+    opacity: .3;
+    width: 4vw;
+}
+.scrim:focus {
+    outline: none;
+    border: 0;
+}
+.left-scrim {
+    background: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,.1));
+    background: -moz-linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,.1));
+    background: -o-linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,.1));
+    background: -webkit-linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,.1));
+    float: left;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+.right-scrim {
+    background: linear-gradient(to right, rgba(0,0,0,.1), rgba(0,0,0,1));
+    background: -moz-linear-gradient(to right, rgba(0,0,0,.1), rgba(0,0,0,1));
+    background: -o-linear-gradient(to right, rgba(0,0,0,.1), rgba(0,0,0,1));
+    background: -webkit-linear-gradient(to right, rgba(0,0,0,.1), rgba(0,0,0,1));
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#arrow-left {
+    color: #ffffff;
+    float: left;
+    font-size: 4vw;
+    left: 0;
+    opacity: .75;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#arrow-right {
+    color: #ffffff;
+    float: right;
+    font-size: 4vw;
+    opacity: .75;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.arrow:focus {
+    border: 0;
+    outline: none;
+}
+.number-display {
+    color: #ffffff;
+    float: right;
+    font-size: 5em;
+    font-weight: 700;
+    opacity: .75;
+    position: relative;
+    right: 2.5%;
+    top: -26%;
+}
+.carousel-caption-contain {
+    position: absolute;
+    padding-right: 3vw;
+    bottom: 2vw;
+}
