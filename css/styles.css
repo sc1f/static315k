@@ -78,9 +78,9 @@ html, body {
   font-family: "Roboto Slab";
   font-size: 3vw;
   font-weight: 400;
-  left: -50%;
+  left: -59%;
   list-style-type: none;
-  padding-top: 5vw;
+  padding-top: 1.5em;
   position: relative;
   z-index: 11;
   /*transitions*/
@@ -330,10 +330,7 @@ md-input-container {
   color: #cc5527;
 }
 /*activity general*/
-.a-display {
-  margin-top: 1vw;
-  padding-top: 0;
-}
+
 .a-intro {
   margin: 0;
 }
@@ -415,16 +412,18 @@ md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-
   opacity: 1;
 }
 /*activity1*/
-.activity-card {
+.photo-activity {
   float: left;
   height: 50vw;
   margin: 1.5vw;
   margin-bottom: 0;
 }
-.activity-card#photo-display {
+.photo-activity.images {
   width: 65%;
+  padding-left: 0;
+  padding-right: 0;
 }
-.activity-card#text-entry {
+.photo-activity.answer {
   margin-left: 0;
   margin-right: 0;
   width: 30.5%;
@@ -432,7 +431,7 @@ md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-
 .activity-wrap {
   width: 100%;
 }
-.a1-entry-contain {
+.entry-contain {
   height: 100%;
   margin-top: -1vw;
   margin: auto;
@@ -540,10 +539,14 @@ md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-
   right: 2.5%;
   top: -26%;
 }
-.carousel-caption-contain {
+.carousel-caption {
   position: absolute;
-  padding-right: 3vw;
-  bottom: 2vw;
+  padding-right: 4em;
+  bottom: 1em;
+}
+#caption {
+  font-style: italic;
+  font-size: .9em;
 }
 /*activity 2*/
 .a2-entry-contain {
@@ -587,7 +590,7 @@ md-card.video {
     top: -5vw;
   }
 }
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .header-container {
     left: 40%;
   }
@@ -598,6 +601,19 @@ md-card.video {
     width: 36px;
     line-height: 36px;
   }
+  .photo-activity {
+    float: none;
+    margin: auto !important;
+    width: 65%;
+    margin-top: 1.5vw !important;
+    position: relative;
+  }
+  .entry-contain {
+    top: 0;
+  }
+  .photo-activity.answer {
+    height: auto;
+  }
   .nav-element {
     font-size: .7em;
   }
@@ -606,11 +622,17 @@ md-card.video {
     margin-left: 8px;
     width: 12vw;
   }
+  md-card {
+    width: 80% !important;
+  }
   md-sidenav {
     height: 100%;
     max-width: 25vw;
     min-width: 25vw;  
     width: 25vw;
+  }
+  .material-icons {
+    font-size: 16px;
   }
   .drop-icon {
     font-size: 6vw;
@@ -626,16 +648,32 @@ md-card.video {
   .header-container {
     left: 38%;
   }
-  .content-center {
-    width: 80%;
+  .nav-bar {
+    background-position: 0;
+    height: 5em;
+  }
+  #module-title {
+    font-size: 1em;
+  }
+  .material-icons {
+    font-size: 24px;
+  }
+  md-card{
+    width: 90% !important;
+    margin: auto;
+    position: relative;
+    margin-top: 1.5vw;
+    float: none;
+  }
+  .photo-activity {
+    margin: auto;
   }
   .md-button.md-fab, 
   .contact-button {
-    height: 56px;
-    width: 56px;
-    line-height: 56px;
-    left: 80vw;
-    top: 90%;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    top: 80%;
   }
   md-sidenav {
     height: 100%;
@@ -655,5 +693,12 @@ md-card.video {
   }
   .footer-wrap {
     display: none;
+  }
+  #first-card-mobile {
+    margin-top: 4em;
+    padding-top: 0;
+  }
+  .first  {
+    margin-top: 17%;
   }
 }

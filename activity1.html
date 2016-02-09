@@ -9,11 +9,11 @@
 		</md-card>
 		<div ng-controller="Activity1Controller as activity">
 			<!--big portrait-->
-			<md-card class="activity-card" id="photo-display" layout flex="66" layout-align="center center" ng-controller="CarouselController">
+			<md-card class="photo-activity images" layout flex="66" layout-align="center center" ng-controller="CarouselController">
 			<carousel images="a1_images">
 			</md-card>
 			<!--text entry-->
-			<md-card class="activity-card" id="text-entry" layout flex="33" layout-align="space-around center" ng-controller="EntryController">
+			<md-card class="photo-activity answer" layout flex="33" layout-align="space-around center" ng-controller="EntryController">
 			<md-card-content>
 			<div class="activity-card complete-scrim" id="scrim-33">
 				<div class="complete-icon">
@@ -21,7 +21,7 @@
 				</div>
 				<p class="complete-text">You've completed this activity!</p>
 			</div>
-			<div class="a1-entry-contain">
+			<div class="entry-contain">
 				<h3 class="question"> Based on these descriptions, explain which of the following portraits is probably most accurate.</h3>
 				<md-input-container>
 			<form name="answer-input">
@@ -34,9 +34,9 @@
 			<md-button class="activity-btn" ng-disabled="true" ng-click="submit()">Submit</md-button>
 			</md-card-actions>
 			</div>
-			<div class="carousel-caption-contain">
+			<div class="carousel-caption">
 				<p id="caption">Christopher Colombus, head-and-shoulders portrait, facing slightly right. Photomechanical print : halftone, color. Created between 1890 and 1940. Library of Congress. 
-          </p>
+          		</p>
 			</div>
 			</md-card-content>
 			</md-card>

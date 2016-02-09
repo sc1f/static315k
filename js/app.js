@@ -23,29 +23,29 @@ $(document).ready(function() {
 //if has_visits = true then display the div
 //inject values into the button
 //navbar function, which reads the scrollTop() to decide when to change class from regular to expanded
+var width = window.innerWidth;
+if(width < 540){
+  $(document).ready(function(){
+    $('.activity-card').addClass('content-center').removeClass('activity-card').removeAttr('id','photo-display');
+
+  });
+} else {
 var updateNav = debounce(function(){
   var w = window.innerWidth;
   $(document).scroll(function(){
-    if ($(window).scrollTop() > 40 && w > 540) {
+    if ($(window).scrollTop() > 40) {
       $('.nav-bar').addClass('nav-bar-scroll');
-      $('#module-title').css('padding-top', '1vw').css('font-size','1.5vw');
+      $('#module-title').css('padding-top', '0').css('font-size','1.5vw');
       $('.contact-button').css('top','1.5vw');
-    } else if ($(window).scrollTop() === 0 && w > 540) {
+    } else if ($(window).scrollTop() === 0) {
       $('.nav-bar').removeClass('nav-bar-scroll');
-      $('#module-title').css('padding-top', '5vw').css('font-size','3vw');
+      $('#module-title').css('padding-top', '1.5em').css('font-size','3vw');
       $('.contact-button').css('top','7.5vw');
-    } else if ($(window).scrollTop() > 40 && w < 540) {
-      $('.nav-bar').removeClass('nav-bar-scroll');
-      $('#module-title').css('padding-top', '5vw').css('font-size','3vw');
-      $('.contact-button').css('top','90%');
-    } else if ($(window).scrollTop() === 0 && w < 540) {
-      $('.nav-bar').removeClass('nav-bar-scroll');
-      $('#module-title').css('padding-top', '5vw').css('font-size','3vw');
-      $('.contact-button').css('top','90%');
-    }
+    } 
   });
 }, 200, true);
 window.addEventListener('scroll', updateNav);
+}
 /*
 input validation: checks whether the textarea is deemed by Angular to have a value, and if true
 it removes the disabled attribute from the submission button. If false, the button remains disabled.
@@ -80,6 +80,7 @@ $(document).ready(function() {
   $('.complete-scrim').hide();
   //makes sure we don't parse angular expressions through user input
   $('textarea').attr('ng-non-bindable', '');
+  $('scrolltracking > md-card').addClass('first')
 });
 //angularJS app
 var app = angular.module('MintzApp', [

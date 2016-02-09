@@ -81,9 +81,9 @@
   font-family: "Roboto Slab";
   font-size: 3vw;
   font-weight: 400;
-  left: -50%;
+  left: -59%;
   list-style-type: none;
-  padding-top: 5vw;
+  padding-top: 1.5em;
   position: relative;
   z-index: 11;
   /*transitions*/
