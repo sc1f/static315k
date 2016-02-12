@@ -1,11 +1,20 @@
-/*footer dependencies*/
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  z-index: 0;
-}
-/*navigation + header*/
+/** Styles for the HIS 315K online class front-end. Created by Junyuan Tan and Chris Pittman, LAITS.
+  *
+  * CONTENTS
+  *
+  * NAVIGATION_ - Main navigation elements
+  * BODY_ - Elements in the body of the activity, including card content and types
+  * * GLOBAL_ - Appears on every kind of activity, regardless of type
+  * * ACTIVITY_ - Styles for specific activities
+  * * SPECIAL_ - Styles for more interactive parts of the activity, such as carousels and interactives
+  * TRACKING_ - Styles for tracking elements that may appear on the page
+  * RESPONSIVE_DESIGN - Media queries for responding to different devices
+*/
+
+/*------------------------------------*\
+  #NAVIGATION_BAR_TOP
+\*------------------------------------*/
+
 .nav-bar {
   background-color: #cc5527;
   background-image: url("/img/background.jpg");
@@ -33,6 +42,12 @@ html, body {
   background-image: none;
   height: 4vw;
 }
+
+/*------------------------------------*\
+  #NAVIGATION_BAR_LINKS
+\*------------------------------------*/
+
+
 .nav-element {
   color: #ffffff;
   display: inline;
@@ -67,6 +82,12 @@ html, body {
   outline: none;
   border: 0;
 }
+
+/*------------------------------------*\
+  #NAVIGATION_MODULE_HEADER
+\*------------------------------------*/
+
+
 .header-container {
   float: left;
   left: 43%;
@@ -90,43 +111,12 @@ html, body {
   -o-transition: padding-top font-size 0.1s linear;
   transition: padding-top font-size 0.1s linear;
 }
-/*footer*/
-.module-footer {
-  background-color: #eeeeee;
-  text-align: center;
-  width: 100%;
-  z-index: 10;
-}
-.date-container {
-  position: relative;
-}
-.date-container.left {
-  top: 2.5vw;
-  margin-left: 2vw;
-  float: left;
-}
-.date-container.center {
-  margin: auto;
-  width: 10%;
-  top: .8vw;
-}
-.date-container.right {
-  float: right;
-  margin-right: 2vw;
-  bottom: 4.6vw;
-}
-.date-display {
-  font-size: 2em;
-  font-style: 500;
-  color: #808080;
-}
-.date-display.small {
-  font-size: 1em;
-}
-.module-footer, .content-container:after {
-  height: 2vw;
-}
-/*FAB*/
+
+/*------------------------------------*\
+  #NAVIGATION_FAB
+\*------------------------------------*/
+
+
 .chat-icon {
   display: inline-block;
   line-height: 1;
@@ -135,7 +125,7 @@ html, body {
 .md-button.md-fab, 
 .contact-button {
   background: #4290D3;
-  left: 85%;
+  left: 79.5%;
   position: fixed;
   top: 7.5vw;
   -webkit-transition: top 0.1s linear;
@@ -163,7 +153,12 @@ a.md-button.md-fab:not([disabled]):hover,
   -o-transition: top 0.1s linear;
   transition: top 0.1s linear;
 }
-/*nav dropdowns*/
+
+/*------------------------------------*\
+  #NAVIGATION_DROPDOWNS
+\*------------------------------------*/
+
+
 .dropdowns {
   height: 100%;
 }
@@ -226,7 +221,11 @@ md-backdrop.md-sidenav-backdrop.md-opaque {
 .locked:hover {
   background-color: #dcdcdc;
 }
-/*body content*/
+
+/*------------------------------------*\
+  #BODY_GLOBAL_POSITIONS
+\*------------------------------------*/
+
 md-card {
   padding-left: 1vw;
   padding-right: 1vw;
@@ -244,32 +243,42 @@ md-content {
 }
 .content-container {
   position: absolute;
-  top: 9.5vw;
-  /*min-height: 100%;
-  margin-bottom: 2vw;*/
+  top: 9.5vw; 
 }
-/*.content-container:after {
-  content: '';
-  display: block;
-}*/
+.inline-img {
+  height: auto;
+  float: left;
+  padding-right: 1.5vw;
+  width: 50%;
+}
 .content-center {
   margin: auto;
   width: 65%;
   margin-top: 1.5vw;
   position: relative;
 }
-.content-inject {
+md-card.video {
+  height: 36.5625vw;
+  max-height: 100vh;
+}
+
+/*------------------------------------*\
+  #BODY_GLOBAL_TYPOGRAPHY
+\*------------------------------------*/
+
+md-card-content > p, md-content > span {
   color: #404040;
   white-space: pre-wrap;
   line-height: 1.4;
 }
-.content-head {
+md-card-content > h3, md-content > h3 {
   color: #404040;
   font-weight: 500;
   -webkit-margin-after: .5em;
   -webkit-margin-before: .5em;  
 }
-h2.content-head.question-head {
+md-card-content > h2 {
+  color: #a0a0a0;
   -webkit-margin-after: 0em;
   -webkit-margin-before: 0em;  
 }
@@ -278,6 +287,11 @@ h3.question {
   font-weight: 400;
   -webkit-margin-after: .5em;
 }
+
+/*------------------------------------*\
+  #BODY_GLOBAL_INPUT
+\*------------------------------------*/
+
 md-toast {
   position: fixed;
 }
@@ -294,7 +308,11 @@ md-input-container {
 .input {
   width: 100% !important;
 }
-/*popup*/
+
+/*------------------------------------*\
+  #TRACKING_POPUP
+\*------------------------------------*/
+
 .popup {
   width: 100%;
 }
@@ -324,38 +342,16 @@ md-input-container {
 }
 #re-do {
    bottom: -1vw !important; 
- right: 1vw;
+   right: 1vw;
 }
 #popup-head {
   color: #cc5527;
 }
-/*activity general*/
 
-.a-intro {
-  margin: 0;
-}
-md-toolbar.md-warn > md-tabs.md-default-theme, 
-md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, 
-md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused {
-  color: #404040;
-}
-md-toolbar.md-warn > md-tabs.md-default-theme, 
-md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]){
-  color: #808080;
-}
-.md-padding.tab-bg {
-  background: none;
-}
-md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-ink-bar {
-  color: #4290d3;
-  background-color: #4290d3;
-}
-.inline-img {
-  height: auto;
-  float: left;
-  padding-right: 1.5vw;
-  width: 50%;
-}
+/*------------------------------------*\
+  #TRACKING_COMPLETE_SCRIM
+\*------------------------------------*/
+
 #yesbtn, #nobtn {
   bottom: .5vw;
   color: #cc5527;
@@ -411,6 +407,28 @@ md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-
   z-index: 2;
   opacity: 1;
 }
+
+/*------------------------------------*\
+  #BODY_SPECIAL_MD-TAB
+\*------------------------------------*/
+
+md-toolbar.md-warn > md-tabs.md-default-theme, 
+md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, 
+md-toolbar.md-warn > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-focused {
+  color: #404040;
+}
+md-toolbar.md-warn > md-tabs.md-default-theme, 
+md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]){
+  color: #808080;
+}
+.md-padding.tab-bg {
+  background: none;
+}
+md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-ink-bar {
+  color: #4290d3;
+  background-color: #4290d3;
+}
+
 /*activity1*/
 .photo-activity {
   float: left;
@@ -441,26 +459,16 @@ md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-
   top: -12vw;
   width: 90%;
 }
-.activity-btn {
-  bottom: -2vw;
+.submit-btn {
   color: #cc5527;
   float: right;
-  right: -1.5vw;
   position: relative;
 }
-.activity-btn#movie-btn {
-  bottom: 0;
-}
-.grid-display {
-  height: 100%;
-  width: 100%;
-}
-.img-container {
-  height: 100%;
-  overflow: hidden;
-  width: 100%;
-}
-/*carousel*/
+
+/*------------------------------------*\
+  #BODY_SPECIAL_CAROUSEL
+\*------------------------------------*/
+
 .carousel {
   height: 100%;
   float: left;
@@ -548,30 +556,21 @@ md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-
   font-style: italic;
   font-size: .9em;
 }
-/*activity 2*/
-.a2-entry-contain {
-  width: 60vw;
-}
-/*activity 3*/
-.a3-entry-contain {
-  width: 60vw;
-}
-/*columbus at the movies*/
-md-card.video {
-  height: 36.5625vw;
-  max-height: 100vh;
-}
-/*responsive design*/
+
+/*------------------------------------*\
+  #RESPONSIVE_DESIGN
+\*------------------------------------*/
+
 @media (max-width: 1024px) {
   .header-container {
     left: 41%;
   }
   .md-button.md-fab, 
   .contact-button {
-    left: 82vw;
     height: 45px;
-    width: 45px;
+    left: 82vw;
     line-height: 45px;
+    width: 45px; 
   }
    .element-drop {
     height: 8vw;
@@ -586,9 +585,6 @@ md-card.video {
   .number-display {
     top: -35%;
   }
-  .a1-entry-contain {
-    top: -5vw;
-  }
 }
 @media (max-width: 768px) {
   .header-container {
@@ -596,17 +592,17 @@ md-card.video {
   }
   .md-button.md-fab, 
   .contact-button {
-    left: 82vw;
     height: 36px;
-    width: 36px;
+    left: 82vw;
     line-height: 36px;
+    width: 36px;
   }
   .photo-activity {
     float: none;
     margin: auto !important;
-    width: 65%;
     margin-top: 1.5vw !important;
     position: relative;
+    width: 65%;
   }
   .entry-contain {
     top: 0;
@@ -645,6 +641,9 @@ md-card.video {
   }
 }
 @media (max-width: 540px) {
+  .content-container {
+    margin-top: 3.5em;
+  }
   .header-container {
     left: 38%;
   }
@@ -654,16 +653,18 @@ md-card.video {
   }
   #module-title {
     font-size: 1em;
+    left: -81%;
+    padding-top: 2em;
   }
   .material-icons {
     font-size: 24px;
   }
   md-card{
-    width: 90% !important;
-    margin: auto;
-    position: relative;
-    margin-top: 1.5vw;
     float: none;
+    margin: auto; 
+    margin-top: 1.5vw;
+    position: relative;
+    width: 90% !important;
   }
   .photo-activity {
     margin: auto;
@@ -671,9 +672,9 @@ md-card.video {
   .md-button.md-fab, 
   .contact-button {
     height: 50px;
-    width: 50px;
     line-height: 50px;
     top: 80%;
+    width: 50px;
   }
   md-sidenav {
     height: 100%;

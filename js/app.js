@@ -53,9 +53,9 @@ The event handler runs this module every time a key is pressed.
 */
 var lenCheck = debounce(function(){
   if($('md-input-container').hasClass('md-input-has-value') && $('.input').hasClass('ng-valid')){
-    $('.activity-btn').removeAttr('disabled');
+    $('.submit-btn').removeAttr('disabled');
   } else if($('md-input-container').hasClass('md-input-invalid') || $('.input').hasClass('ng-invalid')) {
-    $('.activity-btn').attr('disabled', 'disabled');
+    $('.submit-btn').attr('disabled', 'disabled');
   }
 }, 100, true);
 window.addEventListener('keyup', lenCheck);
@@ -63,9 +63,9 @@ window.addEventListener('keyup', lenCheck);
 var tfCheck = debounce(function(){
   $('.radio').each(function(){
     if($('.true').attr('aria-checked') === 'true' || $('.false').attr('aria-checked') === 'true'){
-      $('.activity-btn').removeAttr('disabled');
+      $('.submit-btn').removeAttr('disabled');
     } else if($('.true').attr('aria-checked') === 'false' || $('.false').attr('aria-checked') === 'false') {
-      $('.activity-btn').attr('disabled', 'disabled');
+      $('.submit-btn').attr('disabled', 'disabled');
     }
   });
 }, 200, true);
@@ -137,7 +137,7 @@ app.controller('EntryController', function($scope, $mdToast){
     $('#caption').hide();
     $('.input').val('');
     $('.md-char-counter').text('0/500');
-    $('.activity-btn').attr('disabled', 'disabled');
+    $('.submit-btn').attr('disabled', 'disabled');
     $('.complete-scrim').show();
     //scrim persistence using localstorage
     //gives us the name of our localstorage var for each activity
